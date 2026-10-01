@@ -8,7 +8,7 @@ combinadaYYYY-MM.txt). Tambem aceita qualquer arquivo passado como argumento:
   python scripts/chunk_arquivos.py data/base_eda_ingles.csv
   python scripts/chunk_arquivos.py --max-kb 500 data/combinada2025-01/combinada2025-01.txt
 
-Saida: data/chunks/<nome>/<nome>_part0001.csv, <nome>_part0002.csv, ...
+Saida: data/chunks/<nome>/<nome>_parte0001.csv, <nome>_parte0002.csv, ...
 (sempre .csv, inclusive para os .txt brutos, para o Glue/Athena)
 
 Regras:
@@ -48,7 +48,7 @@ def chunkear(caminho, max_bytes, out_root):
     ext = EXTENSAO_SAIDA
     destino = os.path.join(out_root, nome)
     os.makedirs(destino, exist_ok=True)
-    for antigo in glob.glob(os.path.join(destino, f"{nome}_part*{ext}")):
+    for antigo in glob.glob(os.path.join(destino, f"{nome}_parte*{ext}")):
         os.remove(antigo)
 
     with open(caminho, "rb") as f:
@@ -67,7 +67,7 @@ def chunkear(caminho, max_bytes, out_root):
         def gravar():
             nonlocal partes, maior
             partes += 1
-            saida = os.path.join(destino, f"{nome}_part{partes:04d}{ext}")
+            saida = os.path.join(destino, f"{nome}_parte{partes:04d}{ext}")
             with open(saida, "wb") as out:
                 out.write(cabecalho)
                 out.writelines(buffer)
