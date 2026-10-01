@@ -1,0 +1,11 @@
+# Ambiente virtual
+.venv/
+venv/
+__pycache__/
+.ipynb_checkpoints/
+
+# Dados brutos da ANAC (baixar do portal da ANAC, ver METODOLOGIA.md)
+data/combinada*/
+
+# Pacotes gerados localmente
+*.zip

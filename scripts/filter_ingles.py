@@ -1,18 +1,28 @@
 """
-Filtra os CSVs mensais (ja limpos) para manter somente voos saindo do Brasil
-com destino a paises de lingua inglesa (Estados Unidos, Canada e Reino Unido)
-e agrega o resultado por ano, mes e tipo de voo.
+Filtra os CSVs mensais (ja limpos) para manter somente voos comerciais de
+passageiros saindo do Brasil com destino a paises de lingua inglesa (Estados
+Unidos, Canada e Reino Unido) e agrega o resultado por ano e mes.
 
-Saida (uma linha por ano x mes x tipo_voo):
-  ano, mes, estacao, temporada, tipo_voo, qtd_voos, nr_passageiros
+Na etapa combinada da ANAC cada linha e um par de aeroportos (embarque x
+desembarque) dentro de um voo, e nao um voo. Um voo com escala gera mais de
+uma linha com origem Brasil e destino no mesmo pais. Por isso as linhas
+filtradas sao primeiro somadas ao voo a que pertencem (identificado por
+empresa ICAO, numero do voo e data de partida real) e so depois cada voo
+entra, uma unica vez, na agregacao por ano e mes. O nr_singular fica fora da
+chave porque costuma vir vazio.
 
-O tipo_voo substitui as colunas de peso de bagagem/carga por uma
-classificacao discreta, derivada do numero de passageiros embarcados:
-  - "voo de carga/reabastecimento": nenhum passageiro a bordo (voo cargueiro
-    ou voo de posicionamento/ferry sem carga)
-  - "voo privado": de 1 a 19 passageiros (faixa da aviacao executiva /
-    aeronaves de pequeno porte)
-  - "voo de turismo": 20 ou mais passageiros (voo comercial de passageiros)
+Cada voo e classificado a partir do tipo de servico da linha e do total de
+passageiros embarcados (somando todos os pares de aeroportos):
+  - "voo de carga/reabastecimento": servico da linha CARGUEIRO ou nenhum
+    passageiro a bordo (voo de posicionamento/ferry sem carga)
+  - "voo comercial": voo de linha com pelo menos um passageiro a bordo
+
+Somente os voos comerciais entram no arquivo de saida; os de carga sao
+apenas contados no resumo do console, porque nao interessam para a analise
+de demanda por aulas de ingles.
+
+Saida (uma linha por ano x mes):
+  ano, mes, estacao, temporada, qtd_voos, nr_passageiros
 
 As colunas estacao e temporada enriquecem o mes com contexto de calendario.
 Como os voos PARTEM do Brasil, e o calendario brasileiro (hemisferio sul) que
@@ -27,7 +37,6 @@ invertidas.
 """
 import csv
 import os
-from collections import OrderedDict
 
 DATA_DIR = os.path.join(os.path.dirname(__file__), "..", "data")
 OUT_PATH = os.path.join(DATA_DIR, "voos_brasil_paises_ingleses.csv")
@@ -43,13 +52,12 @@ PAISES_DESTINO_INGLES = {
 
 MES_COL = "nr_ano_mes_partida_real"
 PAX_COLS = ["nr_passag_pagos", "nr_passag_gratis"]
+VOO_COLS = ["sg_empresa_icao", "nr_voo", "dt_partida_real"]
+SERVICO_COL = "ds_servico_tipo_linha"
+SERVICO_CARGUEIRO = "CARGUEIRO"
 
 TIPO_CARGA = "voo de carga/reabastecimento"
-TIPO_PRIVADO = "voo privado"
-TIPO_TURISMO = "voo de turismo"
-ORDEM_TIPOS = [TIPO_PRIVADO, TIPO_TURISMO, TIPO_CARGA]
-
-LIMITE_PRIVADO = 19  # ate 19 assentos = aviacao executiva / pequeno porte
+TIPO_COMERCIAL = "voo comercial"
 
 # Estacoes do hemisferio sul (Brasil, origem dos voos), por trimestre
 ESTACAO_POR_MES = {
@@ -96,12 +104,10 @@ def to_int(val):
     return int(float(val))
 
 
-def classificar(pax):
-    if pax == 0:
+def classificar(pax, servico):
+    if servico == SERVICO_CARGUEIRO or pax == 0:
         return TIPO_CARGA
-    if pax <= LIMITE_PRIVADO:
-        return TIPO_PRIVADO
-    return TIPO_TURISMO
+    return TIPO_COMERCIAL
 
 
 def main():
@@ -111,10 +117,10 @@ def main():
 
     header = None
     idx_origem = idx_destino = idx_mes = None
-    idx_pax = None
+    idx_pax = idx_voo = idx_servico = None
     total_in = 0
     total_out = 0
-    aggregates = OrderedDict()  # (ano, mes, tipo) -> {"qtd_voos", "nr_passageiros"}
+    voos = {}
 
     for name, path in files:
         with open(path, "r", encoding=ENCODING, newline="") as fin:
@@ -126,6 +132,8 @@ def main():
                 idx_destino = header.index("nm_pais_destino")
                 idx_mes = header.index(MES_COL)
                 idx_pax = [header.index(c) for c in PAX_COLS]
+                idx_voo = [header.index(c) for c in VOO_COLS]
+                idx_servico = header.index(SERVICO_COL) if SERVICO_COL in header else None
             elif h != header:
                 raise ValueError(f"Cabecalho diferente em {name}")
 
@@ -138,40 +146,51 @@ def main():
                     continue
                 n_out += 1
 
-                ano_mes = row[idx_mes]
-                ano, mes = int(ano_mes[:4]), int(ano_mes[4:])
-                pax = sum(to_int(row[i]) for i in idx_pax)
-                chave = (ano, mes, classificar(pax))
-
-                bucket = aggregates.setdefault(chave, {"qtd_voos": 0, "nr_passageiros": 0})
-                bucket["qtd_voos"] += 1
-                bucket["nr_passageiros"] += pax
+                chave_voo = tuple(row[i] for i in idx_voo)
+                voo = voos.get(chave_voo)
+                if voo is None:
+                    ano_mes = row[idx_mes]
+                    servico = row[idx_servico] if idx_servico is not None else ""
+                    voo = {"ano": int(ano_mes[:4]), "mes": int(ano_mes[4:]), "pax": 0, "servico": servico}
+                    voos[chave_voo] = voo
+                voo["pax"] += sum(to_int(row[i]) for i in idx_pax)
 
             total_in += n_in
             total_out += n_out
             print(f"[{name}] {n_in} linhas -> {n_out} mantidas", flush=True)
 
+    aggregates = {}
+    n_carga = 0
+    for voo in voos.values():
+        if classificar(voo["pax"], voo["servico"]) == TIPO_CARGA:
+            n_carga += 1
+            continue
+        bucket = aggregates.setdefault((voo["ano"], voo["mes"]), {"qtd_voos": 0, "nr_passageiros": 0})
+        bucket["qtd_voos"] += 1
+        bucket["nr_passageiros"] += voo["pax"]
+
     with open(OUT_PATH, "w", encoding=ENCODING, newline="") as fout:
         writer = csv.writer(fout, delimiter=DELIMITER, quotechar='"', quoting=csv.QUOTE_MINIMAL)
         writer.writerow(
-            ["ano", "mes", "estacao", "temporada", "tipo_voo", "qtd_voos", "nr_passageiros"]
+            ["ano", "mes", "estacao", "temporada", "qtd_voos", "nr_passageiros"]
         )
-        for ano, mes, tipo in sorted(
-            aggregates, key=lambda k: (k[0], k[1], ORDEM_TIPOS.index(k[2]))
-        ):
-            b = aggregates[(ano, mes, tipo)]
+        for ano, mes in sorted(aggregates):
+            b = aggregates[(ano, mes)]
             writer.writerow([
                 ano,
                 mes,
                 ESTACAO_POR_MES[mes],
                 TEMPORADA_POR_MES[mes],
-                tipo,
                 b["qtd_voos"],
                 b["nr_passageiros"],
             ])
 
-    print(f"\nTotal geral: {total_in} linhas lidas, {total_out} voos EUA/Canada/Reino Unido")
-    print(f"Linhas agregadas (ano x mes x tipo): {len(aggregates)}")
+    n_comercial = sum(b["qtd_voos"] for b in aggregates.values())
+    n_pax = sum(b["nr_passageiros"] for b in aggregates.values())
+    print(f"\nTotal geral: {total_in} linhas lidas, {total_out} linhas mantidas, {len(voos)} voos distintos EUA/Canada/Reino Unido")
+    print(f"Voos de carga/reabastecimento excluidos: {n_carga}")
+    print(f"Voos comerciais gravados: {n_comercial} ({n_pax} passageiros)")
+    print(f"Linhas agregadas (ano x mes): {len(aggregates)}")
     print(f"Arquivo consolidado: {OUT_PATH}")
 
 

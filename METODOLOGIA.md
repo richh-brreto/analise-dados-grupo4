@@ -1,6 +1,6 @@
 # Metodologia de tratamento dos dados
 
-Documentação do pipeline que transforma os arquivos brutos da ANAC em um CSV agregado de voos partindo do Brasil com destino a países de língua inglesa.
+Documentação do pipeline que transforma os arquivos brutos da ANAC em um CSV agregado de voos comerciais de passageiros partindo do Brasil com destino a países de língua inglesa.
 
 ## 1. Dados de origem
 
@@ -90,31 +90,49 @@ As grafias foram levantadas a partir dos valores distintos presentes no próprio
 - O dataset escreve `ESTADOS UNIDOS DA AMÉRICA` por extenso, nunca `EUA`.
 - Inglaterra não existe como valor. O país aparece como `REINO UNIDO`.
 
-Países anglófonos menores presentes nos dados (Jamaica, Barbados, Bahamas, Trinidad e Tobago, Antígua e Barbuda, Santa Lúcia, Guiana, Seicheles) e a África do Sul foram deixados de fora por decisão de escopo, restringindo a análise aos três grandes destinos.
+Irlanda, Austrália e Nova Zelândia não aparecem como destino de voos saídos do Brasil no período. A África do Sul (1.396 registros) e os demais países anglófonos presentes na base, todos com menos de 15 registros (Jamaica, Guiana, Trinidad e Tobago, Santa Lúcia, Barbados, Bahamas, Antígua e Barbuda, Nigéria, Quênia, Gana, Libéria, Malta e Singapura), foram deixados de fora por decisão de escopo, restringindo a análise aos três grandes destinos. Países de conexão com muito volume, como Portugal, Espanha, Chile e Qatar, não entram porque o destino do registro não é anglófono.
 
-Resultado do filtro: 36.412 voos, a partir de 3.709.917 registros lidos.
+Resultado do filtro: 36.412 registros, a partir de 3.709.917 lidos.
 
-### 4.2 Chave temporal
+### 4.2 Unidade de análise: de registro para voo
+
+Na etapa combinada da ANAC, cada registro é um **par de aeroportos** (embarque × desembarque) dentro de um voo, e não um voo. Um voo que sai de São Paulo, faz escala em Miami e segue para Nova York gera dois registros com origem Brasil e destino Estados Unidos. Contar registros infla a quantidade de voos e, pior, classifica cada trecho isoladamente: o par que segue até o segundo destino pode ter poucos passageiros embarcados e parecer um voo pequeno, quando é um avião de linha.
+
+Por isso os registros filtrados são primeiro somados ao voo a que pertencem, identificado pela chave `(sg_empresa_icao, nr_voo, dt_partida_real)`. O campo `nr_singular` fica fora da chave porque costuma vir vazio. Só depois cada voo entra, uma única vez, na agregação mensal.
+
+| Registros por voo | Voos |
+|---|---|
+| 1 | 13.571 |
+| 2 | 1.368 |
+| 3 | 5.873 |
+| 4 a 9 | 415 |
+
+Os 36.412 registros correspondem a **21.227 voos distintos**. A contagem por registro superestimava o número de voos em 72%. A soma de passageiros não é afetada, porque cada registro traz apenas os embarques daquele trecho.
+
+Nenhum voo toca mais de um dos três países de destino: somando os voos por país (Estados Unidos 15.656, Reino Unido 1.633, Canadá 1.038, considerando só os comerciais da seção 4.4) chega-se exatamente ao total.
+
+### 4.3 Chave temporal
 
 A agregação usa `nr_ano_mes_partida_real`, o mês da partida efetiva, e não `nr_ano_mes_referencia`, o mês de referência do arquivo da ANAC.
 
-Consequência conhecida: aparecem 20 meses no resultado, e não 19. Quatro voos do arquivo de julho de 2026 decolaram já em 1º de agosto e formam a linha residual de `2026-08`. Para eliminar esse resíduo basta trocar a chave para o mês de referência.
+Consequência conhecida: aparecem 20 meses no resultado, e não 19. Dois voos do arquivo de julho de 2026 decolaram já em 1º de agosto e formam a linha residual de `2026-08` (2 voos, 617 passageiros). Para eliminar esse resíduo basta trocar a chave para o mês de referência.
 
-### 4.3 Discretização do tipo de voo
+### 4.4 Classificação do tipo de voo e exclusão dos cargueiros
 
-As colunas de peso (bagagem livre, bagagem em excesso, carga paga, carga grátis e correio) foram substituídas por uma classificação categórica derivada do total de passageiros a bordo:
+Cada voo é classificado a partir de duas informações: o tipo de serviço da linha (`ds_servico_tipo_linha`, que assume os valores `PASSAGEIRO`, `CARGUEIRO` e `NÃO IDENTIFICADO`) e o total de passageiros embarcados no voo inteiro (`nr_passag_pagos` mais `nr_passag_gratis`, somados em todos os trechos).
 
 | Categoria | Regra | Voos | Passageiros |
 |---|---|---|---|
-| `voo privado` | 1 a 19 passageiros | 2.536 | 16.690 |
-| `voo de turismo` | 20 ou mais passageiros | 22.586 | 4.551.762 |
-| `voo de carga/reabastecimento` | nenhum passageiro | 11.290 | 0 |
+| `voo de carga/reabastecimento` | serviço `CARGUEIRO` ou nenhum passageiro a bordo | 2.900 | 0 |
+| `voo comercial` | demais voos (linha de passageiros com ao menos um embarque) | 18.327 | 4.568.452 |
 
-O corte em 19 assentos segue a fronteira regulatória da aviação, na qual aeronaves de até 19 assentos se enquadram na categoria executiva e de táxi aéreo.
+**Somente os voos comerciais entram no arquivo final.** Os de carga são apenas contados no resumo do console do script, porque não interessam para a análise de demanda por aulas de inglês. Como restou uma única categoria, o CSV não tem coluna de tipo.
 
-A categoria de carga reúne dois casos distintos que a nomenclatura já contempla: 3.489 voos cargueiros com carga registrada e 7.801 voos de posicionamento (ferry) sem carga nem passageiros. Se a distinção entre os dois importar, o critério de separação é `kg_carga_paga` maior que zero.
+A categoria de carga reúne 738 voos de serviço `CARGUEIRO`, 2.132 voos `NÃO IDENTIFICADO` sem passageiros e 30 voos `PASSAGEIRO` sem passageiros (posicionamento ou ferry). No período, nenhum voo `CARGUEIRO` registrou passageiro, então o critério de serviço é uma salvaguarda: a regra de zero passageiros já capturaria todos.
 
-### 4.4 Enriquecimento de calendário
+Uma versão anterior desta análise classificava por registro, e não por voo, e tinha uma terceira categoria, `voo privado`, para voos de 1 a 19 passageiros. Depois de agregar por voo, sobraram apenas 9 voos nessa faixa em 19 meses, todos de companhias aéreas comerciais (Delta, Azul, Air Transat e American), com 97 passageiros no total. A categoria era um artefato dos trechos de escala com poucos embarques e foi removida; esses 9 voos contam como comerciais.
+
+### 4.5 Enriquecimento de calendário
 
 Duas colunas derivadas do mês adicionam contexto sazonal. Como os voos partem do Brasil, o calendário aplicado é o brasileiro, do hemisfério sul. Nos destinos as estações são invertidas.
 
@@ -135,18 +153,18 @@ Duas colunas derivadas do mês adicionam contexto sazonal. Como os voos partem d
 | fevereiro, agosto | `volta às aulas` |
 | demais meses | `período letivo` |
 
-A coluna `temporada` separa a demanda com mais nitidez que `estacao`, porque julho é inverno mas é pico de férias. Considerando apenas voos de turismo, férias escolares somam 268.283 passageiros por mês contra 171.408 nos meses de volta às aulas.
+A coluna `temporada` separa a demanda com mais nitidez que `estacao`, porque julho é inverno mas é pico de férias. Nos meses completos (sem o resíduo de `2026-08`), férias escolares somam em média 269.295 passageiros por mês, contra 229.373 na volta às aulas e 230.295 no período letivo.
 
-### 4.5 Granularidade e métricas
+### 4.6 Granularidade e métricas
 
-Cada linha do CSV final representa uma combinação de ano, mês e tipo de voo. Dentro de cada grupo são calculados:
+Cada linha do CSV final representa uma combinação de ano e mês. Dentro de cada grupo são calculados:
 
-- `qtd_voos`: contagem de trechos de voo
+- `qtd_voos`: contagem de voos comerciais distintos (chave da seção 4.2)
 - `nr_passageiros`: soma de `nr_passag_pagos` mais `nr_passag_gratis`
 
 Os passageiros grátis, que incluem tripulação e funcionários em deslocamento, foram somados junto aos pagantes por decisão de escopo.
 
-Resultado: 59 linhas, correspondendo a 20 meses vezes 3 tipos, menos combinações inexistentes no mês residual.
+Resultado: 20 linhas, correspondendo aos 19 meses completos mais o mês residual.
 
 ## 5. Arquivo final
 
@@ -158,11 +176,10 @@ Resultado: 59 linhas, correspondendo a 20 meses vezes 3 tipos, menos combinaçõ
 | `mes` | inteiro | mês da partida real, de 1 a 12 |
 | `estacao` | texto | estação do ano no Brasil |
 | `temporada` | texto | momento do calendário escolar brasileiro |
-| `tipo_voo` | texto | categoria discretizada do voo |
-| `qtd_voos` | inteiro | total de voos no grupo |
-| `nr_passageiros` | inteiro | total de passageiros no grupo |
+| `qtd_voos` | inteiro | total de voos comerciais no mês |
+| `nr_passageiros` | inteiro | total de passageiros no mês |
 
-Totais de controle: 59 linhas, 36.412 voos e 4.568.452 passageiros.
+Totais de controle: 20 linhas, 18.327 voos e 4.568.452 passageiros.
 
 ## 6. Como ler o arquivo
 
@@ -188,14 +205,34 @@ import csv
 with open("data/voos_brasil_paises_ingleses.csv", encoding="latin-1", newline="") as f:
     leitor = csv.DictReader(f, delimiter=";")
     for linha in leitor:
-        print(linha["ano"], linha["mes"], linha["tipo_voo"], linha["qtd_voos"])
+        print(linha["ano"], linha["mes"], linha["qtd_voos"], linha["nr_passageiros"])
 ```
 
 No Excel em português, o arquivo abre corretamente com duplo clique, pois Latin-1 e ponto e vírgula são os padrões esperados pela versão brasileira. Em outras configurações regionais, use Dados, Obter Dados, De Texto/CSV e selecione origem Europeu Ocidental (ISO) e delimitador ponto e vírgula.
 
 Os mesmos parâmetros valem para os 19 CSVs mensais limpos, que preservam as 90 colunas originais e servem para qualquer recorte diferente do adotado aqui.
 
-## 7. Como reproduzir
+## 7. Gráficos
+
+Script: `scripts/graficos_comercial.py`
+
+Entrada: `data/voos_brasil_paises_ingleses.csv`
+Saída: quatro PNGs em `graficos/`
+
+| Arquivo | Conteúdo |
+|---|---|
+| `01_comercial_mensal.png` | voos e passageiros por mês, com os meses de férias escolares destacados |
+| `02_sazonalidade_ano_a_ano.png` | passageiros por mês do ano, uma linha por ano (2025 × 2026) |
+| `03_sazonalidade_calendario.png` | média mensal de voos e passageiros por temporada escolar e por estação |
+| `04_passageiros_por_voo.png` | média de passageiros por voo, mês a mês |
+
+O mês residual `2026-08` (seção 4.3) é ignorado, pois não representa um mês completo e distorceria as séries e as médias. Sobram 19 meses, com 18.325 voos e 4.567.835 passageiros, média de 249 passageiros por voo. O pico é janeiro de 2026 (296.851 passageiros) e o vale, setembro de 2025 (213.411).
+
+As médias por temporada e por estação são calculadas por mês (total do grupo dividido pelo número de meses), já que as categorias cobrem quantidades diferentes de meses. A série usa uma única cor; os anos, no gráfico ano a ano, usam uma rampa de um só matiz, verificada para daltonismo.
+
+Este é o único script com dependência externa: `matplotlib`.
+
+## 8. Como reproduzir
 
 Ordem de execução, a partir da raiz do projeto:
 
@@ -207,16 +244,23 @@ python scripts/clean_combinada.py
 python scripts/filter_ingles.py
 ```
 
+```bash
+python scripts/graficos_comercial.py
+```
+
 A primeira etapa lê os `.txt` e é a mais demorada, na casa de dezenas de minutos, por processar 2,9 GB em duas passadas. A segunda lê os CSVs limpos e roda em poucos minutos.
 
-Nenhuma dependência externa é necessária. Todo o pipeline usa apenas a biblioteca padrão do Python.
+A limpeza e o filtro usam apenas a biblioteca padrão do Python. A etapa de gráficos precisa de `matplotlib` (`pip install matplotlib`) e roda em segundos.
 
 Parâmetros ajustáveis, todos no topo de `scripts/filter_ingles.py`:
 
 | Constante | Função |
 |---|---|
 | `PAISES_DESTINO_INGLES` | conjunto de países de destino considerados |
-| `LIMITE_PRIVADO` | corte de passageiros entre voo privado e voo de turismo |
+| `VOO_COLS` | colunas que identificam um voo (empresa, número e data de partida) |
+| `SERVICO_CARGUEIRO` | valor de `ds_servico_tipo_linha` que marca voo cargueiro |
 | `MES_COL` | campo usado como chave temporal |
 | `ESTACAO_POR_MES` | mapa de mês para estação |
 | `TEMPORADA_POR_MES` | mapa de mês para temporada escolar |
+
+Em `scripts/graficos_comercial.py`, `MESES_EXCLUIDOS` lista os meses incompletos que ficam fora das séries.
