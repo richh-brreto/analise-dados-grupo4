@@ -8,7 +8,8 @@ combinadaYYYY-MM.txt). Tambem aceita qualquer arquivo passado como argumento:
   python scripts/chunk_arquivos.py data/base_eda_ingles.csv
   python scripts/chunk_arquivos.py --max-kb 500 data/combinada2025-01/combinada2025-01.txt
 
-Saida: data/chunks/<nome>/<nome>_part0001.<ext>, <nome>_part0002.<ext>, ...
+Saida: data/chunks/<nome>/<nome>_part0001.csv, <nome>_part0002.csv, ...
+(sempre .csv, inclusive para os .txt brutos, para o Glue/Athena)
 
 Regras:
   - o tamanho maximo vale para o arquivo inteiro da parte, cabecalho incluso
@@ -28,6 +29,7 @@ BASE_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
 DATA_DIR = os.path.join(BASE_DIR, "data")
 OUT_DIR = os.path.join(DATA_DIR, "chunks")
 MAX_KB_PADRAO = 600
+EXTENSAO_SAIDA = ".csv"
 
 
 def registros(arquivo):
@@ -42,7 +44,8 @@ def registros(arquivo):
 
 
 def chunkear(caminho, max_bytes, out_root):
-    nome, ext = os.path.splitext(os.path.basename(caminho))
+    nome = os.path.splitext(os.path.basename(caminho))[0]
+    ext = EXTENSAO_SAIDA
     destino = os.path.join(out_root, nome)
     os.makedirs(destino, exist_ok=True)
     for antigo in glob.glob(os.path.join(destino, f"{nome}_part*{ext}")):
