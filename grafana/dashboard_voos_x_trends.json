@@ -1,0 +1,3437 @@
+{
+  "__inputs": [
+    {
+      "name": "DS_ATHENA",
+      "label": "Athena",
+      "type": "datasource",
+      "pluginId": "grafana-athena-datasource",
+      "pluginName": "Amazon Athena"
+    }
+  ],
+  "__requires": [
+    {
+      "type": "datasource",
+      "id": "grafana-athena-datasource",
+      "name": "Amazon Athena",
+      "version": "2.0.0"
+    },
+    {
+      "type": "grafana",
+      "id": "grafana",
+      "name": "Grafana",
+      "version": "10.4.0"
+    }
+  ],
+  "title": "Voos para países anglófonos × intenção de estudar inglês",
+  "uid": "grupo4-voos-trends",
+  "description": "Projeto Boost Your English, grupo 4. Cruzamento semanal entre voos comerciais do Brasil para EUA, Canadá e Reino Unido (ANAC) e interesse de busca (Google Trends).",
+  "tags": [
+    "grupo4",
+    "anac",
+    "google-trends",
+    "boost-your-english"
+  ],
+  "timezone": "browser",
+  "editable": true,
+  "graphTooltip": 1,
+  "time": {
+    "from": "2021-12-26T00:00:00.000Z",
+    "to": "2026-08-01T23:59:59.000Z"
+  },
+  "timepicker": {},
+  "schemaVersion": 39,
+  "version": 1,
+  "refresh": "",
+  "templating": {
+    "list": [
+      {
+        "type": "custom",
+        "name": "termo",
+        "label": "Termo do Trends",
+        "description": "",
+        "query": "curso de inglês : tr_curso_ingles, aula de inglês : tr_aula_ingles, aprender inglês : tr_aprender_ingles, inglês online : tr_ingles_online, professor de inglês : tr_professor_ingles, intenção (5 termos somados) : tr_intencao_ingles, inglês ÷ curso online : tr_razao_ingles_curso_online, intercâmbio : tr_intercambio, visto americano : tr_visto_americano, passagem aérea : tr_passagem_aerea, curso online (controle) : tr_curso_online",
+        "current": {
+          "text": "curso de inglês",
+          "value": "tr_curso_ingles"
+        },
+        "options": [
+          {
+            "text": "curso de inglês",
+            "value": "tr_curso_ingles",
+            "selected": true
+          },
+          {
+            "text": "aula de inglês",
+            "value": "tr_aula_ingles",
+            "selected": false
+          },
+          {
+            "text": "aprender inglês",
+            "value": "tr_aprender_ingles",
+            "selected": false
+          },
+          {
+            "text": "inglês online",
+            "value": "tr_ingles_online",
+            "selected": false
+          },
+          {
+            "text": "professor de inglês",
+            "value": "tr_professor_ingles",
+            "selected": false
+          },
+          {
+            "text": "intenção (5 termos somados)",
+            "value": "tr_intencao_ingles",
+            "selected": false
+          },
+          {
+            "text": "inglês ÷ curso online",
+            "value": "tr_razao_ingles_curso_online",
+            "selected": false
+          },
+          {
+            "text": "intercâmbio",
+            "value": "tr_intercambio",
+            "selected": false
+          },
+          {
+            "text": "visto americano",
+            "value": "tr_visto_americano",
+            "selected": false
+          },
+          {
+            "text": "passagem aérea",
+            "value": "tr_passagem_aerea",
+            "selected": false
+          },
+          {
+            "text": "curso online (controle)",
+            "value": "tr_curso_online",
+            "selected": false
+          }
+        ],
+        "multi": false,
+        "includeAll": false,
+        "hide": 0
+      },
+      {
+        "type": "custom",
+        "name": "serie_voos",
+        "label": "Série de voos",
+        "description": "",
+        "query": "passageiros : nr_passageiros, voos : qtd_voos, passageiros por voo : pax_por_voo, passageiros EUA : pax_eua, passageiros Canadá : pax_canada, passageiros Reino Unido : pax_reino_unido",
+        "current": {
+          "text": "passageiros",
+          "value": "nr_passageiros"
+        },
+        "options": [
+          {
+            "text": "passageiros",
+            "value": "nr_passageiros",
+            "selected": true
+          },
+          {
+            "text": "voos",
+            "value": "qtd_voos",
+            "selected": false
+          },
+          {
+            "text": "passageiros por voo",
+            "value": "pax_por_voo",
+            "selected": false
+          },
+          {
+            "text": "passageiros EUA",
+            "value": "pax_eua",
+            "selected": false
+          },
+          {
+            "text": "passageiros Canadá",
+            "value": "pax_canada",
+            "selected": false
+          },
+          {
+            "text": "passageiros Reino Unido",
+            "value": "pax_reino_unido",
+            "selected": false
+          }
+        ],
+        "multi": false,
+        "includeAll": false,
+        "hide": 0
+      },
+      {
+        "type": "custom",
+        "name": "transformacao",
+        "label": "Transformação",
+        "description": "Nível compara os valores; variação compara as mudanças de uma semana para a outra, o que tira tendência e sazonalidade comum.",
+        "query": "nível : nivel, variação semanal : variacao",
+        "current": {
+          "text": "nível",
+          "value": "nivel"
+        },
+        "options": [
+          {
+            "text": "nível",
+            "value": "nivel",
+            "selected": true
+          },
+          {
+            "text": "variação semanal",
+            "value": "variacao",
+            "selected": false
+          }
+        ],
+        "multi": false,
+        "includeAll": false,
+        "hide": 0
+      },
+      {
+        "type": "custom",
+        "name": "termo_destinos",
+        "label": "Termo (comparação de destinos)",
+        "description": "",
+        "query": "curso de inglês : tr_curso_ingles, intenção (5 termos somados) : tr_intencao_ingles, aula de inglês : tr_aula_ingles, curso online (controle) : tr_curso_online, inglês ÷ curso online : tr_razao_ingles_curso_online",
+        "current": {
+          "text": "curso de inglês",
+          "value": "tr_curso_ingles"
+        },
+        "options": [
+          {
+            "text": "curso de inglês",
+            "value": "tr_curso_ingles",
+            "selected": true
+          },
+          {
+            "text": "intenção (5 termos somados)",
+            "value": "tr_intencao_ingles",
+            "selected": false
+          },
+          {
+            "text": "aula de inglês",
+            "value": "tr_aula_ingles",
+            "selected": false
+          },
+          {
+            "text": "curso online (controle)",
+            "value": "tr_curso_online",
+            "selected": false
+          },
+          {
+            "text": "inglês ÷ curso online",
+            "value": "tr_razao_ingles_curso_online",
+            "selected": false
+          }
+        ],
+        "multi": false,
+        "includeAll": false,
+        "hide": 0
+      },
+      {
+        "type": "custom",
+        "name": "defasagem",
+        "label": "Defasagem (semanas)",
+        "description": "Positivo: a busca vem k semanas depois do voo.",
+        "query": "-8 : -8, -7 : -7, -6 : -6, -5 : -5, -4 : -4, -3 : -3, -2 : -2, -1 : -1, 0 : 0, 1 : 1, 2 : 2, 3 : 3, 4 : 4, 5 : 5, 6 : 6, 7 : 7, 8 : 8",
+        "current": {
+          "text": "3",
+          "value": "3"
+        },
+        "options": [
+          {
+            "text": "-8",
+            "value": "-8",
+            "selected": false
+          },
+          {
+            "text": "-7",
+            "value": "-7",
+            "selected": false
+          },
+          {
+            "text": "-6",
+            "value": "-6",
+            "selected": false
+          },
+          {
+            "text": "-5",
+            "value": "-5",
+            "selected": false
+          },
+          {
+            "text": "-4",
+            "value": "-4",
+            "selected": false
+          },
+          {
+            "text": "-3",
+            "value": "-3",
+            "selected": false
+          },
+          {
+            "text": "-2",
+            "value": "-2",
+            "selected": false
+          },
+          {
+            "text": "-1",
+            "value": "-1",
+            "selected": false
+          },
+          {
+            "text": "0",
+            "value": "0",
+            "selected": false
+          },
+          {
+            "text": "1",
+            "value": "1",
+            "selected": false
+          },
+          {
+            "text": "2",
+            "value": "2",
+            "selected": false
+          },
+          {
+            "text": "3",
+            "value": "3",
+            "selected": true
+          },
+          {
+            "text": "4",
+            "value": "4",
+            "selected": false
+          },
+          {
+            "text": "5",
+            "value": "5",
+            "selected": false
+          },
+          {
+            "text": "6",
+            "value": "6",
+            "selected": false
+          },
+          {
+            "text": "7",
+            "value": "7",
+            "selected": false
+          },
+          {
+            "text": "8",
+            "value": "8",
+            "selected": false
+          }
+        ],
+        "multi": false,
+        "includeAll": false,
+        "hide": 0
+      },
+      {
+        "type": "query",
+        "name": "uf",
+        "label": "UF",
+        "datasource": {
+          "type": "grafana-athena-datasource",
+          "uid": "${DS_ATHENA}"
+        },
+        "query": {
+          "rawSQL": "SELECT DISTINCT sg_uf FROM cruzamento_semanal_uf WHERE cruzamento = 'voos e trends' ORDER BY sg_uf",
+          "format": 1,
+          "connectionArgs": {
+            "region": "__default",
+            "catalog": "__default",
+            "database": "__default"
+          }
+        },
+        "definition": "SELECT DISTINCT sg_uf FROM cruzamento_semanal_uf WHERE cruzamento = 'voos e trends'",
+        "refresh": 1,
+        "multi": true,
+        "includeAll": false,
+        "current": {
+          "text": [
+            "SP",
+            "RJ",
+            "MG"
+          ],
+          "value": [
+            "SP",
+            "RJ",
+            "MG"
+          ]
+        },
+        "hide": 0,
+        "sort": 1
+      }
+    ]
+  },
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "grafana",
+          "uid": "-- Grafana --"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      },
+      {
+        "datasource": {
+          "type": "grafana-athena-datasource",
+          "uid": "${DS_ATHENA}"
+        },
+        "enable": true,
+        "hide": false,
+        "iconColor": "#898781",
+        "name": "Eventos de calendário",
+        "target": {
+          "refId": "A",
+          "datasource": {
+            "type": "grafana-athena-datasource",
+            "uid": "${DS_ATHENA}"
+          },
+          "format": 1,
+          "rawSQL": "SELECT CAST(semana_inicio AS timestamp) AS time, evento AS text FROM cruzamento_semanal_br WHERE evento <> '' AND $__timeFilter(semana_inicio)",
+          "connectionArgs": {
+            "region": "__default",
+            "catalog": "__default",
+            "database": "__default",
+            "resultReuseEnabled": false
+          }
+        }
+      }
+    ]
+  },
+  "panels": [
+    {
+      "id": 1,
+      "type": "row",
+      "title": "Resumo do período",
+      "collapsed": false,
+      "gridPos": {
+        "x": 0,
+        "y": 0,
+        "w": 24,
+        "h": 1
+      },
+      "panels": []
+    },
+    {
+      "id": 2,
+      "type": "stat",
+      "title": "Passageiros no período",
+      "description": "Passageiros de voos comerciais do Brasil para EUA, Canadá e Reino Unido nas semanas completas do intervalo de tempo escolhido.",
+      "datasource": {
+        "type": "grafana-athena-datasource",
+        "uid": "${DS_ATHENA}"
+      },
+      "gridPos": {
+        "x": 0,
+        "y": 1,
+        "w": 6,
+        "h": 4
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "grafana-athena-datasource",
+            "uid": "${DS_ATHENA}"
+          },
+          "format": 1,
+          "rawSQL": "SELECT CAST(SUM(nr_passageiros) AS bigint) AS passageiros FROM cruzamento_semanal_br WHERE semana_completa AND $__timeFilter(semana_inicio)",
+          "connectionArgs": {
+            "region": "__default",
+            "catalog": "__default",
+            "database": "__default",
+            "resultReuseEnabled": false
+          }
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short",
+          "color": {
+            "mode": "fixed",
+            "fixedColor": "text"
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "colorMode": "none",
+        "graphMode": "none",
+        "textMode": "value",
+        "justifyMode": "center",
+        "orientation": "auto"
+      }
+    },
+    {
+      "id": 3,
+      "type": "stat",
+      "title": "Semanas completas no intervalo",
+      "description": "",
+      "datasource": {
+        "type": "grafana-athena-datasource",
+        "uid": "${DS_ATHENA}"
+      },
+      "gridPos": {
+        "x": 6,
+        "y": 1,
+        "w": 6,
+        "h": 4
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "grafana-athena-datasource",
+            "uid": "${DS_ATHENA}"
+          },
+          "format": 1,
+          "rawSQL": "SELECT COUNT(*) AS semanas FROM cruzamento_semanal_br WHERE semana_completa AND $__timeFilter(semana_inicio)",
+          "connectionArgs": {
+            "region": "__default",
+            "catalog": "__default",
+            "database": "__default",
+            "resultReuseEnabled": false
+          }
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short",
+          "color": {
+            "mode": "fixed",
+            "fixedColor": "text"
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "colorMode": "none",
+        "graphMode": "none",
+        "textMode": "value",
+        "justifyMode": "center",
+        "orientation": "auto"
+      }
+    },
+    {
+      "id": 4,
+      "type": "stat",
+      "title": "Maior correlação: ${serie_voos} × ${termo}",
+      "description": "Maior Pearson entre a série de voos e o termo escolhidos, entre as defasagens de -8 a +8 semanas. Calculado sobre o período inteiro (não segue o seletor de tempo).",
+      "datasource": {
+        "type": "grafana-athena-datasource",
+        "uid": "${DS_ATHENA}"
+      },
+      "gridPos": {
+        "x": 12,
+        "y": 1,
+        "w": 6,
+        "h": 4
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "grafana-athena-datasource",
+            "uid": "${DS_ATHENA}"
+          },
+          "format": 1,
+          "rawSQL": "SELECT MAX(pearson) AS pearson FROM correlacoes\nWHERE recorte = 'BR' AND serie_voos = '${serie_voos:raw}' AND serie_trends = '${termo:raw}'\n  AND transformacao = '${transformacao:raw}'",
+          "connectionArgs": {
+            "region": "__default",
+            "catalog": "__default",
+            "database": "__default",
+            "resultReuseEnabled": false
+          }
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short",
+          "color": {
+            "mode": "fixed",
+            "fixedColor": "text"
+          },
+          "decimals": 2
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "colorMode": "none",
+        "graphMode": "none",
+        "textMode": "value",
+        "justifyMode": "center",
+        "orientation": "auto"
+      }
+    },
+    {
+      "id": 5,
+      "type": "stat",
+      "title": "Defasagem do pico (semanas)",
+      "description": "Positivo: a busca acontece depois do voo. Negativo: a busca vem antes.",
+      "datasource": {
+        "type": "grafana-athena-datasource",
+        "uid": "${DS_ATHENA}"
+      },
+      "gridPos": {
+        "x": 18,
+        "y": 1,
+        "w": 6,
+        "h": 4
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "grafana-athena-datasource",
+            "uid": "${DS_ATHENA}"
+          },
+          "format": 1,
+          "rawSQL": "SELECT defasagem_semanas AS defasagem FROM correlacoes\nWHERE recorte = 'BR' AND serie_voos = '${serie_voos:raw}' AND serie_trends = '${termo:raw}'\n  AND transformacao = '${transformacao:raw}'\nORDER BY pearson DESC LIMIT 1",
+          "connectionArgs": {
+            "region": "__default",
+            "catalog": "__default",
+            "database": "__default",
+            "resultReuseEnabled": false
+          }
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short",
+          "color": {
+            "mode": "fixed",
+            "fixedColor": "text"
+          },
+          "decimals": 0
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "colorMode": "none",
+        "graphMode": "none",
+        "textMode": "value",
+        "justifyMode": "center",
+        "orientation": "auto"
+      }
+    },
+    {
+      "id": 6,
+      "type": "row",
+      "title": "Séries semanais",
+      "collapsed": false,
+      "gridPos": {
+        "x": 0,
+        "y": 5,
+        "w": 24,
+        "h": 1
+      },
+      "panels": []
+    },
+    {
+      "id": 7,
+      "type": "timeseries",
+      "title": "Passageiros × ${termo:text} (índice 0 a 100)",
+      "description": "As três séries na mesma base (100 = maior semana de cada uma no período), sem eixo duplo. Troque o termo no seletor do topo.",
+      "datasource": {
+        "type": "grafana-athena-datasource",
+        "uid": "${DS_ATHENA}"
+      },
+      "gridPos": {
+        "x": 0,
+        "y": 6,
+        "w": 24,
+        "h": 9
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "grafana-athena-datasource",
+            "uid": "${DS_ATHENA}"
+          },
+          "format": 1,
+          "rawSQL": "SELECT CAST(semana_inicio AS timestamp) AS time,\n       pax_indice AS \"Passageiros (índice)\",\n       ${termo:raw} AS \"Busca: ${termo:text}\",\n       tr_curso_online AS \"Busca: curso online (controle)\"\nFROM cruzamento_semanal_br WHERE semana_completa AND $__timeFilter(semana_inicio) ORDER BY 1",
+          "connectionArgs": {
+            "region": "__default",
+            "catalog": "__default",
+            "database": "__default",
+            "resultReuseEnabled": false
+          }
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "drawStyle": "line",
+            "lineWidth": 2,
+            "fillOpacity": 0,
+            "showPoints": "never",
+            "spanNulls": false,
+            "axisSoftMin": 0
+          },
+          "unit": "short",
+          "color": {
+            "mode": "palette-classic"
+          },
+          "min": 0,
+          "max": 100
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Passageiros (índice)"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#2a78d6"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Busca: ${termo:text}"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#eb6834"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Busca: curso online (controle)"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#1baf7a"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "options": {
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      }
+    },
+    {
+      "id": 8,
+      "type": "timeseries",
+      "title": "Termos de intenção de estudar inglês",
+      "description": "Mesma escala entre os cinco termos (100 = maior semana de curso de inglês).",
+      "datasource": {
+        "type": "grafana-athena-datasource",
+        "uid": "${DS_ATHENA}"
+      },
+      "gridPos": {
+        "x": 0,
+        "y": 15,
+        "w": 12,
+        "h": 8
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "grafana-athena-datasource",
+            "uid": "${DS_ATHENA}"
+          },
+          "format": 1,
+          "rawSQL": "SELECT CAST(semana_inicio AS timestamp) AS time,\n       tr_curso_ingles AS \"curso de inglês\", tr_aula_ingles AS \"aula de inglês\",\n       tr_aprender_ingles AS \"aprender inglês\", tr_ingles_online AS \"inglês online\",\n       tr_professor_ingles AS \"professor de inglês\"\nFROM cruzamento_semanal_br WHERE semana_completa AND $__timeFilter(semana_inicio) ORDER BY 1",
+          "connectionArgs": {
+            "region": "__default",
+            "catalog": "__default",
+            "database": "__default",
+            "resultReuseEnabled": false
+          }
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "drawStyle": "line",
+            "lineWidth": 2,
+            "fillOpacity": 0,
+            "showPoints": "never",
+            "spanNulls": false,
+            "axisSoftMin": 0
+          },
+          "unit": "short",
+          "color": {
+            "mode": "palette-classic"
+          },
+          "min": 0
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "curso de inglês"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#eb6834"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "aula de inglês"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#2a78d6"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "aprender inglês"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#1baf7a"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "inglês online"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#eda100"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "professor de inglês"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#e87ba4"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "options": {
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      }
+    },
+    {
+      "id": 9,
+      "type": "timeseries",
+      "title": "Contexto de viagem e controle",
+      "description": "Mesma escala entre os termos do grupo (100 = maior semana de curso online).",
+      "datasource": {
+        "type": "grafana-athena-datasource",
+        "uid": "${DS_ATHENA}"
+      },
+      "gridPos": {
+        "x": 12,
+        "y": 15,
+        "w": 12,
+        "h": 8
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "grafana-athena-datasource",
+            "uid": "${DS_ATHENA}"
+          },
+          "format": 1,
+          "rawSQL": "SELECT CAST(semana_inicio AS timestamp) AS time,\n       tr_passagem_aerea AS \"passagem aérea\", tr_visto_americano AS \"visto americano\",\n       tr_intercambio AS \"intercâmbio\", tr_curso_online AS \"curso online\"\nFROM cruzamento_semanal_br WHERE semana_completa AND $__timeFilter(semana_inicio) ORDER BY 1",
+          "connectionArgs": {
+            "region": "__default",
+            "catalog": "__default",
+            "database": "__default",
+            "resultReuseEnabled": false
+          }
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "drawStyle": "line",
+            "lineWidth": 2,
+            "fillOpacity": 0,
+            "showPoints": "never",
+            "spanNulls": false,
+            "axisSoftMin": 0
+          },
+          "unit": "short",
+          "color": {
+            "mode": "palette-classic"
+          },
+          "min": 0
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "passagem aérea"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#2a78d6"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "visto americano"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#eb6834"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "intercâmbio"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#1baf7a"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "curso online"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#eda100"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "options": {
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      }
+    },
+    {
+      "id": 10,
+      "type": "timeseries",
+      "title": "Passageiros por destino",
+      "description": "",
+      "datasource": {
+        "type": "grafana-athena-datasource",
+        "uid": "${DS_ATHENA}"
+      },
+      "gridPos": {
+        "x": 0,
+        "y": 23,
+        "w": 12,
+        "h": 8
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "grafana-athena-datasource",
+            "uid": "${DS_ATHENA}"
+          },
+          "format": 1,
+          "rawSQL": "SELECT CAST(semana_inicio AS timestamp) AS time,\n       pax_eua AS \"EUA\", pax_reino_unido AS \"Reino Unido\", pax_canada AS \"Canadá\"\nFROM cruzamento_semanal_br WHERE semana_completa AND $__timeFilter(semana_inicio) ORDER BY 1",
+          "connectionArgs": {
+            "region": "__default",
+            "catalog": "__default",
+            "database": "__default",
+            "resultReuseEnabled": false
+          }
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "drawStyle": "line",
+            "lineWidth": 2,
+            "fillOpacity": 0,
+            "showPoints": "never",
+            "spanNulls": false,
+            "axisSoftMin": 0
+          },
+          "unit": "short",
+          "color": {
+            "mode": "palette-classic"
+          },
+          "min": 0
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "EUA"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#2a78d6"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Reino Unido"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#eb6834"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Canadá"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#1baf7a"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "options": {
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      }
+    },
+    {
+      "id": 11,
+      "type": "timeseries",
+      "title": "Ocupação: passageiros por voo",
+      "description": "Separa o pico que vem de mais voos do pico que vem de voos mais cheios.",
+      "datasource": {
+        "type": "grafana-athena-datasource",
+        "uid": "${DS_ATHENA}"
+      },
+      "gridPos": {
+        "x": 12,
+        "y": 23,
+        "w": 12,
+        "h": 8
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "grafana-athena-datasource",
+            "uid": "${DS_ATHENA}"
+          },
+          "format": 1,
+          "rawSQL": "SELECT CAST(semana_inicio AS timestamp) AS time, pax_por_voo AS \"passageiros por voo\"\nFROM cruzamento_semanal_br WHERE semana_completa AND $__timeFilter(semana_inicio) ORDER BY 1",
+          "connectionArgs": {
+            "region": "__default",
+            "catalog": "__default",
+            "database": "__default",
+            "resultReuseEnabled": false
+          }
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "drawStyle": "line",
+            "lineWidth": 2,
+            "fillOpacity": 0,
+            "showPoints": "never",
+            "spanNulls": false,
+            "axisSoftMin": 0
+          },
+          "unit": "short",
+          "color": {
+            "mode": "palette-classic"
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "passageiros por voo"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#2a78d6"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "options": {
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      }
+    },
+    {
+      "id": 12,
+      "type": "row",
+      "title": "Correlações",
+      "collapsed": false,
+      "gridPos": {
+        "x": 0,
+        "y": 31,
+        "w": 24,
+        "h": 1
+      },
+      "panels": []
+    },
+    {
+      "id": 13,
+      "type": "barchart",
+      "title": "Correlograma: ${serie_voos:text} × ${termo:text}",
+      "description": "Voos na semana t contra busca na semana t+k. Positivo: a busca vem depois. A significância usa o tamanho efetivo da amostra, que desconta a autocorrelação das séries semanais.",
+      "datasource": {
+        "type": "grafana-athena-datasource",
+        "uid": "${DS_ATHENA}"
+      },
+      "gridPos": {
+        "x": 0,
+        "y": 32,
+        "w": 12,
+        "h": 9
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "grafana-athena-datasource",
+            "uid": "${DS_ATHENA}"
+          },
+          "format": 1,
+          "rawSQL": "SELECT CAST(defasagem_semanas AS varchar) AS \"defasagem (semanas)\",\n       pearson AS \"Pearson\",\n       CASE WHEN significativo THEN pearson END AS \"Pearson significativo (5%)\"\nFROM correlacoes\nWHERE recorte = 'BR' AND serie_voos = '${serie_voos:raw}' AND serie_trends = '${termo:raw}'\n  AND transformacao = '${transformacao:raw}'\nORDER BY defasagem_semanas",
+          "connectionArgs": {
+            "region": "__default",
+            "catalog": "__default",
+            "database": "__default",
+            "resultReuseEnabled": false
+          }
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "fillOpacity": 100,
+            "lineWidth": 0,
+            "gradientMode": "none",
+            "axisCenteredZero": false
+          },
+          "unit": "short",
+          "color": {
+            "mode": "palette-classic"
+          },
+          "min": -1,
+          "max": 1
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Pearson"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#9ec5f4"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Pearson significativo (5%)"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#2a78d6"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "options": {
+        "xField": "defasagem (semanas)",
+        "orientation": "vertical",
+        "showValue": "never",
+        "barWidth": 0.85,
+        "groupWidth": 0.75,
+        "stacking": "none",
+        "xTickLabelRotation": 0,
+        "xTickLabelSpacing": 0,
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      }
+    },
+    {
+      "id": 14,
+      "type": "xychart",
+      "title": "Dispersão: ${serie_voos:text} na semana t × ${termo:text} na semana t+${defasagem}",
+      "description": "Cada ponto é uma semana. Mude a defasagem no seletor do topo.",
+      "datasource": {
+        "type": "grafana-athena-datasource",
+        "uid": "${DS_ATHENA}"
+      },
+      "gridPos": {
+        "x": 12,
+        "y": 32,
+        "w": 12,
+        "h": 9
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "grafana-athena-datasource",
+            "uid": "${DS_ATHENA}"
+          },
+          "format": 1,
+          "rawSQL": "SELECT a.${serie_voos:raw} AS \"${serie_voos:text} (semana t)\",\n       b.${termo:raw} AS \"${termo:text} (semana t+k)\"\nFROM cruzamento_semanal_br a\nJOIN cruzamento_semanal_br b ON b.semana_inicio = date_add('week', ${defasagem:raw}, a.semana_inicio)\nWHERE a.semana_completa AND b.semana_completa\n  AND $__timeFilter(a.semana_inicio)",
+          "connectionArgs": {
+            "region": "__default",
+            "catalog": "__default",
+            "database": "__default",
+            "resultReuseEnabled": false
+          }
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "show": "points",
+            "pointSize": {
+              "fixed": 7
+            }
+          },
+          "color": {
+            "mode": "fixed",
+            "fixedColor": "#2a78d6"
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "mapping": "auto",
+        "seriesMapping": "auto",
+        "series": [
+          {}
+        ],
+        "legend": {
+          "showLegend": false,
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      }
+    },
+    {
+      "id": 15,
+      "type": "table",
+      "title": "Matriz de correlação (defasagem ${defasagem} semanas, ${transformacao})",
+      "description": "Pearson entre cada série de voos (colunas) e cada termo do Trends (linhas). Azul: relação inversa; vermelho: relação direta. Use a defasagem 0 para a mesma semana.",
+      "datasource": {
+        "type": "grafana-athena-datasource",
+        "uid": "${DS_ATHENA}"
+      },
+      "gridPos": {
+        "x": 0,
+        "y": 41,
+        "w": 24,
+        "h": 10
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "grafana-athena-datasource",
+            "uid": "${DS_ATHENA}"
+          },
+          "format": 1,
+          "rawSQL": "SELECT CASE serie_trends WHEN 'tr_curso_ingles' THEN 'curso de inglês' WHEN 'tr_aula_ingles' THEN 'aula de inglês' WHEN 'tr_aprender_ingles' THEN 'aprender inglês' WHEN 'tr_ingles_online' THEN 'inglês online' WHEN 'tr_professor_ingles' THEN 'professor de inglês' WHEN 'tr_intencao_ingles' THEN 'intenção (5 termos somados)' WHEN 'tr_razao_ingles_curso_online' THEN 'inglês ÷ curso online' WHEN 'tr_intercambio' THEN 'intercâmbio' WHEN 'tr_visto_americano' THEN 'visto americano' WHEN 'tr_passagem_aerea' THEN 'passagem aérea' WHEN 'tr_curso_online' THEN 'curso online (controle)' END AS \"termo do Trends\", ROUND(MAX(CASE WHEN serie_voos = 'nr_passageiros' THEN pearson END), 2) AS \"passageiros\", ROUND(MAX(CASE WHEN serie_voos = 'qtd_voos' THEN pearson END), 2) AS \"voos\", ROUND(MAX(CASE WHEN serie_voos = 'pax_por_voo' THEN pearson END), 2) AS \"passageiros por voo\", ROUND(MAX(CASE WHEN serie_voos = 'pax_eua' THEN pearson END), 2) AS \"passageiros EUA\", ROUND(MAX(CASE WHEN serie_voos = 'pax_canada' THEN pearson END), 2) AS \"passageiros Canadá\", ROUND(MAX(CASE WHEN serie_voos = 'pax_reino_unido' THEN pearson END), 2) AS \"passageiros Reino Unido\"\nFROM correlacoes\nWHERE recorte = 'BR' AND transformacao = '${transformacao:raw}' AND defasagem_semanas = ${defasagem:raw}\nGROUP BY serie_trends\nORDER BY CASE serie_trends WHEN 'tr_curso_ingles' THEN 0 WHEN 'tr_aula_ingles' THEN 1 WHEN 'tr_aprender_ingles' THEN 2 WHEN 'tr_ingles_online' THEN 3 WHEN 'tr_professor_ingles' THEN 4 WHEN 'tr_intencao_ingles' THEN 5 WHEN 'tr_razao_ingles_curso_online' THEN 6 WHEN 'tr_intercambio' THEN 7 WHEN 'tr_visto_americano' THEN 8 WHEN 'tr_passagem_aerea' THEN 9 WHEN 'tr_curso_online' THEN 10 END",
+          "connectionArgs": {
+            "region": "__default",
+            "catalog": "__default",
+            "database": "__default",
+            "resultReuseEnabled": false
+          }
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "align": "auto",
+            "cellOptions": {
+              "type": "auto"
+            },
+            "inspect": false
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "passageiros"
+            },
+            "properties": [
+              {
+                "id": "custom.cellOptions",
+                "value": {
+                  "type": "color-background",
+                  "mode": "basic"
+                }
+              },
+              {
+                "id": "color",
+                "value": {
+                  "mode": "thresholds"
+                }
+              },
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "#184f95",
+                      "value": null
+                    },
+                    {
+                      "color": "#3987e5",
+                      "value": -0.5
+                    },
+                    {
+                      "color": "#9ec5f4",
+                      "value": -0.3
+                    },
+                    {
+                      "color": "#e1e0d9",
+                      "value": -0.1
+                    },
+                    {
+                      "color": "#f4a9a8",
+                      "value": 0.1
+                    },
+                    {
+                      "color": "#e34948",
+                      "value": 0.3
+                    },
+                    {
+                      "color": "#a02a2a",
+                      "value": 0.5
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "decimals",
+                "value": 2
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "voos"
+            },
+            "properties": [
+              {
+                "id": "custom.cellOptions",
+                "value": {
+                  "type": "color-background",
+                  "mode": "basic"
+                }
+              },
+              {
+                "id": "color",
+                "value": {
+                  "mode": "thresholds"
+                }
+              },
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "#184f95",
+                      "value": null
+                    },
+                    {
+                      "color": "#3987e5",
+                      "value": -0.5
+                    },
+                    {
+                      "color": "#9ec5f4",
+                      "value": -0.3
+                    },
+                    {
+                      "color": "#e1e0d9",
+                      "value": -0.1
+                    },
+                    {
+                      "color": "#f4a9a8",
+                      "value": 0.1
+                    },
+                    {
+                      "color": "#e34948",
+                      "value": 0.3
+                    },
+                    {
+                      "color": "#a02a2a",
+                      "value": 0.5
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "decimals",
+                "value": 2
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "passageiros por voo"
+            },
+            "properties": [
+              {
+                "id": "custom.cellOptions",
+                "value": {
+                  "type": "color-background",
+                  "mode": "basic"
+                }
+              },
+              {
+                "id": "color",
+                "value": {
+                  "mode": "thresholds"
+                }
+              },
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "#184f95",
+                      "value": null
+                    },
+                    {
+                      "color": "#3987e5",
+                      "value": -0.5
+                    },
+                    {
+                      "color": "#9ec5f4",
+                      "value": -0.3
+                    },
+                    {
+                      "color": "#e1e0d9",
+                      "value": -0.1
+                    },
+                    {
+                      "color": "#f4a9a8",
+                      "value": 0.1
+                    },
+                    {
+                      "color": "#e34948",
+                      "value": 0.3
+                    },
+                    {
+                      "color": "#a02a2a",
+                      "value": 0.5
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "decimals",
+                "value": 2
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "passageiros EUA"
+            },
+            "properties": [
+              {
+                "id": "custom.cellOptions",
+                "value": {
+                  "type": "color-background",
+                  "mode": "basic"
+                }
+              },
+              {
+                "id": "color",
+                "value": {
+                  "mode": "thresholds"
+                }
+              },
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "#184f95",
+                      "value": null
+                    },
+                    {
+                      "color": "#3987e5",
+                      "value": -0.5
+                    },
+                    {
+                      "color": "#9ec5f4",
+                      "value": -0.3
+                    },
+                    {
+                      "color": "#e1e0d9",
+                      "value": -0.1
+                    },
+                    {
+                      "color": "#f4a9a8",
+                      "value": 0.1
+                    },
+                    {
+                      "color": "#e34948",
+                      "value": 0.3
+                    },
+                    {
+                      "color": "#a02a2a",
+                      "value": 0.5
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "decimals",
+                "value": 2
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "passageiros Canadá"
+            },
+            "properties": [
+              {
+                "id": "custom.cellOptions",
+                "value": {
+                  "type": "color-background",
+                  "mode": "basic"
+                }
+              },
+              {
+                "id": "color",
+                "value": {
+                  "mode": "thresholds"
+                }
+              },
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "#184f95",
+                      "value": null
+                    },
+                    {
+                      "color": "#3987e5",
+                      "value": -0.5
+                    },
+                    {
+                      "color": "#9ec5f4",
+                      "value": -0.3
+                    },
+                    {
+                      "color": "#e1e0d9",
+                      "value": -0.1
+                    },
+                    {
+                      "color": "#f4a9a8",
+                      "value": 0.1
+                    },
+                    {
+                      "color": "#e34948",
+                      "value": 0.3
+                    },
+                    {
+                      "color": "#a02a2a",
+                      "value": 0.5
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "decimals",
+                "value": 2
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "passageiros Reino Unido"
+            },
+            "properties": [
+              {
+                "id": "custom.cellOptions",
+                "value": {
+                  "type": "color-background",
+                  "mode": "basic"
+                }
+              },
+              {
+                "id": "color",
+                "value": {
+                  "mode": "thresholds"
+                }
+              },
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "#184f95",
+                      "value": null
+                    },
+                    {
+                      "color": "#3987e5",
+                      "value": -0.5
+                    },
+                    {
+                      "color": "#9ec5f4",
+                      "value": -0.3
+                    },
+                    {
+                      "color": "#e1e0d9",
+                      "value": -0.1
+                    },
+                    {
+                      "color": "#f4a9a8",
+                      "value": 0.1
+                    },
+                    {
+                      "color": "#e34948",
+                      "value": 0.3
+                    },
+                    {
+                      "color": "#a02a2a",
+                      "value": 0.5
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "decimals",
+                "value": 2
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "termo do Trends"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 220
+              }
+            ]
+          }
+        ]
+      },
+      "options": {
+        "showHeader": true,
+        "cellHeight": "sm",
+        "footer": {
+          "show": false,
+          "reducer": [
+            "sum"
+          ],
+          "fields": ""
+        }
+      }
+    },
+    {
+      "id": 16,
+      "type": "table",
+      "title": "Ranking dos pares mais correlacionados (${transformacao})",
+      "description": "Todos os recortes (Brasil e UFs), todas as defasagens. Correlação alta sem significância é efeito de poucas semanas independentes.",
+      "datasource": {
+        "type": "grafana-athena-datasource",
+        "uid": "${DS_ATHENA}"
+      },
+      "gridPos": {
+        "x": 0,
+        "y": 51,
+        "w": 24,
+        "h": 10
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "grafana-athena-datasource",
+            "uid": "${DS_ATHENA}"
+          },
+          "format": 1,
+          "rawSQL": "SELECT recorte, serie_voos AS \"série de voos\", serie_trends AS \"termo\",\n       defasagem_semanas AS \"defasagem\", ROUND(pearson, 3) AS \"Pearson\",\n       ROUND(spearman, 3) AS \"Spearman\", n, ROUND(n_efetivo, 1) AS \"n efetivo\",\n       CASE WHEN significativo THEN 'sim' ELSE 'não' END AS \"significativo (5%)\"\nFROM correlacoes\nWHERE transformacao = '${transformacao:raw}'\nORDER BY ABS(pearson) DESC\nLIMIT 30",
+          "connectionArgs": {
+            "region": "__default",
+            "catalog": "__default",
+            "database": "__default",
+            "resultReuseEnabled": false
+          }
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "align": "auto",
+            "cellOptions": {
+              "type": "auto"
+            },
+            "inspect": false
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Pearson"
+            },
+            "properties": [
+              {
+                "id": "custom.cellOptions",
+                "value": {
+                  "type": "color-background",
+                  "mode": "basic"
+                }
+              },
+              {
+                "id": "color",
+                "value": {
+                  "mode": "thresholds"
+                }
+              },
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "#184f95",
+                      "value": null
+                    },
+                    {
+                      "color": "#3987e5",
+                      "value": -0.5
+                    },
+                    {
+                      "color": "#9ec5f4",
+                      "value": -0.3
+                    },
+                    {
+                      "color": "#e1e0d9",
+                      "value": -0.1
+                    },
+                    {
+                      "color": "#f4a9a8",
+                      "value": 0.1
+                    },
+                    {
+                      "color": "#e34948",
+                      "value": 0.3
+                    },
+                    {
+                      "color": "#a02a2a",
+                      "value": 0.5
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "decimals",
+                "value": 2
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Spearman"
+            },
+            "properties": [
+              {
+                "id": "custom.cellOptions",
+                "value": {
+                  "type": "color-background",
+                  "mode": "basic"
+                }
+              },
+              {
+                "id": "color",
+                "value": {
+                  "mode": "thresholds"
+                }
+              },
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "#184f95",
+                      "value": null
+                    },
+                    {
+                      "color": "#3987e5",
+                      "value": -0.5
+                    },
+                    {
+                      "color": "#9ec5f4",
+                      "value": -0.3
+                    },
+                    {
+                      "color": "#e1e0d9",
+                      "value": -0.1
+                    },
+                    {
+                      "color": "#f4a9a8",
+                      "value": 0.1
+                    },
+                    {
+                      "color": "#e34948",
+                      "value": 0.3
+                    },
+                    {
+                      "color": "#a02a2a",
+                      "value": 0.5
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "decimals",
+                "value": 2
+              }
+            ]
+          }
+        ]
+      },
+      "options": {
+        "showHeader": true,
+        "cellHeight": "sm",
+        "footer": {
+          "show": false,
+          "reducer": [
+            "sum"
+          ],
+          "fields": ""
+        }
+      }
+    },
+    {
+      "id": 17,
+      "type": "row",
+      "title": "Calendário escolar e ano contra ano",
+      "collapsed": false,
+      "gridPos": {
+        "x": 0,
+        "y": 61,
+        "w": 24,
+        "h": 1
+      },
+      "panels": []
+    },
+    {
+      "id": 18,
+      "type": "barchart",
+      "title": "Cada série por temporada (100 = média do período)",
+      "description": "Acima de 100: a série fica acima da própria média naquela temporada. Passageiros e curso de inglês sobem nas férias; aula de inglês cai.",
+      "datasource": {
+        "type": "grafana-athena-datasource",
+        "uid": "${DS_ATHENA}"
+      },
+      "gridPos": {
+        "x": 0,
+        "y": 62,
+        "w": 12,
+        "h": 9
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "grafana-athena-datasource",
+            "uid": "${DS_ATHENA}"
+          },
+          "format": 1,
+          "rawSQL": "SELECT temporada,\n       ROUND(100 * AVG(nr_passageiros) / (SELECT AVG(nr_passageiros) FROM cruzamento_semanal_br WHERE semana_completa AND $__timeFilter(semana_inicio)), 1) AS \"passageiros\",\n       ROUND(100 * AVG(tr_curso_ingles) / (SELECT AVG(tr_curso_ingles) FROM cruzamento_semanal_br WHERE semana_completa AND $__timeFilter(semana_inicio)), 1) AS \"curso de inglês\",\n       ROUND(100 * AVG(tr_aula_ingles) / (SELECT AVG(tr_aula_ingles) FROM cruzamento_semanal_br WHERE semana_completa AND $__timeFilter(semana_inicio)), 1) AS \"aula de inglês\",\n       ROUND(100 * AVG(tr_curso_online) / (SELECT AVG(tr_curso_online) FROM cruzamento_semanal_br WHERE semana_completa AND $__timeFilter(semana_inicio)), 1) AS \"curso online\"\nFROM cruzamento_semanal_br WHERE semana_completa AND $__timeFilter(semana_inicio)\nGROUP BY temporada\nORDER BY CASE temporada WHEN 'férias escolares' THEN 1 WHEN 'volta às aulas' THEN 2 ELSE 3 END",
+          "connectionArgs": {
+            "region": "__default",
+            "catalog": "__default",
+            "database": "__default",
+            "resultReuseEnabled": false
+          }
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "fillOpacity": 100,
+            "lineWidth": 0,
+            "gradientMode": "none",
+            "axisCenteredZero": false
+          },
+          "unit": "short",
+          "color": {
+            "mode": "palette-classic"
+          },
+          "min": 0
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "passageiros"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#2a78d6"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "curso de inglês"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#eb6834"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "aula de inglês"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#1baf7a"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "curso online"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#eda100"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "options": {
+        "xField": "temporada",
+        "orientation": "vertical",
+        "showValue": "never",
+        "barWidth": 0.85,
+        "groupWidth": 0.75,
+        "stacking": "none",
+        "xTickLabelRotation": 0,
+        "xTickLabelSpacing": 0,
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      }
+    },
+    {
+      "id": 19,
+      "type": "trend",
+      "title": "Passageiros por semana do ano",
+      "description": "Sobreposição ano a ano: picos alinhados na mesma semana indicam sazonalidade, não evento pontual.",
+      "datasource": {
+        "type": "grafana-athena-datasource",
+        "uid": "${DS_ATHENA}"
+      },
+      "gridPos": {
+        "x": 12,
+        "y": 62,
+        "w": 6,
+        "h": 9
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "grafana-athena-datasource",
+            "uid": "${DS_ATHENA}"
+          },
+          "format": 1,
+          "rawSQL": "SELECT num_semana AS \"semana do ano\",\n       MAX(CASE WHEN ano_semana = 2022 THEN nr_passageiros END) AS \"2022\",\n       MAX(CASE WHEN ano_semana = 2023 THEN nr_passageiros END) AS \"2023\",\n       MAX(CASE WHEN ano_semana = 2024 THEN nr_passageiros END) AS \"2024\",\n       MAX(CASE WHEN ano_semana = 2025 THEN nr_passageiros END) AS \"2025\",\n       MAX(CASE WHEN ano_semana = 2026 THEN nr_passageiros END) AS \"2026\"\nFROM cruzamento_semanal_br WHERE semana_completa\nGROUP BY num_semana ORDER BY num_semana",
+          "connectionArgs": {
+            "region": "__default",
+            "catalog": "__default",
+            "database": "__default",
+            "resultReuseEnabled": false
+          }
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "lineWidth": 2,
+            "showPoints": "never",
+            "spanNulls": false,
+            "fillOpacity": 0
+          },
+          "color": {
+            "mode": "palette-classic"
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "2022"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#86b6ef"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "2023"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#5598e7"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "2024"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#2a78d6"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "2025"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#104281"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "2026"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#0d366b"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "options": {
+        "xField": "semana do ano",
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      }
+    },
+    {
+      "id": 20,
+      "type": "trend",
+      "title": "${termo:text} por semana do ano",
+      "description": "Sobreposição ano a ano: picos alinhados na mesma semana indicam sazonalidade, não evento pontual.",
+      "datasource": {
+        "type": "grafana-athena-datasource",
+        "uid": "${DS_ATHENA}"
+      },
+      "gridPos": {
+        "x": 18,
+        "y": 62,
+        "w": 6,
+        "h": 9
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "grafana-athena-datasource",
+            "uid": "${DS_ATHENA}"
+          },
+          "format": 1,
+          "rawSQL": "SELECT num_semana AS \"semana do ano\",\n       MAX(CASE WHEN ano_semana = 2022 THEN ${termo:raw} END) AS \"2022\",\n       MAX(CASE WHEN ano_semana = 2023 THEN ${termo:raw} END) AS \"2023\",\n       MAX(CASE WHEN ano_semana = 2024 THEN ${termo:raw} END) AS \"2024\",\n       MAX(CASE WHEN ano_semana = 2025 THEN ${termo:raw} END) AS \"2025\",\n       MAX(CASE WHEN ano_semana = 2026 THEN ${termo:raw} END) AS \"2026\"\nFROM cruzamento_semanal_br WHERE semana_completa\nGROUP BY num_semana ORDER BY num_semana",
+          "connectionArgs": {
+            "region": "__default",
+            "catalog": "__default",
+            "database": "__default",
+            "resultReuseEnabled": false
+          }
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "lineWidth": 2,
+            "showPoints": "never",
+            "spanNulls": false,
+            "fillOpacity": 0
+          },
+          "color": {
+            "mode": "palette-classic"
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "2022"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#86b6ef"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "2023"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#5598e7"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "2024"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#2a78d6"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "2025"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#104281"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "2026"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#0d366b"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "options": {
+        "xField": "semana do ano",
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      }
+    },
+    {
+      "id": 21,
+      "type": "row",
+      "title": "Regional (UF do aeroporto de embarque)",
+      "collapsed": false,
+      "gridPos": {
+        "x": 0,
+        "y": 71,
+        "w": 24,
+        "h": 1
+      },
+      "panels": []
+    },
+    {
+      "id": 22,
+      "type": "timeseries",
+      "title": "${uf}: passageiros × busca por curso de inglês (índice)",
+      "description": "Um gráfico por UF escolhida no seletor. 100 = maior semana da UF. Semanas sem dado no Trends ficam em branco (volume abaixo do limiar de privacidade do Google).",
+      "datasource": {
+        "type": "grafana-athena-datasource",
+        "uid": "${DS_ATHENA}"
+      },
+      "gridPos": {
+        "x": 0,
+        "y": 72,
+        "w": 8,
+        "h": 8
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "grafana-athena-datasource",
+            "uid": "${DS_ATHENA}"
+          },
+          "format": 1,
+          "rawSQL": "SELECT CAST(semana_inicio AS timestamp) AS time,\n       ROUND(100.0 * nr_passageiros / MAX(nr_passageiros) OVER (), 2) AS \"passageiros (índice)\",\n       ROUND(100.0 * tr_curso_ingles_uf / MAX(tr_curso_ingles_uf) OVER (), 2) AS \"busca na UF (índice)\"\nFROM cruzamento_semanal_uf\nWHERE sg_uf = '${uf:raw}' AND semana_completa AND $__timeFilter(semana_inicio)\nORDER BY 1",
+          "connectionArgs": {
+            "region": "__default",
+            "catalog": "__default",
+            "database": "__default",
+            "resultReuseEnabled": false
+          }
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "drawStyle": "line",
+            "lineWidth": 2,
+            "fillOpacity": 0,
+            "showPoints": "never",
+            "spanNulls": false,
+            "axisSoftMin": 0
+          },
+          "unit": "short",
+          "color": {
+            "mode": "palette-classic"
+          },
+          "min": 0,
+          "max": 100
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "passageiros (índice)"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#2a78d6"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "busca na UF (índice)"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#eb6834"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "options": {
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "repeat": "uf",
+      "repeatDirection": "h",
+      "maxPerRow": 3
+    },
+    {
+      "id": 23,
+      "type": "barchart",
+      "title": "Correlograma por UF: passageiros × busca na UF",
+      "description": "Só UFs com voo comercial e série semanal do Trends com dado suficiente.",
+      "datasource": {
+        "type": "grafana-athena-datasource",
+        "uid": "${DS_ATHENA}"
+      },
+      "gridPos": {
+        "x": 0,
+        "y": 80,
+        "w": 12,
+        "h": 9
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "grafana-athena-datasource",
+            "uid": "${DS_ATHENA}"
+          },
+          "format": 1,
+          "rawSQL": "SELECT CAST(defasagem_semanas AS varchar) AS \"defasagem (semanas)\",\n       MAX(CASE WHEN recorte = 'SP' THEN pearson END) AS \"SP\",\n       MAX(CASE WHEN recorte = 'RJ' THEN pearson END) AS \"RJ\",\n       MAX(CASE WHEN recorte = 'MG' THEN pearson END) AS \"MG\"\nFROM correlacoes\nWHERE serie_voos = 'nr_passageiros' AND serie_trends = 'tr_curso_ingles_uf'\n  AND transformacao = '${transformacao:raw}'\nGROUP BY defasagem_semanas ORDER BY defasagem_semanas",
+          "connectionArgs": {
+            "region": "__default",
+            "catalog": "__default",
+            "database": "__default",
+            "resultReuseEnabled": false
+          }
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "fillOpacity": 100,
+            "lineWidth": 0,
+            "gradientMode": "none",
+            "axisCenteredZero": false
+          },
+          "unit": "short",
+          "color": {
+            "mode": "palette-classic"
+          },
+          "min": -1,
+          "max": 1
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "SP"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#2a78d6"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "RJ"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#eb6834"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "MG"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#1baf7a"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "options": {
+        "xField": "defasagem (semanas)",
+        "orientation": "vertical",
+        "showValue": "never",
+        "barWidth": 0.85,
+        "groupWidth": 0.75,
+        "stacking": "none",
+        "xTickLabelRotation": 0,
+        "xTickLabelSpacing": 0,
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      }
+    },
+    {
+      "id": 24,
+      "type": "barchart",
+      "title": "Interesse por curso de inglês, por UF",
+      "description": "Busca relativa no período inteiro: participação de curso de inglês no total de buscas da UF.",
+      "datasource": {
+        "type": "grafana-athena-datasource",
+        "uid": "${DS_ATHENA}"
+      },
+      "gridPos": {
+        "x": 12,
+        "y": 80,
+        "w": 12,
+        "h": 9
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "grafana-athena-datasource",
+            "uid": "${DS_ATHENA}"
+          },
+          "format": 1,
+          "rawSQL": "SELECT sg_uf AS \"UF\", interesse_curso_ingles AS \"interesse (100 = maior UF)\"\nFROM resumo_uf ORDER BY interesse_curso_ingles DESC",
+          "connectionArgs": {
+            "region": "__default",
+            "catalog": "__default",
+            "database": "__default",
+            "resultReuseEnabled": false
+          }
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "fillOpacity": 100,
+            "lineWidth": 0,
+            "gradientMode": "none",
+            "axisCenteredZero": false
+          },
+          "unit": "short",
+          "color": {
+            "mode": "palette-classic"
+          },
+          "min": 0,
+          "max": 100
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "interesse (100 = maior UF)"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#2a78d6"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "options": {
+        "xField": "UF",
+        "orientation": "vertical",
+        "showValue": "never",
+        "barWidth": 0.85,
+        "groupWidth": 0.75,
+        "stacking": "none",
+        "xTickLabelRotation": 0,
+        "xTickLabelSpacing": 0,
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      }
+    },
+    {
+      "id": 25,
+      "type": "table",
+      "title": "Resumo por UF",
+      "description": "Voos e passageiros contam a UF do aeroporto de embarque, não a residência do passageiro: Guarulhos (SP) recebe conexões do país inteiro.",
+      "datasource": {
+        "type": "grafana-athena-datasource",
+        "uid": "${DS_ATHENA}"
+      },
+      "gridPos": {
+        "x": 0,
+        "y": 89,
+        "w": 24,
+        "h": 9
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "grafana-athena-datasource",
+            "uid": "${DS_ATHENA}"
+          },
+          "format": 1,
+          "rawSQL": "SELECT sg_uf AS \"UF\", nome_uf AS \"nome\", regiao AS \"região\", qtd_voos AS \"voos\",\n       nr_passageiros AS \"passageiros\", pct_passageiros AS \"% dos passageiros\",\n       interesse_curso_ingles AS \"interesse no Trends\",\n       CASE WHEN serie_semanal_trends THEN 'sim' ELSE 'não' END AS \"série semanal no Trends\",\n       semanas_com_dado_trends AS \"semanas com dado\", ROUND(pearson_semanal, 2) AS \"Pearson semanal\"\nFROM resumo_uf ORDER BY nr_passageiros DESC, interesse_curso_ingles DESC",
+          "connectionArgs": {
+            "region": "__default",
+            "catalog": "__default",
+            "database": "__default",
+            "resultReuseEnabled": false
+          }
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "align": "auto",
+            "cellOptions": {
+              "type": "auto"
+            },
+            "inspect": false
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Pearson semanal"
+            },
+            "properties": [
+              {
+                "id": "custom.cellOptions",
+                "value": {
+                  "type": "color-background",
+                  "mode": "basic"
+                }
+              },
+              {
+                "id": "color",
+                "value": {
+                  "mode": "thresholds"
+                }
+              },
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "#184f95",
+                      "value": null
+                    },
+                    {
+                      "color": "#3987e5",
+                      "value": -0.5
+                    },
+                    {
+                      "color": "#9ec5f4",
+                      "value": -0.3
+                    },
+                    {
+                      "color": "#e1e0d9",
+                      "value": -0.1
+                    },
+                    {
+                      "color": "#f4a9a8",
+                      "value": 0.1
+                    },
+                    {
+                      "color": "#e34948",
+                      "value": 0.3
+                    },
+                    {
+                      "color": "#a02a2a",
+                      "value": 0.5
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "decimals",
+                "value": 2
+              }
+            ]
+          }
+        ]
+      },
+      "options": {
+        "showHeader": true,
+        "cellHeight": "sm",
+        "footer": {
+          "show": false,
+          "reducer": [
+            "sum"
+          ],
+          "fields": ""
+        }
+      }
+    },
+    {
+      "id": 26,
+      "type": "row",
+      "title": "Férias ou destino? (grupo de comparação: destinos não anglófonos)",
+      "collapsed": false,
+      "gridPos": {
+        "x": 0,
+        "y": 98,
+        "w": 24,
+        "h": 1
+      },
+      "panels": []
+    },
+    {
+      "id": 27,
+      "type": "timeseries",
+      "title": "Passageiros por destino (índice) × ${termo_destinos:text}",
+      "description": "Cada grupo de destino em índice (100 = maior semana do grupo). A Europa, que não segue as férias escolares brasileiras, é o contraste.",
+      "datasource": {
+        "type": "grafana-athena-datasource",
+        "uid": "${DS_ATHENA}"
+      },
+      "gridPos": {
+        "x": 0,
+        "y": 99,
+        "w": 24,
+        "h": 9
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "grafana-athena-datasource",
+            "uid": "${DS_ATHENA}"
+          },
+          "format": 1,
+          "rawSQL": "SELECT CAST(semana_inicio AS timestamp) AS time,\n       MAX(CASE WHEN segmento = 'anglofono' THEN pax_indice END) AS \"Anglófonos\",\n       MAX(CASE WHEN segmento = 'nao_anglofono' THEN pax_indice END) AS \"Não anglófonos\",\n       MAX(CASE WHEN segmento = 'nao_anglofono_america_sul' THEN pax_indice END) AS \"América do Sul\",\n       MAX(CASE WHEN segmento = 'nao_anglofono_europa' THEN pax_indice END) AS \"Europa\",\n       MAX(${termo_destinos:raw}) AS \"Busca: ${termo_destinos:text}\"\nFROM comparacao_destinos_semanal\nWHERE semana_completa AND $__timeFilter(semana_inicio)\nGROUP BY semana_inicio ORDER BY 1",
+          "connectionArgs": {
+            "region": "__default",
+            "catalog": "__default",
+            "database": "__default",
+            "resultReuseEnabled": false
+          }
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "drawStyle": "line",
+            "lineWidth": 2,
+            "fillOpacity": 0,
+            "showPoints": "never",
+            "spanNulls": false,
+            "axisSoftMin": 0
+          },
+          "unit": "short",
+          "color": {
+            "mode": "palette-classic"
+          },
+          "min": 30,
+          "max": 100
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Anglófonos"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#2a78d6"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Não anglófonos"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#eb6834"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "América do Sul"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#1baf7a"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Europa"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#eda100"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Busca: ${termo_destinos:text}"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#898781"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Busca: ${termo_destinos:text}"
+            },
+            "properties": [
+              {
+                "id": "custom.lineStyle",
+                "value": {
+                  "fill": "dash",
+                  "dash": [
+                    8,
+                    6
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "options": {
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      }
+    },
+    {
+      "id": 28,
+      "type": "barchart",
+      "title": "Correlograma por destino: passageiros × ${termo_destinos:text}",
+      "description": "Se o efeito fosse só do destino de língua inglesa, os não anglófonos não teriam correlação. Positivo: a busca vem depois do voo.",
+      "datasource": {
+        "type": "grafana-athena-datasource",
+        "uid": "${DS_ATHENA}"
+      },
+      "gridPos": {
+        "x": 0,
+        "y": 108,
+        "w": 12,
+        "h": 9
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "grafana-athena-datasource",
+            "uid": "${DS_ATHENA}"
+          },
+          "format": 1,
+          "rawSQL": "SELECT CAST(defasagem_semanas AS varchar) AS \"defasagem (semanas)\",\n       MAX(CASE WHEN segmento = 'anglofono' THEN pearson END) AS \"Anglófonos\",\n       MAX(CASE WHEN segmento = 'nao_anglofono' THEN pearson END) AS \"Não anglófonos\",\n       MAX(CASE WHEN segmento = 'nao_anglofono_america_sul' THEN pearson END) AS \"América do Sul\",\n       MAX(CASE WHEN segmento = 'nao_anglofono_europa' THEN pearson END) AS \"Europa\"\nFROM correlacoes_destinos\nWHERE serie_voos = 'nr_passageiros' AND serie_trends = '${termo_destinos:raw}'\n  AND transformacao = '${transformacao:raw}'\nGROUP BY defasagem_semanas ORDER BY defasagem_semanas",
+          "connectionArgs": {
+            "region": "__default",
+            "catalog": "__default",
+            "database": "__default",
+            "resultReuseEnabled": false
+          }
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "fillOpacity": 100,
+            "lineWidth": 0,
+            "gradientMode": "none",
+            "axisCenteredZero": false
+          },
+          "unit": "short",
+          "color": {
+            "mode": "palette-classic"
+          },
+          "min": -1,
+          "max": 1
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Anglófonos"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#2a78d6"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Não anglófonos"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#eb6834"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "América do Sul"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#1baf7a"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Europa"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#eda100"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "options": {
+        "xField": "defasagem (semanas)",
+        "orientation": "vertical",
+        "showValue": "never",
+        "barWidth": 0.85,
+        "groupWidth": 0.75,
+        "stacking": "none",
+        "xTickLabelRotation": 0,
+        "xTickLabelSpacing": 0,
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      }
+    },
+    {
+      "id": 29,
+      "type": "barchart",
+      "title": "Correlação parcial: o que cada grupo acrescenta sobre o outro",
+      "description": "Correlação de cada grupo com a busca depois de retirar o que o outro grupo explica.",
+      "datasource": {
+        "type": "grafana-athena-datasource",
+        "uid": "${DS_ATHENA}"
+      },
+      "gridPos": {
+        "x": 12,
+        "y": 108,
+        "w": 12,
+        "h": 9
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "grafana-athena-datasource",
+            "uid": "${DS_ATHENA}"
+          },
+          "format": 1,
+          "rawSQL": "SELECT CAST(defasagem_semanas AS varchar) AS \"defasagem (semanas)\",\n       MAX(CASE WHEN explicativa = 'anglofono' THEN pearson_parcial END) AS \"anglófonos, descontados os não anglófonos\",\n       MAX(CASE WHEN explicativa = 'nao_anglofono' THEN pearson_parcial END) AS \"não anglófonos, descontados os anglófonos\"\nFROM parciais_destinos\nWHERE serie_trends = '${termo_destinos:raw}'\nGROUP BY defasagem_semanas ORDER BY defasagem_semanas",
+          "connectionArgs": {
+            "region": "__default",
+            "catalog": "__default",
+            "database": "__default",
+            "resultReuseEnabled": false
+          }
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "fillOpacity": 100,
+            "lineWidth": 0,
+            "gradientMode": "none",
+            "axisCenteredZero": false
+          },
+          "unit": "short",
+          "color": {
+            "mode": "palette-classic"
+          },
+          "min": -1,
+          "max": 1
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "anglófonos, descontados os não anglófonos"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#2a78d6"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "não anglófonos, descontados os anglófonos"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#eb6834"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "options": {
+        "xField": "defasagem (semanas)",
+        "orientation": "vertical",
+        "showValue": "never",
+        "barWidth": 0.85,
+        "groupWidth": 0.75,
+        "stacking": "none",
+        "xTickLabelRotation": 0,
+        "xTickLabelSpacing": 0,
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      }
+    },
+    {
+      "id": 30,
+      "type": "xychart",
+      "title": "Composição: % anglófona dos passageiros (semana t) × ${termo_destinos:text} (t+${defasagem})",
+      "description": "Se o destino importasse, semanas com mais viagem para países de língua inglesa (em proporção) seriam seguidas de mais busca. Não são.",
+      "datasource": {
+        "type": "grafana-athena-datasource",
+        "uid": "${DS_ATHENA}"
+      },
+      "gridPos": {
+        "x": 0,
+        "y": 117,
+        "w": 12,
+        "h": 9
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "grafana-athena-datasource",
+            "uid": "${DS_ATHENA}"
+          },
+          "format": 1,
+          "rawSQL": "SELECT a.participacao_pax AS \"% anglófona (semana t)\",\n       b.${termo_destinos:raw} AS \"${termo_destinos:text} (semana t+k)\"\nFROM comparacao_destinos_semanal a\nJOIN comparacao_destinos_semanal b\n  ON b.segmento = a.segmento AND b.semana_inicio = date_add('week', ${defasagem:raw}, a.semana_inicio)\nWHERE a.segmento = 'anglofono' AND a.semana_completa AND b.semana_completa\n  AND $__timeFilter(a.semana_inicio)",
+          "connectionArgs": {
+            "region": "__default",
+            "catalog": "__default",
+            "database": "__default",
+            "resultReuseEnabled": false
+          }
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "show": "points",
+            "pointSize": {
+              "fixed": 7
+            }
+          },
+          "color": {
+            "mode": "fixed",
+            "fixedColor": "#2a78d6"
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "mapping": "auto",
+        "seriesMapping": "auto",
+        "series": [
+          {}
+        ],
+        "legend": {
+          "showLegend": false,
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      }
+    },
+    {
+      "id": 31,
+      "type": "table",
+      "title": "Pico de correlação por destino (${transformacao})",
+      "description": "nr_passageiros: volume do grupo; participacao_pax: fatia do grupo no total internacional.",
+      "datasource": {
+        "type": "grafana-athena-datasource",
+        "uid": "${DS_ATHENA}"
+      },
+      "gridPos": {
+        "x": 12,
+        "y": 117,
+        "w": 12,
+        "h": 9
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "grafana-athena-datasource",
+            "uid": "${DS_ATHENA}"
+          },
+          "format": 1,
+          "rawSQL": "SELECT c.segmento AS \"segmento\", c.serie_voos AS \"série\", c.defasagem_semanas AS \"defasagem do pico\",\n       c.pearson AS \"Pearson\", CASE WHEN c.significativo THEN 'sim' ELSE 'não' END AS \"significativo (5%)\"\nFROM correlacoes_destinos c\nJOIN (SELECT segmento, serie_voos, MAX(pearson) AS maximo FROM correlacoes_destinos\n      WHERE serie_trends = '${termo_destinos:raw}' AND transformacao = '${transformacao:raw}'\n      GROUP BY segmento, serie_voos) m\n  ON m.segmento = c.segmento AND m.serie_voos = c.serie_voos AND m.maximo = c.pearson\nWHERE c.serie_trends = '${termo_destinos:raw}' AND c.transformacao = '${transformacao:raw}'\nORDER BY c.pearson DESC",
+          "connectionArgs": {
+            "region": "__default",
+            "catalog": "__default",
+            "database": "__default",
+            "resultReuseEnabled": false
+          }
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "align": "auto",
+            "cellOptions": {
+              "type": "auto"
+            },
+            "inspect": false
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Pearson"
+            },
+            "properties": [
+              {
+                "id": "custom.cellOptions",
+                "value": {
+                  "type": "color-background",
+                  "mode": "basic"
+                }
+              },
+              {
+                "id": "color",
+                "value": {
+                  "mode": "thresholds"
+                }
+              },
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "#184f95",
+                      "value": null
+                    },
+                    {
+                      "color": "#3987e5",
+                      "value": -0.5
+                    },
+                    {
+                      "color": "#9ec5f4",
+                      "value": -0.3
+                    },
+                    {
+                      "color": "#e1e0d9",
+                      "value": -0.1
+                    },
+                    {
+                      "color": "#f4a9a8",
+                      "value": 0.1
+                    },
+                    {
+                      "color": "#e34948",
+                      "value": 0.3
+                    },
+                    {
+                      "color": "#a02a2a",
+                      "value": 0.5
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "decimals",
+                "value": 2
+              }
+            ]
+          }
+        ]
+      },
+      "options": {
+        "showHeader": true,
+        "cellHeight": "sm",
+        "footer": {
+          "show": false,
+          "reducer": [
+            "sum"
+          ],
+          "fields": ""
+        }
+      }
+    }
+  ]
+}

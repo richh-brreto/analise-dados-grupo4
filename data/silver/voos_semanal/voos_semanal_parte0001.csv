@@ -1,0 +1,721 @@
+semana_inicio;semana_fim;ano_semana;num_semana;mes_referencia;estacao;temporada;dias_cobertos;semana_completa;nm_pais_destino;qtd_voos;nr_passageiros
+2021-12-26;2022-01-01;2021;52;12;verão;férias escolares;1;false;CANADÁ;2;510
+2021-12-26;2022-01-01;2021;52;12;verão;férias escolares;1;false;ESTADOS UNIDOS DA AMÉRICA;16;4021
+2021-12-26;2022-01-01;2021;52;12;verão;férias escolares;1;false;REINO UNIDO;2;485
+2022-01-02;2022-01-08;2022;1;1;verão;férias escolares;7;true;CANADÁ;11;2960
+2022-01-02;2022-01-08;2022;1;1;verão;férias escolares;7;true;ESTADOS UNIDOS DA AMÉRICA;111;29287
+2022-01-02;2022-01-08;2022;1;1;verão;férias escolares;7;true;REINO UNIDO;13;4078
+2022-01-09;2022-01-15;2022;2;1;verão;férias escolares;7;true;CANADÁ;10;2963
+2022-01-09;2022-01-15;2022;2;1;verão;férias escolares;7;true;ESTADOS UNIDOS DA AMÉRICA;108;28647
+2022-01-09;2022-01-15;2022;2;1;verão;férias escolares;7;true;REINO UNIDO;14;4465
+2022-01-16;2022-01-22;2022;3;1;verão;férias escolares;7;true;CANADÁ;10;2788
+2022-01-16;2022-01-22;2022;3;1;verão;férias escolares;7;true;ESTADOS UNIDOS DA AMÉRICA;111;27573
+2022-01-16;2022-01-22;2022;3;1;verão;férias escolares;7;true;REINO UNIDO;16;4516
+2022-01-23;2022-01-29;2022;4;1;verão;férias escolares;7;true;CANADÁ;9;2752
+2022-01-23;2022-01-29;2022;4;1;verão;férias escolares;7;true;ESTADOS UNIDOS DA AMÉRICA;107;21953
+2022-01-23;2022-01-29;2022;4;1;verão;férias escolares;7;true;REINO UNIDO;15;4131
+2022-01-30;2022-02-05;2022;5;2;verão;volta às aulas;7;true;CANADÁ;9;2549
+2022-01-30;2022-02-05;2022;5;2;verão;volta às aulas;7;true;ESTADOS UNIDOS DA AMÉRICA;115;22777
+2022-01-30;2022-02-05;2022;5;2;verão;volta às aulas;7;true;REINO UNIDO;15;4237
+2022-02-06;2022-02-12;2022;6;2;verão;volta às aulas;7;true;CANADÁ;10;2043
+2022-02-06;2022-02-12;2022;6;2;verão;volta às aulas;7;true;ESTADOS UNIDOS DA AMÉRICA;118;20890
+2022-02-06;2022-02-12;2022;6;2;verão;volta às aulas;7;true;REINO UNIDO;15;4173
+2022-02-13;2022-02-19;2022;7;2;verão;volta às aulas;7;true;CANADÁ;10;1534
+2022-02-13;2022-02-19;2022;7;2;verão;volta às aulas;7;true;ESTADOS UNIDOS DA AMÉRICA;117;22610
+2022-02-13;2022-02-19;2022;7;2;verão;volta às aulas;7;true;REINO UNIDO;17;4893
+2022-02-20;2022-02-26;2022;8;2;verão;volta às aulas;7;true;CANADÁ;10;2108
+2022-02-20;2022-02-26;2022;8;2;verão;volta às aulas;7;true;ESTADOS UNIDOS DA AMÉRICA;120;30567
+2022-02-20;2022-02-26;2022;8;2;verão;volta às aulas;7;true;REINO UNIDO;15;4545
+2022-02-27;2022-03-05;2022;9;3;outono;período letivo;7;true;CANADÁ;10;2091
+2022-02-27;2022-03-05;2022;9;3;outono;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;115;26320
+2022-02-27;2022-03-05;2022;9;3;outono;período letivo;7;true;REINO UNIDO;15;4043
+2022-03-06;2022-03-12;2022;10;3;outono;período letivo;7;true;CANADÁ;10;1955
+2022-03-06;2022-03-12;2022;10;3;outono;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;107;24831
+2022-03-06;2022-03-12;2022;10;3;outono;período letivo;7;true;REINO UNIDO;15;4008
+2022-03-13;2022-03-19;2022;11;3;outono;período letivo;7;true;CANADÁ;10;1926
+2022-03-13;2022-03-19;2022;11;3;outono;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;111;25341
+2022-03-13;2022-03-19;2022;11;3;outono;período letivo;7;true;REINO UNIDO;18;4483
+2022-03-20;2022-03-26;2022;12;3;outono;período letivo;7;true;CANADÁ;10;2187
+2022-03-20;2022-03-26;2022;12;3;outono;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;111;27983
+2022-03-20;2022-03-26;2022;12;3;outono;período letivo;7;true;REINO UNIDO;16;3972
+2022-03-27;2022-04-02;2022;13;3;outono;período letivo;7;true;CANADÁ;10;2310
+2022-03-27;2022-04-02;2022;13;3;outono;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;100;26635
+2022-03-27;2022-04-02;2022;13;3;outono;período letivo;7;true;REINO UNIDO;16;4345
+2022-04-03;2022-04-09;2022;14;4;outono;período letivo;7;true;CANADÁ;11;2434
+2022-04-03;2022-04-09;2022;14;4;outono;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;100;26299
+2022-04-03;2022-04-09;2022;14;4;outono;período letivo;7;true;REINO UNIDO;17;4672
+2022-04-10;2022-04-16;2022;15;4;outono;período letivo;7;true;CANADÁ;10;2685
+2022-04-10;2022-04-16;2022;15;4;outono;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;99;26995
+2022-04-10;2022-04-16;2022;15;4;outono;período letivo;7;true;REINO UNIDO;18;4698
+2022-04-17;2022-04-23;2022;16;4;outono;período letivo;7;true;CANADÁ;11;2938
+2022-04-17;2022-04-23;2022;16;4;outono;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;99;27087
+2022-04-17;2022-04-23;2022;16;4;outono;período letivo;7;true;REINO UNIDO;16;5140
+2022-04-24;2022-04-30;2022;17;4;outono;período letivo;7;true;CANADÁ;10;2950
+2022-04-24;2022-04-30;2022;17;4;outono;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;97;26957
+2022-04-24;2022-04-30;2022;17;4;outono;período letivo;7;true;REINO UNIDO;13;4532
+2022-05-01;2022-05-07;2022;18;5;outono;período letivo;7;true;CANADÁ;9;2206
+2022-05-01;2022-05-07;2022;18;5;outono;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;94;27007
+2022-05-01;2022-05-07;2022;18;5;outono;período letivo;7;true;REINO UNIDO;16;4858
+2022-05-08;2022-05-14;2022;19;5;outono;período letivo;7;true;CANADÁ;10;2709
+2022-05-08;2022-05-14;2022;19;5;outono;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;96;26548
+2022-05-08;2022-05-14;2022;19;5;outono;período letivo;7;true;REINO UNIDO;18;5019
+2022-05-15;2022-05-21;2022;20;5;outono;período letivo;7;true;CANADÁ;9;2389
+2022-05-15;2022-05-21;2022;20;5;outono;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;103;27613
+2022-05-15;2022-05-21;2022;20;5;outono;período letivo;7;true;REINO UNIDO;17;4960
+2022-05-22;2022-05-28;2022;21;5;outono;período letivo;7;true;CANADÁ;10;2631
+2022-05-22;2022-05-28;2022;21;5;outono;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;98;25107
+2022-05-22;2022-05-28;2022;21;5;outono;período letivo;7;true;REINO UNIDO;17;4773
+2022-05-29;2022-06-04;2022;22;6;inverno;período letivo;7;true;CANADÁ;10;2604
+2022-05-29;2022-06-04;2022;22;6;inverno;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;97;25055
+2022-05-29;2022-06-04;2022;22;6;inverno;período letivo;7;true;REINO UNIDO;14;4707
+2022-06-05;2022-06-11;2022;23;6;inverno;período letivo;7;true;CANADÁ;9;2362
+2022-06-05;2022-06-11;2022;23;6;inverno;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;95;25714
+2022-06-05;2022-06-11;2022;23;6;inverno;período letivo;7;true;REINO UNIDO;15;4567
+2022-06-12;2022-06-18;2022;24;6;inverno;período letivo;7;true;CANADÁ;10;2837
+2022-06-12;2022-06-18;2022;24;6;inverno;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;101;26749
+2022-06-12;2022-06-18;2022;24;6;inverno;período letivo;7;true;REINO UNIDO;17;5260
+2022-06-19;2022-06-25;2022;25;6;inverno;período letivo;7;true;CANADÁ;8;2091
+2022-06-19;2022-06-25;2022;25;6;inverno;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;99;25985
+2022-06-19;2022-06-25;2022;25;6;inverno;período letivo;7;true;REINO UNIDO;17;4691
+2022-06-26;2022-07-02;2022;26;6;inverno;período letivo;7;true;CANADÁ;9;2489
+2022-06-26;2022-07-02;2022;26;6;inverno;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;103;28216
+2022-06-26;2022-07-02;2022;26;6;inverno;período letivo;7;true;REINO UNIDO;18;5572
+2022-07-03;2022-07-09;2022;27;7;inverno;férias escolares;7;true;CANADÁ;11;3101
+2022-07-03;2022-07-09;2022;27;7;inverno;férias escolares;7;true;ESTADOS UNIDOS DA AMÉRICA;118;31195
+2022-07-03;2022-07-09;2022;27;7;inverno;férias escolares;7;true;REINO UNIDO;17;5161
+2022-07-10;2022-07-16;2022;28;7;inverno;férias escolares;7;true;CANADÁ;10;2727
+2022-07-10;2022-07-16;2022;28;7;inverno;férias escolares;7;true;ESTADOS UNIDOS DA AMÉRICA;119;30955
+2022-07-10;2022-07-16;2022;28;7;inverno;férias escolares;7;true;REINO UNIDO;18;4965
+2022-07-17;2022-07-23;2022;29;7;inverno;férias escolares;7;true;CANADÁ;10;2676
+2022-07-17;2022-07-23;2022;29;7;inverno;férias escolares;7;true;ESTADOS UNIDOS DA AMÉRICA;117;29897
+2022-07-17;2022-07-23;2022;29;7;inverno;férias escolares;7;true;REINO UNIDO;17;5092
+2022-07-24;2022-07-30;2022;30;7;inverno;férias escolares;7;true;CANADÁ;10;2610
+2022-07-24;2022-07-30;2022;30;7;inverno;férias escolares;7;true;ESTADOS UNIDOS DA AMÉRICA;120;30676
+2022-07-24;2022-07-30;2022;30;7;inverno;férias escolares;7;true;REINO UNIDO;16;5193
+2022-07-31;2022-08-06;2022;31;8;inverno;volta às aulas;7;true;CANADÁ;10;2729
+2022-07-31;2022-08-06;2022;31;8;inverno;volta às aulas;7;true;ESTADOS UNIDOS DA AMÉRICA;119;29960
+2022-07-31;2022-08-06;2022;31;8;inverno;volta às aulas;7;true;REINO UNIDO;17;5065
+2022-08-07;2022-08-13;2022;32;8;inverno;volta às aulas;7;true;CANADÁ;10;2709
+2022-08-07;2022-08-13;2022;32;8;inverno;volta às aulas;7;true;ESTADOS UNIDOS DA AMÉRICA;116;30532
+2022-08-07;2022-08-13;2022;32;8;inverno;volta às aulas;7;true;REINO UNIDO;16;5429
+2022-08-14;2022-08-20;2022;33;8;inverno;volta às aulas;7;true;CANADÁ;10;2751
+2022-08-14;2022-08-20;2022;33;8;inverno;volta às aulas;7;true;ESTADOS UNIDOS DA AMÉRICA;119;30961
+2022-08-14;2022-08-20;2022;33;8;inverno;volta às aulas;7;true;REINO UNIDO;16;5252
+2022-08-21;2022-08-27;2022;34;8;inverno;volta às aulas;7;true;CANADÁ;10;2821
+2022-08-21;2022-08-27;2022;34;8;inverno;volta às aulas;7;true;ESTADOS UNIDOS DA AMÉRICA;116;30736
+2022-08-21;2022-08-27;2022;34;8;inverno;volta às aulas;7;true;REINO UNIDO;17;5560
+2022-08-28;2022-09-03;2022;35;8;inverno;volta às aulas;7;true;CANADÁ;10;2817
+2022-08-28;2022-09-03;2022;35;8;inverno;volta às aulas;7;true;ESTADOS UNIDOS DA AMÉRICA;118;32123
+2022-08-28;2022-09-03;2022;35;8;inverno;volta às aulas;7;true;REINO UNIDO;16;5084
+2022-09-04;2022-09-10;2022;36;9;primavera;período letivo;7;true;CANADÁ;9;2762
+2022-09-04;2022-09-10;2022;36;9;primavera;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;116;30725
+2022-09-04;2022-09-10;2022;36;9;primavera;período letivo;7;true;REINO UNIDO;15;5779
+2022-09-11;2022-09-17;2022;37;9;primavera;período letivo;7;true;CANADÁ;10;2495
+2022-09-11;2022-09-17;2022;37;9;primavera;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;119;30984
+2022-09-11;2022-09-17;2022;37;9;primavera;período letivo;7;true;REINO UNIDO;16;5065
+2022-09-18;2022-09-24;2022;38;9;primavera;período letivo;7;true;CANADÁ;10;2389
+2022-09-18;2022-09-24;2022;38;9;primavera;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;114;28208
+2022-09-18;2022-09-24;2022;38;9;primavera;período letivo;7;true;REINO UNIDO;16;5903
+2022-09-25;2022-10-01;2022;39;9;primavera;período letivo;7;true;CANADÁ;9;2378
+2022-09-25;2022-10-01;2022;39;9;primavera;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;115;27734
+2022-09-25;2022-10-01;2022;39;9;primavera;período letivo;7;true;REINO UNIDO;18;5332
+2022-10-02;2022-10-08;2022;40;10;primavera;período letivo;7;true;CANADÁ;10;2536
+2022-10-02;2022-10-08;2022;40;10;primavera;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;116;31349
+2022-10-02;2022-10-08;2022;40;10;primavera;período letivo;7;true;REINO UNIDO;16;5482
+2022-10-09;2022-10-15;2022;41;10;primavera;período letivo;7;true;CANADÁ;10;2379
+2022-10-09;2022-10-15;2022;41;10;primavera;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;118;30539
+2022-10-09;2022-10-15;2022;41;10;primavera;período letivo;7;true;REINO UNIDO;15;4868
+2022-10-16;2022-10-22;2022;42;10;primavera;período letivo;7;true;CANADÁ;10;2134
+2022-10-16;2022-10-22;2022;42;10;primavera;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;119;29997
+2022-10-16;2022-10-22;2022;42;10;primavera;período letivo;7;true;REINO UNIDO;17;5157
+2022-10-23;2022-10-29;2022;43;10;primavera;período letivo;7;true;CANADÁ;10;2063
+2022-10-23;2022-10-29;2022;43;10;primavera;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;120;28836
+2022-10-23;2022-10-29;2022;43;10;primavera;período letivo;7;true;REINO UNIDO;18;5546
+2022-10-30;2022-11-05;2022;44;11;primavera;período letivo;7;true;CANADÁ;9;2379
+2022-10-30;2022-11-05;2022;44;11;primavera;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;125;30594
+2022-10-30;2022-11-05;2022;44;11;primavera;período letivo;7;true;REINO UNIDO;14;4920
+2022-11-06;2022-11-12;2022;45;11;primavera;período letivo;7;true;CANADÁ;10;2180
+2022-11-06;2022-11-12;2022;45;11;primavera;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;126;31434
+2022-11-06;2022-11-12;2022;45;11;primavera;período letivo;7;true;REINO UNIDO;15;4654
+2022-11-13;2022-11-19;2022;46;11;primavera;período letivo;7;true;CANADÁ;10;2339
+2022-11-13;2022-11-19;2022;46;11;primavera;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;131;31510
+2022-11-13;2022-11-19;2022;46;11;primavera;período letivo;7;true;REINO UNIDO;15;4576
+2022-11-20;2022-11-26;2022;47;11;primavera;período letivo;7;true;CANADÁ;10;2731
+2022-11-20;2022-11-26;2022;47;11;primavera;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;131;31057
+2022-11-20;2022-11-26;2022;47;11;primavera;período letivo;7;true;REINO UNIDO;17;4460
+2022-11-27;2022-12-03;2022;48;11;primavera;período letivo;7;true;CANADÁ;11;2958
+2022-11-27;2022-12-03;2022;48;11;primavera;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;132;32398
+2022-11-27;2022-12-03;2022;48;11;primavera;período letivo;7;true;REINO UNIDO;18;5184
+2022-12-04;2022-12-10;2022;49;12;verão;férias escolares;7;true;CANADÁ;12;3068
+2022-12-04;2022-12-10;2022;49;12;verão;férias escolares;7;true;ESTADOS UNIDOS DA AMÉRICA;140;31907
+2022-12-04;2022-12-10;2022;49;12;verão;férias escolares;7;true;REINO UNIDO;17;5493
+2022-12-11;2022-12-17;2022;50;12;verão;férias escolares;7;true;CANADÁ;12;3182
+2022-12-11;2022-12-17;2022;50;12;verão;férias escolares;7;true;ESTADOS UNIDOS DA AMÉRICA;151;36750
+2022-12-11;2022-12-17;2022;50;12;verão;férias escolares;7;true;REINO UNIDO;17;5137
+2022-12-18;2022-12-24;2022;51;12;verão;férias escolares;7;true;CANADÁ;12;3622
+2022-12-18;2022-12-24;2022;51;12;verão;férias escolares;7;true;ESTADOS UNIDOS DA AMÉRICA;171;42307
+2022-12-18;2022-12-24;2022;51;12;verão;férias escolares;7;true;REINO UNIDO;18;5297
+2022-12-25;2022-12-31;2022;52;12;verão;férias escolares;7;true;CANADÁ;13;3949
+2022-12-25;2022-12-31;2022;52;12;verão;férias escolares;7;true;ESTADOS UNIDOS DA AMÉRICA;169;44275
+2022-12-25;2022-12-31;2022;52;12;verão;férias escolares;7;true;REINO UNIDO;17;5177
+2023-01-01;2023-01-07;2023;1;1;verão;férias escolares;7;true;CANADÁ;13;4534
+2023-01-01;2023-01-07;2023;1;1;verão;férias escolares;7;true;ESTADOS UNIDOS DA AMÉRICA;174;48003
+2023-01-01;2023-01-07;2023;1;1;verão;férias escolares;7;true;REINO UNIDO;17;5159
+2023-01-08;2023-01-14;2023;2;1;verão;férias escolares;7;true;CANADÁ;13;4633
+2023-01-08;2023-01-14;2023;2;1;verão;férias escolares;7;true;ESTADOS UNIDOS DA AMÉRICA;172;45056
+2023-01-08;2023-01-14;2023;2;1;verão;férias escolares;7;true;REINO UNIDO;18;5946
+2023-01-15;2023-01-21;2023;3;1;verão;férias escolares;7;true;CANADÁ;12;4336
+2023-01-15;2023-01-21;2023;3;1;verão;férias escolares;7;true;ESTADOS UNIDOS DA AMÉRICA;171;44497
+2023-01-15;2023-01-21;2023;3;1;verão;férias escolares;7;true;REINO UNIDO;16;5633
+2023-01-22;2023-01-28;2023;4;1;verão;férias escolares;7;true;CANADÁ;13;3680
+2023-01-22;2023-01-28;2023;4;1;verão;férias escolares;7;true;ESTADOS UNIDOS DA AMÉRICA;170;37691
+2023-01-22;2023-01-28;2023;4;1;verão;férias escolares;7;true;REINO UNIDO;18;5567
+2023-01-29;2023-02-04;2023;5;2;verão;volta às aulas;7;true;CANADÁ;13;3165
+2023-01-29;2023-02-04;2023;5;2;verão;volta às aulas;7;true;ESTADOS UNIDOS DA AMÉRICA;166;32820
+2023-01-29;2023-02-04;2023;5;2;verão;volta às aulas;7;true;REINO UNIDO;17;5214
+2023-02-05;2023-02-11;2023;6;2;verão;volta às aulas;7;true;CANADÁ;13;2757
+2023-02-05;2023-02-11;2023;6;2;verão;volta às aulas;7;true;ESTADOS UNIDOS DA AMÉRICA;161;31169
+2023-02-05;2023-02-11;2023;6;2;verão;volta às aulas;7;true;REINO UNIDO;18;5640
+2023-02-12;2023-02-18;2023;7;2;verão;volta às aulas;7;true;CANADÁ;13;3303
+2023-02-12;2023-02-18;2023;7;2;verão;volta às aulas;7;true;ESTADOS UNIDOS DA AMÉRICA;158;40767
+2023-02-12;2023-02-18;2023;7;2;verão;volta às aulas;7;true;REINO UNIDO;17;5731
+2023-02-19;2023-02-25;2023;8;2;verão;volta às aulas;7;true;CANADÁ;12;3125
+2023-02-19;2023-02-25;2023;8;2;verão;volta às aulas;7;true;ESTADOS UNIDOS DA AMÉRICA;157;34641
+2023-02-19;2023-02-25;2023;8;2;verão;volta às aulas;7;true;REINO UNIDO;18;6052
+2023-02-26;2023-03-04;2023;9;3;outono;período letivo;7;true;CANADÁ;11;3636
+2023-02-26;2023-03-04;2023;9;3;outono;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;154;38343
+2023-02-26;2023-03-04;2023;9;3;outono;período letivo;7;true;REINO UNIDO;18;5364
+2023-03-05;2023-03-11;2023;10;3;outono;período letivo;7;true;CANADÁ;13;3698
+2023-03-05;2023-03-11;2023;10;3;outono;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;151;34541
+2023-03-05;2023-03-11;2023;10;3;outono;período letivo;7;true;REINO UNIDO;18;5659
+2023-03-12;2023-03-18;2023;11;3;outono;período letivo;7;true;CANADÁ;13;3490
+2023-03-12;2023-03-18;2023;11;3;outono;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;143;34315
+2023-03-12;2023-03-18;2023;11;3;outono;período letivo;7;true;REINO UNIDO;17;5739
+2023-03-19;2023-03-25;2023;12;3;outono;período letivo;7;true;CANADÁ;11;3261
+2023-03-19;2023-03-25;2023;12;3;outono;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;148;37169
+2023-03-19;2023-03-25;2023;12;3;outono;período letivo;7;true;REINO UNIDO;17;6048
+2023-03-26;2023-04-01;2023;13;3;outono;período letivo;7;true;CANADÁ;10;2427
+2023-03-26;2023-04-01;2023;13;3;outono;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;141;36988
+2023-03-26;2023-04-01;2023;13;3;outono;período letivo;7;true;REINO UNIDO;16;6042
+2023-04-02;2023-04-08;2023;14;4;outono;período letivo;7;true;CANADÁ;11;2874
+2023-04-02;2023-04-08;2023;14;4;outono;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;147;34178
+2023-04-02;2023-04-08;2023;14;4;outono;período letivo;7;true;REINO UNIDO;17;5933
+2023-04-09;2023-04-15;2023;15;4;outono;período letivo;7;true;CANADÁ;11;2761
+2023-04-09;2023-04-15;2023;15;4;outono;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;147;37311
+2023-04-09;2023-04-15;2023;15;4;outono;período letivo;7;true;REINO UNIDO;17;5911
+2023-04-16;2023-04-22;2023;16;4;outono;período letivo;7;true;CANADÁ;11;2752
+2023-04-16;2023-04-22;2023;16;4;outono;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;149;37858
+2023-04-16;2023-04-22;2023;16;4;outono;período letivo;7;true;REINO UNIDO;18;6383
+2023-04-23;2023-04-29;2023;17;4;outono;período letivo;7;true;CANADÁ;11;2750
+2023-04-23;2023-04-29;2023;17;4;outono;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;145;35576
+2023-04-23;2023-04-29;2023;17;4;outono;período letivo;7;true;REINO UNIDO;16;5630
+2023-04-30;2023-05-06;2023;18;5;outono;período letivo;7;true;CANADÁ;11;2875
+2023-04-30;2023-05-06;2023;18;5;outono;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;141;36052
+2023-04-30;2023-05-06;2023;18;5;outono;período letivo;7;true;REINO UNIDO;17;6583
+2023-05-07;2023-05-13;2023;19;5;outono;período letivo;7;true;CANADÁ;11;2903
+2023-05-07;2023-05-13;2023;19;5;outono;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;144;34174
+2023-05-07;2023-05-13;2023;19;5;outono;período letivo;7;true;REINO UNIDO;18;6084
+2023-05-14;2023-05-20;2023;20;5;outono;período letivo;7;true;CANADÁ;11;2914
+2023-05-14;2023-05-20;2023;20;5;outono;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;149;34767
+2023-05-14;2023-05-20;2023;20;5;outono;período letivo;7;true;REINO UNIDO;17;5699
+2023-05-21;2023-05-27;2023;21;5;outono;período letivo;7;true;CANADÁ;11;2930
+2023-05-21;2023-05-27;2023;21;5;outono;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;148;31541
+2023-05-21;2023-05-27;2023;21;5;outono;período letivo;7;true;REINO UNIDO;17;6405
+2023-05-28;2023-06-03;2023;22;5;outono;período letivo;7;true;CANADÁ;11;2936
+2023-05-28;2023-06-03;2023;22;5;outono;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;151;35886
+2023-05-28;2023-06-03;2023;22;5;outono;período letivo;7;true;REINO UNIDO;16;5429
+2023-06-04;2023-06-10;2023;23;6;inverno;período letivo;7;true;CANADÁ;11;2520
+2023-06-04;2023-06-10;2023;23;6;inverno;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;149;35517
+2023-06-04;2023-06-10;2023;23;6;inverno;período letivo;7;true;REINO UNIDO;16;6286
+2023-06-11;2023-06-17;2023;24;6;inverno;período letivo;7;true;CANADÁ;9;2442
+2023-06-11;2023-06-17;2023;24;6;inverno;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;148;33687
+2023-06-11;2023-06-17;2023;24;6;inverno;período letivo;7;true;REINO UNIDO;16;5798
+2023-06-18;2023-06-24;2023;25;6;inverno;período letivo;7;true;CANADÁ;10;3160
+2023-06-18;2023-06-24;2023;25;6;inverno;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;156;40383
+2023-06-18;2023-06-24;2023;25;6;inverno;período letivo;7;true;REINO UNIDO;17;5873
+2023-06-25;2023-07-01;2023;26;6;inverno;período letivo;7;true;CANADÁ;11;3100
+2023-06-25;2023-07-01;2023;26;6;inverno;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;157;41777
+2023-06-25;2023-07-01;2023;26;6;inverno;período letivo;7;true;REINO UNIDO;16;5420
+2023-07-02;2023-07-08;2023;27;7;inverno;férias escolares;7;true;CANADÁ;11;2970
+2023-07-02;2023-07-08;2023;27;7;inverno;férias escolares;7;true;ESTADOS UNIDOS DA AMÉRICA;164;41612
+2023-07-02;2023-07-08;2023;27;7;inverno;férias escolares;7;true;REINO UNIDO;17;5997
+2023-07-09;2023-07-15;2023;28;7;inverno;férias escolares;7;true;CANADÁ;11;2992
+2023-07-09;2023-07-15;2023;28;7;inverno;férias escolares;7;true;ESTADOS UNIDOS DA AMÉRICA;163;40584
+2023-07-09;2023-07-15;2023;28;7;inverno;férias escolares;7;true;REINO UNIDO;16;6298
+2023-07-16;2023-07-22;2023;29;7;inverno;férias escolares;7;true;CANADÁ;11;2925
+2023-07-16;2023-07-22;2023;29;7;inverno;férias escolares;7;true;ESTADOS UNIDOS DA AMÉRICA;162;40154
+2023-07-16;2023-07-22;2023;29;7;inverno;férias escolares;7;true;REINO UNIDO;17;5550
+2023-07-23;2023-07-29;2023;30;7;inverno;férias escolares;7;true;CANADÁ;12;2987
+2023-07-23;2023-07-29;2023;30;7;inverno;férias escolares;7;true;ESTADOS UNIDOS DA AMÉRICA;162;37937
+2023-07-23;2023-07-29;2023;30;7;inverno;férias escolares;7;true;REINO UNIDO;17;5895
+2023-07-30;2023-08-05;2023;31;8;inverno;volta às aulas;7;true;CANADÁ;11;2920
+2023-07-30;2023-08-05;2023;31;8;inverno;volta às aulas;7;true;ESTADOS UNIDOS DA AMÉRICA;163;41469
+2023-07-30;2023-08-05;2023;31;8;inverno;volta às aulas;7;true;REINO UNIDO;17;5350
+2023-08-06;2023-08-12;2023;32;8;inverno;volta às aulas;7;true;CANADÁ;11;2963
+2023-08-06;2023-08-12;2023;32;8;inverno;volta às aulas;7;true;ESTADOS UNIDOS DA AMÉRICA;155;40824
+2023-08-06;2023-08-12;2023;32;8;inverno;volta às aulas;7;true;REINO UNIDO;18;6661
+2023-08-13;2023-08-19;2023;33;8;inverno;volta às aulas;7;true;CANADÁ;11;3008
+2023-08-13;2023-08-19;2023;33;8;inverno;volta às aulas;7;true;ESTADOS UNIDOS DA AMÉRICA;156;41610
+2023-08-13;2023-08-19;2023;33;8;inverno;volta às aulas;7;true;REINO UNIDO;18;6181
+2023-08-20;2023-08-26;2023;34;8;inverno;volta às aulas;7;true;CANADÁ;11;3023
+2023-08-20;2023-08-26;2023;34;8;inverno;volta às aulas;7;true;ESTADOS UNIDOS DA AMÉRICA;153;39559
+2023-08-20;2023-08-26;2023;34;8;inverno;volta às aulas;7;true;REINO UNIDO;17;5682
+2023-08-27;2023-09-02;2023;35;8;inverno;volta às aulas;7;true;CANADÁ;11;2974
+2023-08-27;2023-09-02;2023;35;8;inverno;volta às aulas;7;true;ESTADOS UNIDOS DA AMÉRICA;154;41738
+2023-08-27;2023-09-02;2023;35;8;inverno;volta às aulas;7;true;REINO UNIDO;17;6239
+2023-09-03;2023-09-09;2023;36;9;primavera;período letivo;7;true;CANADÁ;9;2386
+2023-09-03;2023-09-09;2023;36;9;primavera;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;156;42098
+2023-09-03;2023-09-09;2023;36;9;primavera;período letivo;7;true;REINO UNIDO;17;6240
+2023-09-10;2023-09-16;2023;37;9;primavera;período letivo;7;true;CANADÁ;10;2654
+2023-09-10;2023-09-16;2023;37;9;primavera;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;154;40539
+2023-09-10;2023-09-16;2023;37;9;primavera;período letivo;7;true;REINO UNIDO;19;6571
+2023-09-17;2023-09-23;2023;38;9;primavera;período letivo;7;true;CANADÁ;9;2249
+2023-09-17;2023-09-23;2023;38;9;primavera;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;159;39209
+2023-09-17;2023-09-23;2023;38;9;primavera;período letivo;7;true;REINO UNIDO;16;5586
+2023-09-24;2023-09-30;2023;39;9;primavera;período letivo;7;true;CANADÁ;9;2148
+2023-09-24;2023-09-30;2023;39;9;primavera;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;158;39378
+2023-09-24;2023-09-30;2023;39;9;primavera;período letivo;7;true;REINO UNIDO;18;6058
+2023-10-01;2023-10-07;2023;40;10;primavera;período letivo;7;true;CANADÁ;10;2688
+2023-10-01;2023-10-07;2023;40;10;primavera;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;153;41837
+2023-10-01;2023-10-07;2023;40;10;primavera;período letivo;7;true;REINO UNIDO;17;6033
+2023-10-08;2023-10-14;2023;41;10;primavera;período letivo;7;true;CANADÁ;10;2690
+2023-10-08;2023-10-14;2023;41;10;primavera;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;154;41390
+2023-10-08;2023-10-14;2023;41;10;primavera;período letivo;7;true;REINO UNIDO;17;5791
+2023-10-15;2023-10-21;2023;42;10;primavera;período letivo;7;true;CANADÁ;10;2321
+2023-10-15;2023-10-21;2023;42;10;primavera;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;158;40769
+2023-10-15;2023-10-21;2023;42;10;primavera;período letivo;7;true;REINO UNIDO;18;5585
+2023-10-22;2023-10-28;2023;43;10;primavera;período letivo;7;true;CANADÁ;11;2222
+2023-10-22;2023-10-28;2023;43;10;primavera;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;156;39449
+2023-10-22;2023-10-28;2023;43;10;primavera;período letivo;7;true;REINO UNIDO;17;5292
+2023-10-29;2023-11-04;2023;44;11;primavera;período letivo;7;true;CANADÁ;10;1828
+2023-10-29;2023-11-04;2023;44;11;primavera;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;158;38911
+2023-10-29;2023-11-04;2023;44;11;primavera;período letivo;7;true;REINO UNIDO;20;6133
+2023-11-05;2023-11-11;2023;45;11;primavera;período letivo;7;true;CANADÁ;12;2188
+2023-11-05;2023-11-11;2023;45;11;primavera;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;157;37718
+2023-11-05;2023-11-11;2023;45;11;primavera;período letivo;7;true;REINO UNIDO;17;5096
+2023-11-12;2023-11-18;2023;46;11;primavera;período letivo;7;true;CANADÁ;9;1842
+2023-11-12;2023-11-18;2023;46;11;primavera;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;151;39332
+2023-11-12;2023-11-18;2023;46;11;primavera;período letivo;7;true;REINO UNIDO;19;5586
+2023-11-19;2023-11-25;2023;47;11;primavera;período letivo;7;true;CANADÁ;11;2348
+2023-11-19;2023-11-25;2023;47;11;primavera;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;153;38939
+2023-11-19;2023-11-25;2023;47;11;primavera;período letivo;7;true;REINO UNIDO;20;4879
+2023-11-26;2023-12-02;2023;48;11;primavera;período letivo;7;true;CANADÁ;10;2654
+2023-11-26;2023-12-02;2023;48;11;primavera;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;154;39888
+2023-11-26;2023-12-02;2023;48;11;primavera;período letivo;7;true;REINO UNIDO;19;5116
+2023-12-03;2023-12-09;2023;49;12;verão;férias escolares;7;true;CANADÁ;13;2958
+2023-12-03;2023-12-09;2023;49;12;verão;férias escolares;7;true;ESTADOS UNIDOS DA AMÉRICA;165;40461
+2023-12-03;2023-12-09;2023;49;12;verão;férias escolares;7;true;REINO UNIDO;20;5452
+2023-12-10;2023-12-16;2023;50;12;verão;férias escolares;7;true;CANADÁ;12;2852
+2023-12-10;2023-12-16;2023;50;12;verão;férias escolares;7;true;ESTADOS UNIDOS DA AMÉRICA;166;44334
+2023-12-10;2023-12-16;2023;50;12;verão;férias escolares;7;true;REINO UNIDO;20;6142
+2023-12-17;2023-12-23;2023;51;12;verão;férias escolares;7;true;CANADÁ;12;3022
+2023-12-17;2023-12-23;2023;51;12;verão;férias escolares;7;true;ESTADOS UNIDOS DA AMÉRICA;202;50803
+2023-12-17;2023-12-23;2023;51;12;verão;férias escolares;7;true;REINO UNIDO;19;5679
+2023-12-24;2023-12-30;2023;52;12;verão;férias escolares;7;true;CANADÁ;12;2822
+2023-12-24;2023-12-30;2023;52;12;verão;férias escolares;7;true;ESTADOS UNIDOS DA AMÉRICA;212;53474
+2023-12-24;2023-12-30;2023;52;12;verão;férias escolares;7;true;REINO UNIDO;19;6450
+2023-12-31;2024-01-06;2024;1;1;verão;férias escolares;7;true;CANADÁ;12;2980
+2023-12-31;2024-01-06;2024;1;1;verão;férias escolares;7;true;ESTADOS UNIDOS DA AMÉRICA;211;54408
+2023-12-31;2024-01-06;2024;1;1;verão;férias escolares;7;true;REINO UNIDO;19;5833
+2024-01-07;2024-01-13;2024;2;1;verão;férias escolares;7;true;CANADÁ;12;3018
+2024-01-07;2024-01-13;2024;2;1;verão;férias escolares;7;true;ESTADOS UNIDOS DA AMÉRICA;197;52747
+2024-01-07;2024-01-13;2024;2;1;verão;férias escolares;7;true;REINO UNIDO;19;5323
+2024-01-14;2024-01-20;2024;3;1;verão;férias escolares;7;true;CANADÁ;10;3415
+2024-01-14;2024-01-20;2024;3;1;verão;férias escolares;7;true;ESTADOS UNIDOS DA AMÉRICA;194;51386
+2024-01-14;2024-01-20;2024;3;1;verão;férias escolares;7;true;REINO UNIDO;21;5867
+2024-01-21;2024-01-27;2024;4;1;verão;férias escolares;7;true;CANADÁ;13;3413
+2024-01-21;2024-01-27;2024;4;1;verão;férias escolares;7;true;ESTADOS UNIDOS DA AMÉRICA;199;49255
+2024-01-21;2024-01-27;2024;4;1;verão;férias escolares;7;true;REINO UNIDO;18;5889
+2024-01-28;2024-02-03;2024;5;1;verão;férias escolares;7;true;CANADÁ;11;2794
+2024-01-28;2024-02-03;2024;5;1;verão;férias escolares;7;true;ESTADOS UNIDOS DA AMÉRICA;197;47126
+2024-01-28;2024-02-03;2024;5;1;verão;férias escolares;7;true;REINO UNIDO;18;5561
+2024-02-04;2024-02-10;2024;6;2;verão;volta às aulas;7;true;CANADÁ;12;2731
+2024-02-04;2024-02-10;2024;6;2;verão;volta às aulas;7;true;ESTADOS UNIDOS DA AMÉRICA;192;48219
+2024-02-04;2024-02-10;2024;6;2;verão;volta às aulas;7;true;REINO UNIDO;19;6250
+2024-02-11;2024-02-17;2024;7;2;verão;volta às aulas;7;true;CANADÁ;12;2274
+2024-02-11;2024-02-17;2024;7;2;verão;volta às aulas;7;true;ESTADOS UNIDOS DA AMÉRICA;192;42926
+2024-02-11;2024-02-17;2024;7;2;verão;volta às aulas;7;true;REINO UNIDO;18;5962
+2024-02-18;2024-02-24;2024;8;2;verão;volta às aulas;7;true;CANADÁ;11;2573
+2024-02-18;2024-02-24;2024;8;2;verão;volta às aulas;7;true;ESTADOS UNIDOS DA AMÉRICA;173;38889
+2024-02-18;2024-02-24;2024;8;2;verão;volta às aulas;7;true;REINO UNIDO;20;6472
+2024-02-25;2024-03-02;2024;9;2;verão;volta às aulas;7;true;CANADÁ;11;2876
+2024-02-25;2024-03-02;2024;9;2;verão;volta às aulas;7;true;ESTADOS UNIDOS DA AMÉRICA;163;38376
+2024-02-25;2024-03-02;2024;9;2;verão;volta às aulas;7;true;REINO UNIDO;19;5715
+2024-03-03;2024-03-09;2024;10;3;outono;período letivo;7;true;CANADÁ;12;2597
+2024-03-03;2024-03-09;2024;10;3;outono;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;154;39010
+2024-03-03;2024-03-09;2024;10;3;outono;período letivo;7;true;REINO UNIDO;20;5824
+2024-03-10;2024-03-16;2024;11;3;outono;período letivo;7;true;CANADÁ;12;2919
+2024-03-10;2024-03-16;2024;11;3;outono;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;164;40472
+2024-03-10;2024-03-16;2024;11;3;outono;período letivo;7;true;REINO UNIDO;19;5739
+2024-03-17;2024-03-23;2024;12;3;outono;período letivo;7;true;CANADÁ;12;2943
+2024-03-17;2024-03-23;2024;12;3;outono;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;157;41558
+2024-03-17;2024-03-23;2024;12;3;outono;período letivo;7;true;REINO UNIDO;20;6103
+2024-03-24;2024-03-30;2024;13;3;outono;período letivo;7;true;CANADÁ;12;2768
+2024-03-24;2024-03-30;2024;13;3;outono;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;161;42109
+2024-03-24;2024-03-30;2024;13;3;outono;período letivo;7;true;REINO UNIDO;19;5863
+2024-03-31;2024-04-06;2024;14;4;outono;período letivo;7;true;CANADÁ;11;2670
+2024-03-31;2024-04-06;2024;14;4;outono;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;153;39110
+2024-03-31;2024-04-06;2024;14;4;outono;período letivo;7;true;REINO UNIDO;19;6098
+2024-04-07;2024-04-13;2024;15;4;outono;período letivo;7;true;CANADÁ;11;2781
+2024-04-07;2024-04-13;2024;15;4;outono;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;154;39058
+2024-04-07;2024-04-13;2024;15;4;outono;período letivo;7;true;REINO UNIDO;19;6140
+2024-04-14;2024-04-20;2024;16;4;outono;período letivo;7;true;CANADÁ;11;2682
+2024-04-14;2024-04-20;2024;16;4;outono;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;153;37529
+2024-04-14;2024-04-20;2024;16;4;outono;período letivo;7;true;REINO UNIDO;19;5772
+2024-04-21;2024-04-27;2024;17;4;outono;período letivo;7;true;CANADÁ;11;2703
+2024-04-21;2024-04-27;2024;17;4;outono;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;152;37270
+2024-04-21;2024-04-27;2024;17;4;outono;período letivo;7;true;REINO UNIDO;19;6537
+2024-04-28;2024-05-04;2024;18;5;outono;período letivo;7;true;CANADÁ;10;2878
+2024-04-28;2024-05-04;2024;18;5;outono;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;152;38791
+2024-04-28;2024-05-04;2024;18;5;outono;período letivo;7;true;REINO UNIDO;19;6022
+2024-05-05;2024-05-11;2024;19;5;outono;período letivo;7;true;CANADÁ;12;3012
+2024-05-05;2024-05-11;2024;19;5;outono;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;154;39159
+2024-05-05;2024-05-11;2024;19;5;outono;período letivo;7;true;REINO UNIDO;20;5483
+2024-05-12;2024-05-18;2024;20;5;outono;período letivo;7;true;CANADÁ;11;2819
+2024-05-12;2024-05-18;2024;20;5;outono;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;155;39209
+2024-05-12;2024-05-18;2024;20;5;outono;período letivo;7;true;REINO UNIDO;19;6165
+2024-05-19;2024-05-25;2024;21;5;outono;período letivo;7;true;CANADÁ;11;2734
+2024-05-19;2024-05-25;2024;21;5;outono;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;153;36157
+2024-05-19;2024-05-25;2024;21;5;outono;período letivo;7;true;REINO UNIDO;19;6083
+2024-05-26;2024-06-01;2024;22;5;outono;período letivo;7;true;CANADÁ;11;2906
+2024-05-26;2024-06-01;2024;22;5;outono;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;151;37127
+2024-05-26;2024-06-01;2024;22;5;outono;período letivo;7;true;REINO UNIDO;19;5983
+2024-06-02;2024-06-08;2024;23;6;inverno;período letivo;7;true;CANADÁ;11;2744
+2024-06-02;2024-06-08;2024;23;6;inverno;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;154;36305
+2024-06-02;2024-06-08;2024;23;6;inverno;período letivo;7;true;REINO UNIDO;20;6420
+2024-06-09;2024-06-15;2024;24;6;inverno;período letivo;7;true;CANADÁ;10;2201
+2024-06-09;2024-06-15;2024;24;6;inverno;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;156;35313
+2024-06-09;2024-06-15;2024;24;6;inverno;período letivo;7;true;REINO UNIDO;19;6017
+2024-06-16;2024-06-22;2024;25;6;inverno;período letivo;7;true;CANADÁ;11;2720
+2024-06-16;2024-06-22;2024;25;6;inverno;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;160;40686
+2024-06-16;2024-06-22;2024;25;6;inverno;período letivo;7;true;REINO UNIDO;20;6000
+2024-06-23;2024-06-29;2024;26;6;inverno;período letivo;7;true;CANADÁ;11;2746
+2024-06-23;2024-06-29;2024;26;6;inverno;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;167;44547
+2024-06-23;2024-06-29;2024;26;6;inverno;período letivo;7;true;REINO UNIDO;19;5697
+2024-06-30;2024-07-06;2024;27;7;inverno;férias escolares;7;true;CANADÁ;11;2938
+2024-06-30;2024-07-06;2024;27;7;inverno;férias escolares;7;true;ESTADOS UNIDOS DA AMÉRICA;170;44388
+2024-06-30;2024-07-06;2024;27;7;inverno;férias escolares;7;true;REINO UNIDO;19;5828
+2024-07-07;2024-07-13;2024;28;7;inverno;férias escolares;7;true;CANADÁ;11;2964
+2024-07-07;2024-07-13;2024;28;7;inverno;férias escolares;7;true;ESTADOS UNIDOS DA AMÉRICA;177;44722
+2024-07-07;2024-07-13;2024;28;7;inverno;férias escolares;7;true;REINO UNIDO;19;5420
+2024-07-14;2024-07-20;2024;29;7;inverno;férias escolares;7;true;CANADÁ;11;2970
+2024-07-14;2024-07-20;2024;29;7;inverno;férias escolares;7;true;ESTADOS UNIDOS DA AMÉRICA;175;43580
+2024-07-14;2024-07-20;2024;29;7;inverno;férias escolares;7;true;REINO UNIDO;20;5804
+2024-07-21;2024-07-27;2024;30;7;inverno;férias escolares;7;true;CANADÁ;11;2570
+2024-07-21;2024-07-27;2024;30;7;inverno;férias escolares;7;true;ESTADOS UNIDOS DA AMÉRICA;177;41741
+2024-07-21;2024-07-27;2024;30;7;inverno;férias escolares;7;true;REINO UNIDO;20;5342
+2024-07-28;2024-08-03;2024;31;7;inverno;férias escolares;7;true;CANADÁ;11;2680
+2024-07-28;2024-08-03;2024;31;7;inverno;férias escolares;7;true;ESTADOS UNIDOS DA AMÉRICA;167;41461
+2024-07-28;2024-08-03;2024;31;7;inverno;férias escolares;7;true;REINO UNIDO;19;5293
+2024-08-04;2024-08-10;2024;32;8;inverno;volta às aulas;7;true;CANADÁ;11;2900
+2024-08-04;2024-08-10;2024;32;8;inverno;volta às aulas;7;true;ESTADOS UNIDOS DA AMÉRICA;162;41148
+2024-08-04;2024-08-10;2024;32;8;inverno;volta às aulas;7;true;REINO UNIDO;18;5948
+2024-08-11;2024-08-17;2024;33;8;inverno;volta às aulas;7;true;CANADÁ;11;2996
+2024-08-11;2024-08-17;2024;33;8;inverno;volta às aulas;7;true;ESTADOS UNIDOS DA AMÉRICA;169;42886
+2024-08-11;2024-08-17;2024;33;8;inverno;volta às aulas;7;true;REINO UNIDO;17;5645
+2024-08-18;2024-08-24;2024;34;8;inverno;volta às aulas;7;true;CANADÁ;10;2791
+2024-08-18;2024-08-24;2024;34;8;inverno;volta às aulas;7;true;ESTADOS UNIDOS DA AMÉRICA;170;41710
+2024-08-18;2024-08-24;2024;34;8;inverno;volta às aulas;7;true;REINO UNIDO;20;6358
+2024-08-25;2024-08-31;2024;35;8;inverno;volta às aulas;7;true;CANADÁ;11;3073
+2024-08-25;2024-08-31;2024;35;8;inverno;volta às aulas;7;true;ESTADOS UNIDOS DA AMÉRICA;167;41799
+2024-08-25;2024-08-31;2024;35;8;inverno;volta às aulas;7;true;REINO UNIDO;20;6388
+2024-09-01;2024-09-07;2024;36;9;primavera;período letivo;7;true;CANADÁ;11;3138
+2024-09-01;2024-09-07;2024;36;9;primavera;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;161;43700
+2024-09-01;2024-09-07;2024;36;9;primavera;período letivo;7;true;REINO UNIDO;20;6332
+2024-09-08;2024-09-14;2024;37;9;primavera;período letivo;7;true;CANADÁ;10;2752
+2024-09-08;2024-09-14;2024;37;9;primavera;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;171;43720
+2024-09-08;2024-09-14;2024;37;9;primavera;período letivo;7;true;REINO UNIDO;20;6146
+2024-09-15;2024-09-21;2024;38;9;primavera;período letivo;7;true;CANADÁ;11;2661
+2024-09-15;2024-09-21;2024;38;9;primavera;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;166;41935
+2024-09-15;2024-09-21;2024;38;9;primavera;período letivo;7;true;REINO UNIDO;20;6125
+2024-09-22;2024-09-28;2024;39;9;primavera;período letivo;7;true;CANADÁ;11;2420
+2024-09-22;2024-09-28;2024;39;9;primavera;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;173;39458
+2024-09-22;2024-09-28;2024;39;9;primavera;período letivo;7;true;REINO UNIDO;20;6174
+2024-09-29;2024-10-05;2024;40;10;primavera;período letivo;7;true;CANADÁ;10;2482
+2024-09-29;2024-10-05;2024;40;10;primavera;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;172;42199
+2024-09-29;2024-10-05;2024;40;10;primavera;período letivo;7;true;REINO UNIDO;19;6090
+2024-10-06;2024-10-12;2024;41;10;primavera;período letivo;7;true;CANADÁ;9;2317
+2024-10-06;2024-10-12;2024;41;10;primavera;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;170;41745
+2024-10-06;2024-10-12;2024;41;10;primavera;período letivo;7;true;REINO UNIDO;18;5697
+2024-10-13;2024-10-19;2024;42;10;primavera;período letivo;7;true;CANADÁ;12;2992
+2024-10-13;2024-10-19;2024;42;10;primavera;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;180;46735
+2024-10-13;2024-10-19;2024;42;10;primavera;período letivo;7;true;REINO UNIDO;20;5845
+2024-10-20;2024-10-26;2024;43;10;primavera;período letivo;7;true;CANADÁ;11;2186
+2024-10-20;2024-10-26;2024;43;10;primavera;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;170;42683
+2024-10-20;2024-10-26;2024;43;10;primavera;período letivo;7;true;REINO UNIDO;20;5488
+2024-10-27;2024-11-02;2024;44;10;primavera;período letivo;7;true;CANADÁ;9;1566
+2024-10-27;2024-11-02;2024;44;10;primavera;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;193;44507
+2024-10-27;2024-11-02;2024;44;10;primavera;período letivo;7;true;REINO UNIDO;22;6355
+2024-11-03;2024-11-09;2024;45;11;primavera;período letivo;7;true;CANADÁ;9;1718
+2024-11-03;2024-11-09;2024;45;11;primavera;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;185;42160
+2024-11-03;2024-11-09;2024;45;11;primavera;período letivo;7;true;REINO UNIDO;21;6304
+2024-11-10;2024-11-16;2024;46;11;primavera;período letivo;7;true;CANADÁ;10;2055
+2024-11-10;2024-11-16;2024;46;11;primavera;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;186;48961
+2024-11-10;2024-11-16;2024;46;11;primavera;período letivo;7;true;REINO UNIDO;24;6639
+2024-11-17;2024-11-23;2024;47;11;primavera;período letivo;7;true;CANADÁ;10;1932
+2024-11-17;2024-11-23;2024;47;11;primavera;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;194;45213
+2024-11-17;2024-11-23;2024;47;11;primavera;período letivo;7;true;REINO UNIDO;21;5272
+2024-11-24;2024-11-30;2024;48;11;primavera;período letivo;7;true;CANADÁ;10;2008
+2024-11-24;2024-11-30;2024;48;11;primavera;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;189;45795
+2024-11-24;2024-11-30;2024;48;11;primavera;período letivo;7;true;REINO UNIDO;23;5500
+2024-12-01;2024-12-07;2024;49;12;verão;férias escolares;7;true;CANADÁ;12;2623
+2024-12-01;2024-12-07;2024;49;12;verão;férias escolares;7;true;ESTADOS UNIDOS DA AMÉRICA;195;47443
+2024-12-01;2024-12-07;2024;49;12;verão;férias escolares;7;true;REINO UNIDO;23;5821
+2024-12-08;2024-12-14;2024;50;12;verão;férias escolares;7;true;CANADÁ;14;2983
+2024-12-08;2024-12-14;2024;50;12;verão;férias escolares;7;true;ESTADOS UNIDOS DA AMÉRICA;206;51992
+2024-12-08;2024-12-14;2024;50;12;verão;férias escolares;7;true;REINO UNIDO;22;6597
+2024-12-15;2024-12-21;2024;51;12;verão;férias escolares;7;true;CANADÁ;14;3511
+2024-12-15;2024-12-21;2024;51;12;verão;férias escolares;7;true;ESTADOS UNIDOS DA AMÉRICA;225;56373
+2024-12-15;2024-12-21;2024;51;12;verão;férias escolares;7;true;REINO UNIDO;22;6558
+2024-12-22;2024-12-28;2024;52;12;verão;férias escolares;7;true;CANADÁ;13;3307
+2024-12-22;2024-12-28;2024;52;12;verão;férias escolares;7;true;ESTADOS UNIDOS DA AMÉRICA;233;57694
+2024-12-22;2024-12-28;2024;52;12;verão;férias escolares;7;true;REINO UNIDO;22;6238
+2024-12-29;2025-01-04;2025;1;1;verão;férias escolares;7;true;CANADÁ;13;3863
+2024-12-29;2025-01-04;2025;1;1;verão;férias escolares;7;true;ESTADOS UNIDOS DA AMÉRICA;234;59927
+2024-12-29;2025-01-04;2025;1;1;verão;férias escolares;7;true;REINO UNIDO;22;6528
+2025-01-05;2025-01-11;2025;2;1;verão;férias escolares;7;true;CANADÁ;13;3208
+2025-01-05;2025-01-11;2025;2;1;verão;férias escolares;7;true;ESTADOS UNIDOS DA AMÉRICA;237;59288
+2025-01-05;2025-01-11;2025;2;1;verão;férias escolares;7;true;REINO UNIDO;23;7489
+2025-01-12;2025-01-18;2025;3;1;verão;férias escolares;7;true;CANADÁ;14;3742
+2025-01-12;2025-01-18;2025;3;1;verão;férias escolares;7;true;ESTADOS UNIDOS DA AMÉRICA;236;58160
+2025-01-12;2025-01-18;2025;3;1;verão;férias escolares;7;true;REINO UNIDO;22;7054
+2025-01-19;2025-01-25;2025;4;1;verão;férias escolares;7;true;CANADÁ;14;3376
+2025-01-19;2025-01-25;2025;4;1;verão;férias escolares;7;true;ESTADOS UNIDOS DA AMÉRICA;224;52926
+2025-01-19;2025-01-25;2025;4;1;verão;férias escolares;7;true;REINO UNIDO;22;6212
+2025-01-26;2025-02-01;2025;5;1;verão;férias escolares;7;true;CANADÁ;14;3203
+2025-01-26;2025-02-01;2025;5;1;verão;férias escolares;7;true;ESTADOS UNIDOS DA AMÉRICA;232;50588
+2025-01-26;2025-02-01;2025;5;1;verão;férias escolares;7;true;REINO UNIDO;21;6224
+2025-02-02;2025-02-08;2025;6;2;verão;volta às aulas;7;true;CANADÁ;14;2535
+2025-02-02;2025-02-08;2025;6;2;verão;volta às aulas;7;true;ESTADOS UNIDOS DA AMÉRICA;222;44380
+2025-02-02;2025-02-08;2025;6;2;verão;volta às aulas;7;true;REINO UNIDO;24;6551
+2025-02-09;2025-02-15;2025;7;2;verão;volta às aulas;7;true;CANADÁ;12;2214
+2025-02-09;2025-02-15;2025;7;2;verão;volta às aulas;7;true;ESTADOS UNIDOS DA AMÉRICA;222;40769
+2025-02-09;2025-02-15;2025;7;2;verão;volta às aulas;7;true;REINO UNIDO;21;5218
+2025-02-16;2025-02-22;2025;8;2;verão;volta às aulas;7;true;CANADÁ;11;2607
+2025-02-16;2025-02-22;2025;8;2;verão;volta às aulas;7;true;ESTADOS UNIDOS DA AMÉRICA;222;47762
+2025-02-16;2025-02-22;2025;8;2;verão;volta às aulas;7;true;REINO UNIDO;23;6877
+2025-02-23;2025-03-01;2025;9;2;verão;volta às aulas;7;true;CANADÁ;14;3312
+2025-02-23;2025-03-01;2025;9;2;verão;volta às aulas;7;true;ESTADOS UNIDOS DA AMÉRICA;226;58060
+2025-02-23;2025-03-01;2025;9;2;verão;volta às aulas;7;true;REINO UNIDO;23;7099
+2025-03-02;2025-03-08;2025;10;3;outono;período letivo;7;true;CANADÁ;14;3091
+2025-03-02;2025-03-08;2025;10;3;outono;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;230;53051
+2025-03-02;2025-03-08;2025;10;3;outono;período letivo;7;true;REINO UNIDO;21;6855
+2025-03-09;2025-03-15;2025;11;3;outono;período letivo;7;true;CANADÁ;13;3192
+2025-03-09;2025-03-15;2025;11;3;outono;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;220;47948
+2025-03-09;2025-03-15;2025;11;3;outono;período letivo;7;true;REINO UNIDO;23;7757
+2025-03-16;2025-03-22;2025;12;3;outono;período letivo;7;true;CANADÁ;12;2808
+2025-03-16;2025-03-22;2025;12;3;outono;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;214;48557
+2025-03-16;2025-03-22;2025;12;3;outono;período letivo;7;true;REINO UNIDO;17;5441
+2025-03-23;2025-03-29;2025;13;3;outono;período letivo;7;true;CANADÁ;15;3224
+2025-03-23;2025-03-29;2025;13;3;outono;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;214;48440
+2025-03-23;2025-03-29;2025;13;3;outono;período letivo;7;true;REINO UNIDO;25;7167
+2025-03-30;2025-04-05;2025;14;4;outono;período letivo;7;true;CANADÁ;11;2698
+2025-03-30;2025-04-05;2025;14;4;outono;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;180;44948
+2025-03-30;2025-04-05;2025;14;4;outono;período letivo;7;true;REINO UNIDO;19;5686
+2025-04-06;2025-04-12;2025;15;4;outono;período letivo;7;true;CANADÁ;11;2653
+2025-04-06;2025-04-12;2025;15;4;outono;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;184;45486
+2025-04-06;2025-04-12;2025;15;4;outono;período letivo;7;true;REINO UNIDO;21;6552
+2025-04-13;2025-04-19;2025;16;4;outono;período letivo;7;true;CANADÁ;11;2779
+2025-04-13;2025-04-19;2025;16;4;outono;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;179;46951
+2025-04-13;2025-04-19;2025;16;4;outono;período letivo;7;true;REINO UNIDO;20;6115
+2025-04-20;2025-04-26;2025;17;4;outono;período letivo;7;true;CANADÁ;11;2787
+2025-04-20;2025-04-26;2025;17;4;outono;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;179;44513
+2025-04-20;2025-04-26;2025;17;4;outono;período letivo;7;true;REINO UNIDO;19;6209
+2025-04-27;2025-05-03;2025;18;4;outono;período letivo;7;true;CANADÁ;11;2799
+2025-04-27;2025-05-03;2025;18;4;outono;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;173;45021
+2025-04-27;2025-05-03;2025;18;4;outono;período letivo;7;true;REINO UNIDO;20;5977
+2025-05-04;2025-05-10;2025;19;5;outono;período letivo;7;true;CANADÁ;11;2856
+2025-05-04;2025-05-10;2025;19;5;outono;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;176;44378
+2025-05-04;2025-05-10;2025;19;5;outono;período letivo;7;true;REINO UNIDO;19;5687
+2025-05-11;2025-05-17;2025;20;5;outono;período letivo;7;true;CANADÁ;11;2909
+2025-05-11;2025-05-17;2025;20;5;outono;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;179;44854
+2025-05-11;2025-05-17;2025;20;5;outono;período letivo;7;true;REINO UNIDO;20;6460
+2025-05-18;2025-05-24;2025;21;5;outono;período letivo;7;true;CANADÁ;11;2790
+2025-05-18;2025-05-24;2025;21;5;outono;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;181;39079
+2025-05-18;2025-05-24;2025;21;5;outono;período letivo;7;true;REINO UNIDO;20;6013
+2025-05-25;2025-05-31;2025;22;5;outono;período letivo;7;true;CANADÁ;11;2843
+2025-05-25;2025-05-31;2025;22;5;outono;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;177;37860
+2025-05-25;2025-05-31;2025;22;5;outono;período letivo;7;true;REINO UNIDO;19;6082
+2025-06-01;2025-06-07;2025;23;6;inverno;período letivo;7;true;CANADÁ;11;2700
+2025-06-01;2025-06-07;2025;23;6;inverno;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;174;37297
+2025-06-01;2025-06-07;2025;23;6;inverno;período letivo;7;true;REINO UNIDO;20;5637
+2025-06-08;2025-06-14;2025;24;6;inverno;período letivo;7;true;CANADÁ;11;2749
+2025-06-08;2025-06-14;2025;24;6;inverno;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;182;44080
+2025-06-08;2025-06-14;2025;24;6;inverno;período letivo;7;true;REINO UNIDO;20;5959
+2025-06-15;2025-06-21;2025;25;6;inverno;período letivo;7;true;CANADÁ;11;2860
+2025-06-15;2025-06-21;2025;25;6;inverno;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;180;46980
+2025-06-15;2025-06-21;2025;25;6;inverno;período letivo;7;true;REINO UNIDO;19;5671
+2025-06-22;2025-06-28;2025;26;6;inverno;período letivo;7;true;CANADÁ;11;2954
+2025-06-22;2025-06-28;2025;26;6;inverno;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;186;46791
+2025-06-22;2025-06-28;2025;26;6;inverno;período letivo;7;true;REINO UNIDO;21;6630
+2025-06-29;2025-07-05;2025;27;7;inverno;férias escolares;7;true;CANADÁ;11;2991
+2025-06-29;2025-07-05;2025;27;7;inverno;férias escolares;7;true;ESTADOS UNIDOS DA AMÉRICA;190;47112
+2025-06-29;2025-07-05;2025;27;7;inverno;férias escolares;7;true;REINO UNIDO;18;5626
+2025-07-06;2025-07-12;2025;28;7;inverno;férias escolares;7;true;CANADÁ;11;2940
+2025-07-06;2025-07-12;2025;28;7;inverno;férias escolares;7;true;ESTADOS UNIDOS DA AMÉRICA;182;45731
+2025-07-06;2025-07-12;2025;28;7;inverno;férias escolares;7;true;REINO UNIDO;20;5815
+2025-07-13;2025-07-19;2025;29;7;inverno;férias escolares;7;true;CANADÁ;11;2810
+2025-07-13;2025-07-19;2025;29;7;inverno;férias escolares;7;true;ESTADOS UNIDOS DA AMÉRICA;180;45220
+2025-07-13;2025-07-19;2025;29;7;inverno;férias escolares;7;true;REINO UNIDO;19;5441
+2025-07-20;2025-07-26;2025;30;7;inverno;férias escolares;7;true;CANADÁ;11;2783
+2025-07-20;2025-07-26;2025;30;7;inverno;férias escolares;7;true;ESTADOS UNIDOS DA AMÉRICA;189;44348
+2025-07-20;2025-07-26;2025;30;7;inverno;férias escolares;7;true;REINO UNIDO;20;5405
+2025-07-27;2025-08-02;2025;31;7;inverno;férias escolares;7;true;CANADÁ;11;2681
+2025-07-27;2025-08-02;2025;31;7;inverno;férias escolares;7;true;ESTADOS UNIDOS DA AMÉRICA;190;44546
+2025-07-27;2025-08-02;2025;31;7;inverno;férias escolares;7;true;REINO UNIDO;20;5074
+2025-08-03;2025-08-09;2025;32;8;inverno;volta às aulas;7;true;CANADÁ;10;2825
+2025-08-03;2025-08-09;2025;32;8;inverno;volta às aulas;7;true;ESTADOS UNIDOS DA AMÉRICA;183;43301
+2025-08-03;2025-08-09;2025;32;8;inverno;volta às aulas;7;true;REINO UNIDO;19;5731
+2025-08-10;2025-08-16;2025;33;8;inverno;volta às aulas;7;true;CANADÁ;8;2113
+2025-08-10;2025-08-16;2025;33;8;inverno;volta às aulas;7;true;ESTADOS UNIDOS DA AMÉRICA;175;44308
+2025-08-10;2025-08-16;2025;33;8;inverno;volta às aulas;7;true;REINO UNIDO;20;6404
+2025-08-17;2025-08-23;2025;34;8;inverno;volta às aulas;7;true;CANADÁ;6;1554
+2025-08-17;2025-08-23;2025;34;8;inverno;volta às aulas;7;true;ESTADOS UNIDOS DA AMÉRICA;171;43732
+2025-08-17;2025-08-23;2025;34;8;inverno;volta às aulas;7;true;REINO UNIDO;19;6207
+2025-08-24;2025-08-30;2025;35;8;inverno;volta às aulas;7;true;CANADÁ;11;3037
+2025-08-24;2025-08-30;2025;35;8;inverno;volta às aulas;7;true;ESTADOS UNIDOS DA AMÉRICA;168;41781
+2025-08-24;2025-08-30;2025;35;8;inverno;volta às aulas;7;true;REINO UNIDO;20;6501
+2025-08-31;2025-09-06;2025;36;9;primavera;período letivo;7;true;CANADÁ;11;2968
+2025-08-31;2025-09-06;2025;36;9;primavera;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;169;44442
+2025-08-31;2025-09-06;2025;36;9;primavera;período letivo;7;true;REINO UNIDO;18;5942
+2025-09-07;2025-09-13;2025;37;9;primavera;período letivo;7;true;CANADÁ;11;2854
+2025-09-07;2025-09-13;2025;37;9;primavera;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;169;41773
+2025-09-07;2025-09-13;2025;37;9;primavera;período letivo;7;true;REINO UNIDO;18;5595
+2025-09-14;2025-09-20;2025;38;9;primavera;período letivo;7;true;CANADÁ;10;2839
+2025-09-14;2025-09-20;2025;38;9;primavera;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;169;41635
+2025-09-14;2025-09-20;2025;38;9;primavera;período letivo;7;true;REINO UNIDO;19;6389
+2025-09-21;2025-09-27;2025;39;9;primavera;período letivo;7;true;CANADÁ;10;2352
+2025-09-21;2025-09-27;2025;39;9;primavera;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;164;38430
+2025-09-21;2025-09-27;2025;39;9;primavera;período letivo;7;true;REINO UNIDO;17;5705
+2025-09-28;2025-10-04;2025;40;10;primavera;período letivo;7;true;CANADÁ;11;3048
+2025-09-28;2025-10-04;2025;40;10;primavera;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;168;41647
+2025-09-28;2025-10-04;2025;40;10;primavera;período letivo;7;true;REINO UNIDO;20;6489
+2025-10-05;2025-10-11;2025;41;10;primavera;período letivo;7;true;CANADÁ;11;2814
+2025-10-05;2025-10-11;2025;41;10;primavera;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;171;43148
+2025-10-05;2025-10-11;2025;41;10;primavera;período letivo;7;true;REINO UNIDO;18;6158
+2025-10-12;2025-10-18;2025;42;10;primavera;período letivo;7;true;CANADÁ;10;2721
+2025-10-12;2025-10-18;2025;42;10;primavera;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;167;43818
+2025-10-12;2025-10-18;2025;42;10;primavera;período letivo;7;true;REINO UNIDO;20;5872
+2025-10-19;2025-10-25;2025;43;10;primavera;período letivo;7;true;CANADÁ;11;2636
+2025-10-19;2025-10-25;2025;43;10;primavera;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;170;42078
+2025-10-19;2025-10-25;2025;43;10;primavera;período letivo;7;true;REINO UNIDO;20;5222
+2025-10-26;2025-11-01;2025;44;10;primavera;período letivo;7;true;CANADÁ;12;2561
+2025-10-26;2025-11-01;2025;44;10;primavera;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;175;42329
+2025-10-26;2025-11-01;2025;44;10;primavera;período letivo;7;true;REINO UNIDO;19;5896
+2025-11-02;2025-11-08;2025;45;11;primavera;período letivo;7;true;CANADÁ;12;2200
+2025-11-02;2025-11-08;2025;45;11;primavera;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;188;40087
+2025-11-02;2025-11-08;2025;45;11;primavera;período letivo;7;true;REINO UNIDO;20;5885
+2025-11-09;2025-11-15;2025;46;11;primavera;período letivo;7;true;CANADÁ;12;2505
+2025-11-09;2025-11-15;2025;46;11;primavera;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;188;42805
+2025-11-09;2025-11-15;2025;46;11;primavera;período letivo;7;true;REINO UNIDO;18;5817
+2025-11-16;2025-11-22;2025;47;11;primavera;período letivo;7;true;CANADÁ;12;2825
+2025-11-16;2025-11-22;2025;47;11;primavera;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;183;47329
+2025-11-16;2025-11-22;2025;47;11;primavera;período letivo;7;true;REINO UNIDO;20;5969
+2025-11-23;2025-11-29;2025;48;11;primavera;período letivo;7;true;CANADÁ;12;2763
+2025-11-23;2025-11-29;2025;48;11;primavera;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;176;45525
+2025-11-23;2025-11-29;2025;48;11;primavera;período letivo;7;true;REINO UNIDO;19;5793
+2025-11-30;2025-12-06;2025;49;12;verão;férias escolares;7;true;CANADÁ;15;3057
+2025-11-30;2025-12-06;2025;49;12;verão;férias escolares;7;true;ESTADOS UNIDOS DA AMÉRICA;190;48003
+2025-11-30;2025-12-06;2025;49;12;verão;férias escolares;7;true;REINO UNIDO;19;5521
+2025-12-07;2025-12-13;2025;50;12;verão;férias escolares;7;true;CANADÁ;16;3773
+2025-12-07;2025-12-13;2025;50;12;verão;férias escolares;7;true;ESTADOS UNIDOS DA AMÉRICA;198;49379
+2025-12-07;2025-12-13;2025;50;12;verão;férias escolares;7;true;REINO UNIDO;20;5590
+2025-12-14;2025-12-20;2025;51;12;verão;férias escolares;7;true;CANADÁ;17;4445
+2025-12-14;2025-12-20;2025;51;12;verão;férias escolares;7;true;ESTADOS UNIDOS DA AMÉRICA;216;55870
+2025-12-14;2025-12-20;2025;51;12;verão;férias escolares;7;true;REINO UNIDO;20;5933
+2025-12-21;2025-12-27;2025;52;12;verão;férias escolares;7;true;CANADÁ;17;4465
+2025-12-21;2025-12-27;2025;52;12;verão;férias escolares;7;true;ESTADOS UNIDOS DA AMÉRICA;227;58460
+2025-12-21;2025-12-27;2025;52;12;verão;férias escolares;7;true;REINO UNIDO;20;6431
+2025-12-28;2026-01-03;2025;53;12;verão;férias escolares;7;true;CANADÁ;16;4536
+2025-12-28;2026-01-03;2025;53;12;verão;férias escolares;7;true;ESTADOS UNIDOS DA AMÉRICA;237;60383
+2025-12-28;2026-01-03;2025;53;12;verão;férias escolares;7;true;REINO UNIDO;19;5902
+2026-01-04;2026-01-10;2026;1;1;verão;férias escolares;7;true;CANADÁ;15;4335
+2026-01-04;2026-01-10;2026;1;1;verão;férias escolares;7;true;ESTADOS UNIDOS DA AMÉRICA;232;60504
+2026-01-04;2026-01-10;2026;1;1;verão;férias escolares;7;true;REINO UNIDO;20;6277
+2026-01-11;2026-01-17;2026;2;1;verão;férias escolares;7;true;CANADÁ;14;3816
+2026-01-11;2026-01-17;2026;2;1;verão;férias escolares;7;true;ESTADOS UNIDOS DA AMÉRICA;221;59007
+2026-01-11;2026-01-17;2026;2;1;verão;férias escolares;7;true;REINO UNIDO;21;6362
+2026-01-18;2026-01-24;2026;3;1;verão;férias escolares;7;true;CANADÁ;15;3804
+2026-01-18;2026-01-24;2026;3;1;verão;férias escolares;7;true;ESTADOS UNIDOS DA AMÉRICA;224;54975
+2026-01-18;2026-01-24;2026;3;1;verão;férias escolares;7;true;REINO UNIDO;20;6178
+2026-01-25;2026-01-31;2026;4;1;verão;férias escolares;7;true;CANADÁ;13;3541
+2026-01-25;2026-01-31;2026;4;1;verão;férias escolares;7;true;ESTADOS UNIDOS DA AMÉRICA;215;52256
+2026-01-25;2026-01-31;2026;4;1;verão;férias escolares;7;true;REINO UNIDO;19;5838
+2026-02-01;2026-02-07;2026;5;2;verão;volta às aulas;7;true;CANADÁ;16;3371
+2026-02-01;2026-02-07;2026;5;2;verão;volta às aulas;7;true;ESTADOS UNIDOS DA AMÉRICA;214;44438
+2026-02-01;2026-02-07;2026;5;2;verão;volta às aulas;7;true;REINO UNIDO;20;6131
+2026-02-08;2026-02-14;2026;6;2;verão;volta às aulas;7;true;CANADÁ;18;4176
+2026-02-08;2026-02-14;2026;6;2;verão;volta às aulas;7;true;ESTADOS UNIDOS DA AMÉRICA;213;51219
+2026-02-08;2026-02-14;2026;6;2;verão;volta às aulas;7;true;REINO UNIDO;21;6432
+2026-02-15;2026-02-21;2026;7;2;verão;volta às aulas;7;true;CANADÁ;18;4101
+2026-02-15;2026-02-21;2026;7;2;verão;volta às aulas;7;true;ESTADOS UNIDOS DA AMÉRICA;208;48485
+2026-02-15;2026-02-21;2026;7;2;verão;volta às aulas;7;true;REINO UNIDO;19;5937
+2026-02-22;2026-02-28;2026;8;2;verão;volta às aulas;7;true;CANADÁ;15;4349
+2026-02-22;2026-02-28;2026;8;2;verão;volta às aulas;7;true;ESTADOS UNIDOS DA AMÉRICA;180;45405
+2026-02-22;2026-02-28;2026;8;2;verão;volta às aulas;7;true;REINO UNIDO;19;6198
+2026-03-01;2026-03-07;2026;9;3;outono;período letivo;7;true;CANADÁ;18;4257
+2026-03-01;2026-03-07;2026;9;3;outono;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;195;47167
+2026-03-01;2026-03-07;2026;9;3;outono;período letivo;7;true;REINO UNIDO;21;6669
+2026-03-08;2026-03-14;2026;10;3;outono;período letivo;7;true;CANADÁ;17;3959
+2026-03-08;2026-03-14;2026;10;3;outono;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;196;46492
+2026-03-08;2026-03-14;2026;10;3;outono;período letivo;7;true;REINO UNIDO;19;6143
+2026-03-15;2026-03-21;2026;11;3;outono;período letivo;7;true;CANADÁ;18;4206
+2026-03-15;2026-03-21;2026;11;3;outono;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;192;49621
+2026-03-15;2026-03-21;2026;11;3;outono;período letivo;7;true;REINO UNIDO;19;6160
+2026-03-22;2026-03-28;2026;12;3;outono;período letivo;7;true;CANADÁ;18;4491
+2026-03-22;2026-03-28;2026;12;3;outono;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;198;50894
+2026-03-22;2026-03-28;2026;12;3;outono;período letivo;7;true;REINO UNIDO;19;6256
+2026-03-29;2026-04-04;2026;13;4;outono;período letivo;7;true;CANADÁ;13;3445
+2026-03-29;2026-04-04;2026;13;4;outono;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;153;40186
+2026-03-29;2026-04-04;2026;13;4;outono;período letivo;7;true;REINO UNIDO;18;6067
+2026-04-05;2026-04-11;2026;14;4;outono;período letivo;7;true;CANADÁ;14;3647
+2026-04-05;2026-04-11;2026;14;4;outono;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;162;41993
+2026-04-05;2026-04-11;2026;14;4;outono;período letivo;7;true;REINO UNIDO;19;5784
+2026-04-12;2026-04-18;2026;15;4;outono;período letivo;7;true;CANADÁ;14;3874
+2026-04-12;2026-04-18;2026;15;4;outono;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;159;42458
+2026-04-12;2026-04-18;2026;15;4;outono;período letivo;7;true;REINO UNIDO;19;6558
+2026-04-19;2026-04-25;2026;16;4;outono;período letivo;7;true;CANADÁ;14;3610
+2026-04-19;2026-04-25;2026;16;4;outono;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;161;41982
+2026-04-19;2026-04-25;2026;16;4;outono;período letivo;7;true;REINO UNIDO;19;6366
+2026-04-26;2026-05-02;2026;17;4;outono;período letivo;7;true;CANADÁ;14;3810
+2026-04-26;2026-05-02;2026;17;4;outono;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;160;41629
+2026-04-26;2026-05-02;2026;17;4;outono;período letivo;7;true;REINO UNIDO;19;6195
+2026-05-03;2026-05-09;2026;18;5;outono;período letivo;7;true;CANADÁ;13;3561
+2026-05-03;2026-05-09;2026;18;5;outono;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;169;42697
+2026-05-03;2026-05-09;2026;18;5;outono;período letivo;7;true;REINO UNIDO;19;5669
+2026-05-10;2026-05-16;2026;19;5;outono;período letivo;7;true;CANADÁ;12;3248
+2026-05-10;2026-05-16;2026;19;5;outono;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;164;41429
+2026-05-10;2026-05-16;2026;19;5;outono;período letivo;7;true;REINO UNIDO;20;6185
+2026-05-17;2026-05-23;2026;20;5;outono;período letivo;7;true;CANADÁ;13;3511
+2026-05-17;2026-05-23;2026;20;5;outono;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;164;39890
+2026-05-17;2026-05-23;2026;20;5;outono;período letivo;7;true;REINO UNIDO;20;6404
+2026-05-24;2026-05-30;2026;21;5;outono;período letivo;7;true;CANADÁ;13;3446
+2026-05-24;2026-05-30;2026;21;5;outono;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;165;40189
+2026-05-24;2026-05-30;2026;21;5;outono;período letivo;7;true;REINO UNIDO;20;5970
+2026-05-31;2026-06-06;2026;22;6;inverno;período letivo;7;true;CANADÁ;12;2972
+2026-05-31;2026-06-06;2026;22;6;inverno;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;168;40180
+2026-05-31;2026-06-06;2026;22;6;inverno;período letivo;7;true;REINO UNIDO;19;6311
+2026-06-07;2026-06-13;2026;23;6;inverno;período letivo;7;true;CANADÁ;11;2752
+2026-06-07;2026-06-13;2026;23;6;inverno;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;171;38724
+2026-06-07;2026-06-13;2026;23;6;inverno;período letivo;7;true;REINO UNIDO;19;6500
+2026-06-14;2026-06-20;2026;24;6;inverno;período letivo;7;true;CANADÁ;10;2783
+2026-06-14;2026-06-20;2026;24;6;inverno;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;178;42650
+2026-06-14;2026-06-20;2026;24;6;inverno;período letivo;7;true;REINO UNIDO;18;5750
+2026-06-21;2026-06-27;2026;25;6;inverno;período letivo;7;true;CANADÁ;11;2901
+2026-06-21;2026-06-27;2026;25;6;inverno;período letivo;7;true;ESTADOS UNIDOS DA AMÉRICA;181;44448
+2026-06-21;2026-06-27;2026;25;6;inverno;período letivo;7;true;REINO UNIDO;20;6491
+2026-06-28;2026-07-04;2026;26;7;inverno;férias escolares;7;true;CANADÁ;11;2992
+2026-06-28;2026-07-04;2026;26;7;inverno;férias escolares;7;true;ESTADOS UNIDOS DA AMÉRICA;182;44650
+2026-06-28;2026-07-04;2026;26;7;inverno;férias escolares;7;true;REINO UNIDO;20;5915
+2026-07-05;2026-07-11;2026;27;7;inverno;férias escolares;7;true;CANADÁ;11;3032
+2026-07-05;2026-07-11;2026;27;7;inverno;férias escolares;7;true;ESTADOS UNIDOS DA AMÉRICA;180;43710
+2026-07-05;2026-07-11;2026;27;7;inverno;férias escolares;7;true;REINO UNIDO;18;5495
+2026-07-12;2026-07-18;2026;28;7;inverno;férias escolares;7;true;CANADÁ;10;2917
+2026-07-12;2026-07-18;2026;28;7;inverno;férias escolares;7;true;ESTADOS UNIDOS DA AMÉRICA;185;44537
+2026-07-12;2026-07-18;2026;28;7;inverno;férias escolares;7;true;REINO UNIDO;20;6315
+2026-07-19;2026-07-25;2026;29;7;inverno;férias escolares;7;true;CANADÁ;11;2841
+2026-07-19;2026-07-25;2026;29;7;inverno;férias escolares;7;true;ESTADOS UNIDOS DA AMÉRICA;187;44528
+2026-07-19;2026-07-25;2026;29;7;inverno;férias escolares;7;true;REINO UNIDO;18;5545
+2026-07-26;2026-08-01;2026;30;7;inverno;férias escolares;6;false;CANADÁ;9;2450
+2026-07-26;2026-08-01;2026;30;7;inverno;férias escolares;6;false;ESTADOS UNIDOS DA AMÉRICA;157;37919
+2026-07-26;2026-08-01;2026;30;7;inverno;férias escolares;6;false;REINO UNIDO;18;4914

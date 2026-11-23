@@ -1,0 +1,339 @@
+{
+  "t1_pico_por_segmento": {
+    "anglofono": {
+      "mesma_semana": {
+        "r": -0.236,
+        "p_efetivo": 0.2322,
+        "n": 238,
+        "n_efetivo": 27.3
+      },
+      "defasagem_pico": 3,
+      "pico": {
+        "r": -0.049,
+        "p_efetivo": 0.8073,
+        "n": 235,
+        "n_efetivo": 27.2
+      }
+    },
+    "nao_anglofono": {
+      "mesma_semana": {
+        "r": -0.301,
+        "p_efetivo": 0.1738,
+        "n": 238,
+        "n_efetivo": 22.0
+      },
+      "defasagem_pico": 2,
+      "pico": {
+        "r": -0.269,
+        "p_efetivo": 0.2248,
+        "n": 236,
+        "n_efetivo": 22.1
+      }
+    },
+    "nao_anglofono_america_sul": {
+      "mesma_semana": {
+        "r": -0.219,
+        "p_efetivo": 0.3223,
+        "n": 238,
+        "n_efetivo": 22.5
+      },
+      "defasagem_pico": 2,
+      "pico": {
+        "r": -0.208,
+        "p_efetivo": 0.348,
+        "n": 236,
+        "n_efetivo": 22.5
+      }
+    },
+    "nao_anglofono_europa": {
+      "mesma_semana": {
+        "r": -0.442,
+        "p_efetivo": 0.0347,
+        "n": 238,
+        "n_efetivo": 23.0
+      },
+      "defasagem_pico": 3,
+      "pico": {
+        "r": -0.393,
+        "p_efetivo": 0.0639,
+        "n": 235,
+        "n_efetivo": 23.0
+      }
+    },
+    "nao_anglofono_america_cn": {
+      "mesma_semana": {
+        "r": -0.331,
+        "p_efetivo": 0.0643,
+        "n": 238,
+        "n_efetivo": 32.0
+      },
+      "defasagem_pico": 3,
+      "pico": {
+        "r": -0.163,
+        "p_efetivo": 0.3654,
+        "n": 235,
+        "n_efetivo": 32.9
+      }
+    },
+    "nao_anglofono_outros": {
+      "mesma_semana": {
+        "r": -0.214,
+        "p_efetivo": 0.2032,
+        "n": 238,
+        "n_efetivo": 37.1
+      },
+      "defasagem_pico": 3,
+      "pico": {
+        "r": -0.059,
+        "p_efetivo": 0.7287,
+        "n": 235,
+        "n_efetivo": 37.0
+      }
+    },
+    "internacional": {
+      "mesma_semana": {
+        "r": -0.298,
+        "p_efetivo": 0.1766,
+        "n": 238,
+        "n_efetivo": 22.1
+      },
+      "defasagem_pico": 3,
+      "pico": {
+        "r": -0.243,
+        "p_efetivo": 0.2749,
+        "n": 235,
+        "n_efetivo": 22.1
+      }
+    }
+  },
+  "t2_parciais": {
+    "anglofono|nao_anglofono": {
+      "-8": [
+        -0.1727,
+        false
+      ],
+      "-7": [
+        -0.1616,
+        false
+      ],
+      "-6": [
+        -0.1818,
+        false
+      ],
+      "-5": [
+        -0.222,
+        false
+      ],
+      "-4": [
+        -0.2171,
+        false
+      ],
+      "-3": [
+        -0.1846,
+        false
+      ],
+      "-2": [
+        -0.1218,
+        false
+      ],
+      "-1": [
+        -0.0354,
+        false
+      ],
+      "0": [
+        0.0425,
+        false
+      ],
+      "1": [
+        0.1635,
+        false
+      ],
+      "2": [
+        0.3128,
+        true
+      ],
+      "3": [
+        0.3867,
+        true
+      ],
+      "4": [
+        0.4183,
+        true
+      ],
+      "5": [
+        0.4149,
+        true
+      ],
+      "6": [
+        0.3881,
+        true
+      ],
+      "7": [
+        0.3491,
+        true
+      ],
+      "8": [
+        0.3357,
+        true
+      ]
+    },
+    "nao_anglofono|anglofono": {
+      "-8": [
+        -0.1684,
+        false
+      ],
+      "-7": [
+        -0.1428,
+        false
+      ],
+      "-6": [
+        -0.0978,
+        false
+      ],
+      "-5": [
+        -0.0391,
+        false
+      ],
+      "-4": [
+        -0.0287,
+        false
+      ],
+      "-3": [
+        -0.0388,
+        false
+      ],
+      "-2": [
+        -0.0765,
+        false
+      ],
+      "-1": [
+        -0.1387,
+        false
+      ],
+      "0": [
+        -0.1954,
+        false
+      ],
+      "1": [
+        -0.2853,
+        false
+      ],
+      "2": [
+        -0.3976,
+        true
+      ],
+      "3": [
+        -0.4599,
+        true
+      ],
+      "4": [
+        -0.4984,
+        true
+      ],
+      "5": [
+        -0.5091,
+        true
+      ],
+      "6": [
+        -0.4991,
+        true
+      ],
+      "7": [
+        -0.481,
+        true
+      ],
+      "8": [
+        -0.4768,
+        true
+      ]
+    }
+  },
+  "t3_participacao_anglofona": {
+    "media_pct": 21.55,
+    "min_pct": 16.37,
+    "max_pct": 29.07,
+    "por_defasagem": {
+      "0": {
+        "r": 0.352,
+        "p_efetivo": 0.0446,
+        "n": 238,
+        "n_efetivo": 32.9
+      },
+      "1": {
+        "r": 0.408,
+        "p_efetivo": 0.0182,
+        "n": 237,
+        "n_efetivo": 33.1
+      },
+      "2": {
+        "r": 0.493,
+        "p_efetivo": 0.0034,
+        "n": 236,
+        "n_efetivo": 33.4
+      },
+      "3": {
+        "r": 0.543,
+        "p_efetivo": 0.001,
+        "n": 235,
+        "n_efetivo": 33.5
+      },
+      "4": {
+        "r": 0.583,
+        "p_efetivo": 0.0004,
+        "n": 234,
+        "n_efetivo": 33.2
+      },
+      "5": {
+        "r": 0.596,
+        "p_efetivo": 0.0002,
+        "n": 233,
+        "n_efetivo": 33.6
+      },
+      "6": {
+        "r": 0.584,
+        "p_efetivo": 0.0003,
+        "n": 232,
+        "n_efetivo": 34.2
+      }
+    },
+    "volume_internacional_defasagem3": {
+      "r": -0.243,
+      "p_efetivo": 0.2749,
+      "n": 235,
+      "n_efetivo": 22.1
+    }
+  },
+  "t4_r2_defasagem3": {
+    "so_anglofono": 0.002,
+    "so_nao_anglofono": 0.075,
+    "os_dois": 0.213,
+    "correlacao_entre_anglofono_e_nao": 0.864
+  },
+  "t5_perfil_temporada": {
+    "anglofono": {
+      "férias escolares": 111.4,
+      "período letivo": 95.7,
+      "volta às aulas": 97.6
+    },
+    "nao_anglofono": {
+      "férias escolares": 107.9,
+      "período letivo": 95.8,
+      "volta às aulas": 102.8
+    },
+    "nao_anglofono_america_sul": {
+      "férias escolares": 112.7,
+      "período letivo": 91.9,
+      "volta às aulas": 109.3
+    },
+    "nao_anglofono_europa": {
+      "férias escolares": 101.7,
+      "período letivo": 99.9,
+      "volta às aulas": 97.6
+    },
+    "nao_anglofono_america_cn": {
+      "férias escolares": 110.7,
+      "período letivo": 97.2,
+      "volta às aulas": 93.2
+    }
+  }
+}

@@ -1,0 +1,7 @@
+apiVersion: 1
+providers:
+  - name: grupo4
+    folder: Grupo 4
+    type: file
+    options:
+      path: /etc/grafana/provisioning/dashboards

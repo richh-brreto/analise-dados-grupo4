@@ -1,0 +1,805 @@
+{
+  "h1_correlograma_pax_curso": {
+    "-8": {
+      "r": -0.499,
+      "p_efetivo": 0.0079,
+      "n": 230,
+      "n_efetivo": 27.2
+    },
+    "-7": {
+      "r": -0.461,
+      "p_efetivo": 0.0148,
+      "n": 231,
+      "n_efetivo": 27.4
+    },
+    "-6": {
+      "r": -0.444,
+      "p_efetivo": 0.0192,
+      "n": 232,
+      "n_efetivo": 27.5
+    },
+    "-5": {
+      "r": -0.439,
+      "p_efetivo": 0.0211,
+      "n": 233,
+      "n_efetivo": 27.3
+    },
+    "-4": {
+      "r": -0.424,
+      "p_efetivo": 0.0271,
+      "n": 234,
+      "n_efetivo": 27.2
+    },
+    "-3": {
+      "r": -0.389,
+      "p_efetivo": 0.0444,
+      "n": 235,
+      "n_efetivo": 27.1
+    },
+    "-2": {
+      "r": -0.34,
+      "p_efetivo": 0.082,
+      "n": 236,
+      "n_efetivo": 27.2
+    },
+    "-1": {
+      "r": -0.284,
+      "p_efetivo": 0.1489,
+      "n": 237,
+      "n_efetivo": 27.2
+    },
+    "0": {
+      "r": -0.236,
+      "p_efetivo": 0.2322,
+      "n": 238,
+      "n_efetivo": 27.3
+    },
+    "1": {
+      "r": -0.166,
+      "p_efetivo": 0.4065,
+      "n": 237,
+      "n_efetivo": 27.3
+    },
+    "2": {
+      "r": -0.079,
+      "p_efetivo": 0.6957,
+      "n": 236,
+      "n_efetivo": 27.2
+    },
+    "3": {
+      "r": -0.049,
+      "p_efetivo": 0.8073,
+      "n": 235,
+      "n_efetivo": 27.2
+    },
+    "4": {
+      "r": -0.063,
+      "p_efetivo": 0.7544,
+      "n": 234,
+      "n_efetivo": 27.1
+    },
+    "5": {
+      "r": -0.094,
+      "p_efetivo": 0.6356,
+      "n": 233,
+      "n_efetivo": 27.6
+    },
+    "6": {
+      "r": -0.131,
+      "p_efetivo": 0.5041,
+      "n": 232,
+      "n_efetivo": 28.2
+    },
+    "7": {
+      "r": -0.175,
+      "p_efetivo": 0.3661,
+      "n": 231,
+      "n_efetivo": 28.7
+    },
+    "8": {
+      "r": -0.194,
+      "p_efetivo": 0.3179,
+      "n": 230,
+      "n_efetivo": 28.5
+    }
+  },
+  "h1_correlograma_pax_intencao": {
+    "-8": {
+      "r": -0.629,
+      "p_efetivo": 0.0004,
+      "n": 230,
+      "n_efetivo": 27.1
+    },
+    "-7": {
+      "r": -0.608,
+      "p_efetivo": 0.0007,
+      "n": 231,
+      "n_efetivo": 27.3
+    },
+    "-6": {
+      "r": -0.6,
+      "p_efetivo": 0.0009,
+      "n": 232,
+      "n_efetivo": 27.4
+    },
+    "-5": {
+      "r": -0.607,
+      "p_efetivo": 0.0008,
+      "n": 233,
+      "n_efetivo": 27.1
+    },
+    "-4": {
+      "r": -0.598,
+      "p_efetivo": 0.001,
+      "n": 234,
+      "n_efetivo": 26.8
+    },
+    "-3": {
+      "r": -0.579,
+      "p_efetivo": 0.0017,
+      "n": 235,
+      "n_efetivo": 26.6
+    },
+    "-2": {
+      "r": -0.554,
+      "p_efetivo": 0.0029,
+      "n": 236,
+      "n_efetivo": 26.7
+    },
+    "-1": {
+      "r": -0.521,
+      "p_efetivo": 0.0057,
+      "n": 237,
+      "n_efetivo": 26.6
+    },
+    "0": {
+      "r": -0.493,
+      "p_efetivo": 0.0096,
+      "n": 238,
+      "n_efetivo": 26.6
+    },
+    "1": {
+      "r": -0.437,
+      "p_efetivo": 0.0239,
+      "n": 237,
+      "n_efetivo": 26.6
+    },
+    "2": {
+      "r": -0.344,
+      "p_efetivo": 0.0824,
+      "n": 236,
+      "n_efetivo": 26.4
+    },
+    "3": {
+      "r": -0.3,
+      "p_efetivo": 0.1344,
+      "n": 235,
+      "n_efetivo": 26.3
+    },
+    "4": {
+      "r": -0.276,
+      "p_efetivo": 0.1745,
+      "n": 234,
+      "n_efetivo": 25.8
+    },
+    "5": {
+      "r": -0.261,
+      "p_efetivo": 0.1956,
+      "n": 233,
+      "n_efetivo": 26.3
+    },
+    "6": {
+      "r": -0.26,
+      "p_efetivo": 0.1913,
+      "n": 232,
+      "n_efetivo": 26.8
+    },
+    "7": {
+      "r": -0.275,
+      "p_efetivo": 0.161,
+      "n": 231,
+      "n_efetivo": 27.5
+    },
+    "8": {
+      "r": -0.272,
+      "p_efetivo": 0.1657,
+      "n": 230,
+      "n_efetivo": 27.5
+    }
+  },
+  "h1_correlograma_pax_curso_online": {
+    "-8": {
+      "r": -0.645,
+      "p_efetivo": 0.0007,
+      "n": 230,
+      "n_efetivo": 23.9
+    },
+    "-7": {
+      "r": -0.614,
+      "p_efetivo": 0.0015,
+      "n": 231,
+      "n_efetivo": 23.9
+    },
+    "-6": {
+      "r": -0.601,
+      "p_efetivo": 0.0019,
+      "n": 232,
+      "n_efetivo": 24.0
+    },
+    "-5": {
+      "r": -0.609,
+      "p_efetivo": 0.0017,
+      "n": 233,
+      "n_efetivo": 23.7
+    },
+    "-4": {
+      "r": -0.606,
+      "p_efetivo": 0.0019,
+      "n": 234,
+      "n_efetivo": 23.4
+    },
+    "-3": {
+      "r": -0.593,
+      "p_efetivo": 0.0028,
+      "n": 235,
+      "n_efetivo": 23.2
+    },
+    "-2": {
+      "r": -0.554,
+      "p_efetivo": 0.0059,
+      "n": 236,
+      "n_efetivo": 23.2
+    },
+    "-1": {
+      "r": -0.503,
+      "p_efetivo": 0.0141,
+      "n": 237,
+      "n_efetivo": 23.1
+    },
+    "0": {
+      "r": -0.45,
+      "p_efetivo": 0.0303,
+      "n": 238,
+      "n_efetivo": 23.2
+    },
+    "1": {
+      "r": -0.393,
+      "p_efetivo": 0.0596,
+      "n": 237,
+      "n_efetivo": 23.6
+    },
+    "2": {
+      "r": -0.318,
+      "p_efetivo": 0.1318,
+      "n": 236,
+      "n_efetivo": 23.8
+    },
+    "3": {
+      "r": -0.3,
+      "p_efetivo": 0.1553,
+      "n": 235,
+      "n_efetivo": 23.9
+    },
+    "4": {
+      "r": -0.301,
+      "p_efetivo": 0.1486,
+      "n": 234,
+      "n_efetivo": 24.5
+    },
+    "5": {
+      "r": -0.317,
+      "p_efetivo": 0.1224,
+      "n": 233,
+      "n_efetivo": 25.0
+    },
+    "6": {
+      "r": -0.345,
+      "p_efetivo": 0.088,
+      "n": 232,
+      "n_efetivo": 25.5
+    },
+    "7": {
+      "r": -0.371,
+      "p_efetivo": 0.0597,
+      "n": 231,
+      "n_efetivo": 26.4
+    },
+    "8": {
+      "r": -0.38,
+      "p_efetivo": 0.052,
+      "n": 230,
+      "n_efetivo": 26.7
+    }
+  },
+  "h1_correlograma_pax_razao": {
+    "-8": {
+      "r": 0.161,
+      "p_efetivo": 0.1477,
+      "n": 230,
+      "n_efetivo": 82.7
+    },
+    "-7": {
+      "r": 0.193,
+      "p_efetivo": 0.0782,
+      "n": 231,
+      "n_efetivo": 84.3
+    },
+    "-6": {
+      "r": 0.209,
+      "p_efetivo": 0.0555,
+      "n": 232,
+      "n_efetivo": 84.9
+    },
+    "-5": {
+      "r": 0.231,
+      "p_efetivo": 0.0332,
+      "n": 233,
+      "n_efetivo": 85.0
+    },
+    "-4": {
+      "r": 0.272,
+      "p_efetivo": 0.0115,
+      "n": 234,
+      "n_efetivo": 85.4
+    },
+    "-3": {
+      "r": 0.314,
+      "p_efetivo": 0.0038,
+      "n": 235,
+      "n_efetivo": 83.1
+    },
+    "-2": {
+      "r": 0.349,
+      "p_efetivo": 0.0013,
+      "n": 236,
+      "n_efetivo": 82.5
+    },
+    "-1": {
+      "r": 0.348,
+      "p_efetivo": 0.0013,
+      "n": 237,
+      "n_efetivo": 82.4
+    },
+    "0": {
+      "r": 0.343,
+      "p_efetivo": 0.0015,
+      "n": 238,
+      "n_efetivo": 82.3
+    },
+    "1": {
+      "r": 0.374,
+      "p_efetivo": 0.0006,
+      "n": 237,
+      "n_efetivo": 81.5
+    },
+    "2": {
+      "r": 0.397,
+      "p_efetivo": 0.0002,
+      "n": 236,
+      "n_efetivo": 81.9
+    },
+    "3": {
+      "r": 0.407,
+      "p_efetivo": 0.0001,
+      "n": 235,
+      "n_efetivo": 82.4
+    },
+    "4": {
+      "r": 0.377,
+      "p_efetivo": 0.0004,
+      "n": 234,
+      "n_efetivo": 82.8
+    },
+    "5": {
+      "r": 0.34,
+      "p_efetivo": 0.0018,
+      "n": 233,
+      "n_efetivo": 81.7
+    },
+    "6": {
+      "r": 0.322,
+      "p_efetivo": 0.0033,
+      "n": 232,
+      "n_efetivo": 81.3
+    },
+    "7": {
+      "r": 0.263,
+      "p_efetivo": 0.018,
+      "n": 231,
+      "n_efetivo": 80.7
+    },
+    "8": {
+      "r": 0.243,
+      "p_efetivo": 0.029,
+      "n": 230,
+      "n_efetivo": 80.9
+    }
+  },
+  "h1_correlograma_pax_passagem": {
+    "-8": {
+      "r": -0.504,
+      "p_efetivo": 0.0216,
+      "n": 230,
+      "n_efetivo": 20.5
+    },
+    "-7": {
+      "r": -0.493,
+      "p_efetivo": 0.0247,
+      "n": 231,
+      "n_efetivo": 20.6
+    },
+    "-6": {
+      "r": -0.505,
+      "p_efetivo": 0.0202,
+      "n": 232,
+      "n_efetivo": 20.8
+    },
+    "-5": {
+      "r": -0.512,
+      "p_efetivo": 0.0185,
+      "n": 233,
+      "n_efetivo": 20.7
+    },
+    "-4": {
+      "r": -0.503,
+      "p_efetivo": 0.0216,
+      "n": 234,
+      "n_efetivo": 20.6
+    },
+    "-3": {
+      "r": -0.477,
+      "p_efetivo": 0.0309,
+      "n": 235,
+      "n_efetivo": 20.5
+    },
+    "-2": {
+      "r": -0.447,
+      "p_efetivo": 0.0439,
+      "n": 236,
+      "n_efetivo": 20.7
+    },
+    "-1": {
+      "r": -0.413,
+      "p_efetivo": 0.0651,
+      "n": 237,
+      "n_efetivo": 20.7
+    },
+    "0": {
+      "r": -0.389,
+      "p_efetivo": 0.083,
+      "n": 238,
+      "n_efetivo": 20.8
+    },
+    "1": {
+      "r": -0.374,
+      "p_efetivo": 0.1008,
+      "n": 237,
+      "n_efetivo": 20.4
+    },
+    "2": {
+      "r": -0.406,
+      "p_efetivo": 0.0744,
+      "n": 236,
+      "n_efetivo": 20.1
+    },
+    "3": {
+      "r": -0.464,
+      "p_efetivo": 0.0386,
+      "n": 235,
+      "n_efetivo": 20.1
+    },
+    "4": {
+      "r": -0.532,
+      "p_efetivo": 0.0158,
+      "n": 234,
+      "n_efetivo": 19.9
+    },
+    "5": {
+      "r": -0.595,
+      "p_efetivo": 0.0059,
+      "n": 233,
+      "n_efetivo": 19.8
+    },
+    "6": {
+      "r": -0.628,
+      "p_efetivo": 0.0032,
+      "n": 232,
+      "n_efetivo": 19.8
+    },
+    "7": {
+      "r": -0.64,
+      "p_efetivo": 0.0026,
+      "n": 231,
+      "n_efetivo": 19.7
+    },
+    "8": {
+      "r": -0.636,
+      "p_efetivo": 0.0028,
+      "n": 230,
+      "n_efetivo": 19.7
+    }
+  },
+  "h1_termos_lag0": {
+    "tr_curso_ingles": {
+      "r": -0.236,
+      "p_efetivo": 0.2322,
+      "n": 238,
+      "n_efetivo": 27.3
+    },
+    "tr_aula_ingles": {
+      "r": -0.517,
+      "p_efetivo": 0.0007,
+      "n": 238,
+      "n_efetivo": 39.7
+    },
+    "tr_aprender_ingles": {
+      "r": -0.367,
+      "p_efetivo": 0.0213,
+      "n": 238,
+      "n_efetivo": 39.1
+    },
+    "tr_ingles_online": {
+      "r": -0.493,
+      "p_efetivo": 0.009,
+      "n": 238,
+      "n_efetivo": 27.0
+    },
+    "tr_professor_ingles": {
+      "r": -0.42,
+      "p_efetivo": 0.0016,
+      "n": 238,
+      "n_efetivo": 54.0
+    },
+    "tr_intencao_ingles": {
+      "r": -0.493,
+      "p_efetivo": 0.0096,
+      "n": 238,
+      "n_efetivo": 26.6
+    }
+  },
+  "h2_parcial_controle_curso_online": {
+    "0": {
+      "r": 0.382,
+      "p_efetivo": 0.0006,
+      "n": 238,
+      "n_efetivo": 77.2
+    },
+    "2": {
+      "r": 0.446,
+      "p_efetivo": 0.0001,
+      "n": 236,
+      "n_efetivo": 75.6
+    },
+    "3": {
+      "r": 0.476,
+      "p_efetivo": 0.0,
+      "n": 235,
+      "n_efetivo": 74.7
+    },
+    "4": {
+      "r": 0.454,
+      "p_efetivo": 0.0,
+      "n": 234,
+      "n_efetivo": 75.7
+    }
+  },
+  "h3_sem_dez_jan": {
+    "0": {
+      "r": -0.463,
+      "p_efetivo": 0.0077,
+      "n": 199,
+      "n_efetivo": 32.0
+    },
+    "2": {
+      "r": -0.417,
+      "p_efetivo": 0.0137,
+      "n": 197,
+      "n_efetivo": 34.4
+    },
+    "3": {
+      "r": -0.404,
+      "p_efetivo": 0.0148,
+      "n": 196,
+      "n_efetivo": 35.7
+    },
+    "4": {
+      "r": -0.445,
+      "p_efetivo": 0.0068,
+      "n": 195,
+      "n_efetivo": 35.8
+    }
+  },
+  "h3_sem_dez_jan_semanas": 199,
+  "h4_ano_contra_ano": {
+    "r": -0.135,
+    "p_efetivo": 0.1881,
+    "n": 185,
+    "n_efetivo": 97.4,
+    "pares": [
+      "2023 x 2022 (52 semanas)",
+      "2024 x 2023 (52 semanas)",
+      "2025 x 2024 (52 semanas)",
+      "2026 x 2025 (29 semanas)"
+    ],
+    "var_pax_media_pct": 12.09,
+    "var_curso_media_pct": -5.17
+  },
+  "h5_julho_vs_junho_pct": {
+    "2022": {
+      "nr_passageiros": 14.2,
+      "tr_curso_ingles": -3.3,
+      "tr_curso_online": 3.3,
+      "tr_razao_ingles_curso_online": -7.4,
+      "tr_aula_ingles": -15.2
+    },
+    "2023": {
+      "nr_passageiros": 5.3,
+      "tr_curso_ingles": 3.7,
+      "tr_curso_online": 6.7,
+      "tr_razao_ingles_curso_online": -1.4,
+      "tr_aula_ingles": -19.3
+    },
+    "2024": {
+      "nr_passageiros": 7.7,
+      "tr_curso_ingles": -7.8,
+      "tr_curso_online": 1.7,
+      "tr_razao_ingles_curso_online": -6.9,
+      "tr_aula_ingles": -22.9
+    },
+    "2025": {
+      "nr_passageiros": 2.1,
+      "tr_curso_ingles": 16.0,
+      "tr_curso_online": 9.8,
+      "tr_razao_ingles_curso_online": 2.9,
+      "tr_aula_ingles": -8.9
+    },
+    "2026": {
+      "nr_passageiros": 4.9,
+      "tr_curso_ingles": 13.5,
+      "tr_curso_online": 7.7,
+      "tr_razao_ingles_curso_online": 5.9,
+      "tr_aula_ingles": -2.8
+    }
+  },
+  "h6_perfil_temporada": {
+    "nr_passageiros": {
+      "férias escolares": 111.4,
+      "período letivo": 95.7,
+      "volta às aulas": 97.6
+    },
+    "tr_curso_ingles": {
+      "férias escolares": 104.9,
+      "período letivo": 93.6,
+      "volta às aulas": 115.6
+    },
+    "tr_aula_ingles": {
+      "férias escolares": 78.8,
+      "período letivo": 103.8,
+      "volta às aulas": 119.9
+    },
+    "tr_professor_ingles": {
+      "férias escolares": 78.1,
+      "período letivo": 107.9,
+      "volta às aulas": 106.1
+    },
+    "tr_aprender_ingles": {
+      "férias escolares": 99.8,
+      "período letivo": 97.8,
+      "volta às aulas": 108.3
+    },
+    "tr_ingles_online": {
+      "férias escolares": 98.3,
+      "período letivo": 99.0,
+      "volta às aulas": 106.2
+    },
+    "tr_curso_online": {
+      "férias escolares": 102.9,
+      "período letivo": 95.9,
+      "volta às aulas": 110.2
+    },
+    "tr_passagem_aerea": {
+      "férias escolares": 107.9,
+      "período letivo": 97.2,
+      "volta às aulas": 97.5
+    }
+  },
+  "h7_regional": {
+    "SP": {
+      "0": {
+        "r": -0.389,
+        "p_efetivo": 0.0047,
+        "n": 238,
+        "n_efetivo": 51.1
+      },
+      "2": {
+        "r": -0.233,
+        "p_efetivo": 0.1018,
+        "n": 236,
+        "n_efetivo": 50.6
+      },
+      "3": {
+        "r": -0.207,
+        "p_efetivo": 0.1475,
+        "n": 235,
+        "n_efetivo": 50.4
+      },
+      "sem_dez_jan_lag0": {
+        "r": -0.588,
+        "p_efetivo": 0.0,
+        "n": 199,
+        "n_efetivo": 52.0
+      }
+    },
+    "RJ": {
+      "0": {
+        "r": 0.134,
+        "p_efetivo": 0.2264,
+        "n": 238,
+        "n_efetivo": 83.5
+      },
+      "2": {
+        "r": 0.261,
+        "p_efetivo": 0.0165,
+        "n": 236,
+        "n_efetivo": 84.3
+      },
+      "3": {
+        "r": 0.245,
+        "p_efetivo": 0.0245,
+        "n": 235,
+        "n_efetivo": 84.1
+      },
+      "sem_dez_jan_lag0": {
+        "r": 0.181,
+        "p_efetivo": 0.0977,
+        "n": 199,
+        "n_efetivo": 85.0
+      }
+    },
+    "MG": {
+      "0": {
+        "r": -0.325,
+        "p_efetivo": 0.0091,
+        "n": 236,
+        "n_efetivo": 63.7
+      },
+      "2": {
+        "r": -0.239,
+        "p_efetivo": 0.0594,
+        "n": 234,
+        "n_efetivo": 62.8
+      },
+      "3": {
+        "r": -0.215,
+        "p_efetivo": 0.0918,
+        "n": 233,
+        "n_efetivo": 62.4
+      },
+      "sem_dez_jan_lag0": {
+        "r": -0.394,
+        "p_efetivo": 0.001,
+        "n": 197,
+        "n_efetivo": 66.8
+      }
+    }
+  },
+  "h7_transversal_ufs_com_voo": {
+    "spearman": 0.075,
+    "p": 0.8473,
+    "n_ufs": 9
+  },
+  "h8_granger_p": {
+    "voos_antecedem_busca": {
+      "1": 0.0567,
+      "2": 0.0004,
+      "3": 0.0,
+      "4": 0.0
+    },
+    "busca_antecede_voos": {
+      "1": 0.643,
+      "2": 0.8969,
+      "3": 0.8949,
+      "4": 0.3819
+    }
+  }
+}

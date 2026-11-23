@@ -12,3 +12,14 @@ data/chunks/
 
 # Pacotes gerados localmente
 *.zip
+
+# Base da EDA com todos os destinos (52 MB; fica no workspace analise-pi)
+data/base_eda_internacional.csv
+
+# Plugin DuckDB do Grafana local (binario baixado por grafana/local/instalar_plugin.sh)
+grafana/local/plugins/
+
+# Saidas do rodar_pipeline_local.sh
+logs/
+data/bronze_arquivo/
+data/bronze_nova_coleta/

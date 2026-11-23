@@ -1,0 +1,20 @@
+# Fonte de dados do Grafana local: DuckDB em memoria com uma view por tabela gold,
+# lendo os CSVs de data/gold (montados em /gold pelo docker-compose.yml).
+apiVersion: 1
+datasources:
+  - name: DuckDB gold (local)
+    type: motherduck-duckdb-datasource
+    uid: duckdb-gold
+    access: proxy
+    isDefault: true
+    editable: true
+    jsonData:
+      path: ""
+      initSql: |
+        CREATE OR REPLACE VIEW cruzamento_semanal_br AS SELECT * FROM read_csv('/gold/cruzamento_semanal_br/*.csv', delim = ';', header = true);
+        CREATE OR REPLACE VIEW cruzamento_semanal_uf AS SELECT * FROM read_csv('/gold/cruzamento_semanal_uf/*.csv', delim = ';', header = true);
+        CREATE OR REPLACE VIEW resumo_uf AS SELECT * FROM read_csv('/gold/resumo_uf/*.csv', delim = ';', header = true);
+        CREATE OR REPLACE VIEW correlacoes AS SELECT * FROM read_csv('/gold/correlacoes/*.csv', delim = ';', header = true);
+        CREATE OR REPLACE VIEW comparacao_destinos_semanal AS SELECT * FROM read_csv('/gold/comparacao_destinos_semanal/*.csv', delim = ';', header = true);
+        CREATE OR REPLACE VIEW correlacoes_destinos AS SELECT * FROM read_csv('/gold/correlacoes_destinos/*.csv', delim = ';', header = true);
+        CREATE OR REPLACE VIEW parciais_destinos AS SELECT * FROM read_csv('/gold/parciais_destinos/*.csv', delim = ';', header = true);
