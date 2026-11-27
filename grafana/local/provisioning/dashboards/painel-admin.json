@@ -1,0 +1,532 @@
+{
+  "title": "Painel do Admin",
+  "description": "",
+  "uid": "1919b763-9297-472a-a3c3-4147447b3f52",
+  "tags": [],
+  "timezone": "browser",
+  "editable": true,
+  "graphTooltip": 0,
+  "time": {
+    "from": "now-6h",
+    "to": "now"
+  },
+  "timepicker": {
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ],
+    "hidden": false
+  },
+  "hideTimepicker": false,
+  "refresh": "",
+  "fiscalYearStartMonth": 0,
+  "liveNow": false,
+  "links": [],
+  "schemaVersion": 39,
+  "version": 22,
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "grafana",
+          "uid": "-- Grafana --"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "query": "",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "templating": {
+    "list": []
+  },
+  "panels": [
+    {
+      "id": 1000,
+      "type": "row",
+      "title": "New row",
+      "collapsed": false,
+      "gridPos": {
+        "x": 0,
+        "y": 0,
+        "w": 24,
+        "h": 1
+      },
+      "panels": []
+    },
+    {
+      "id": 1,
+      "type": "table",
+      "title": "1. Auditoria de Controles de Acesso (Permissões por Professor)",
+      "description": "",
+      "gridPos": {
+        "x": 0,
+        "y": 1,
+        "w": 12,
+        "h": 9
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "mysql",
+            "uid": "mysql-escola-uid"
+          },
+          "dataset": "boost",
+          "editorMode": "code",
+          "format": "table",
+          "rawQuery": true,
+          "rawSql": "SELECT \n    p.id_professor,\n    p.nome AS Professor,\n    p.email,\n    GROUP_CONCAT(perm.nome SEPARATOR ' | ') AS Telas_Liberadas\nFROM professor p\nLEFT JOIN professor_permissao pp ON p.id_professor = pp.professor_id_professor\nLEFT JOIN permissao perm ON pp.permissao_id_permissao = perm.id_permissao\nGROUP BY p.id_professor, p.nome, p.email;",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          },
+          "hide": false
+        }
+      ],
+      "links": [],
+      "datasource": {
+        "type": "mysql",
+        "uid": "mysql-escola-uid"
+      },
+      "transformations": [],
+      "options": {
+        "cellHeight": "sm",
+        "showHeader": true,
+        "zebraStriping": false
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "value": 0,
+                "color": "green"
+              },
+              {
+                "value": 80,
+                "color": "red"
+              }
+            ]
+          },
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "auto",
+            "cellOptions": {
+              "type": "auto"
+            },
+            "footer": {
+              "reducers": []
+            },
+            "inspect": false
+          }
+        },
+        "overrides": []
+      }
+    },
+    {
+      "id": 2,
+      "type": "table",
+      "title": "2. Log de Atividades Recentes no Sistema",
+      "description": "",
+      "gridPos": {
+        "x": 12,
+        "y": 1,
+        "w": 12,
+        "h": 9
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "mysql",
+            "uid": "mysql-escola-uid"
+          },
+          "dataset": "boost",
+          "editorMode": "code",
+          "format": "table",
+          "rawQuery": true,
+          "rawSql": "SELECT \n    l.data_hora AS time,\n    l.acao AS metric,\n    l.descricao AS text\nFROM logs l\nORDER BY l.data_hora DESC\nLIMIT 50;",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          },
+          "hide": false
+        }
+      ],
+      "links": [],
+      "datasource": {
+        "type": "mysql",
+        "uid": "mysql-escola-uid"
+      },
+      "transformations": [],
+      "options": {
+        "cellHeight": "sm",
+        "showHeader": true,
+        "sortBy": [
+          {
+            "desc": false,
+            "displayName": "metric"
+          }
+        ],
+        "zebraStriping": false
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "value": 0,
+                "color": "green"
+              },
+              {
+                "value": 80,
+                "color": "red"
+              }
+            ]
+          },
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "auto",
+            "cellOptions": {
+              "type": "auto"
+            },
+            "footer": {
+              "reducers": []
+            },
+            "inspect": false
+          }
+        },
+        "overrides": []
+      }
+    },
+    {
+      "id": 1001,
+      "type": "row",
+      "title": "New row 1",
+      "collapsed": false,
+      "gridPos": {
+        "x": 0,
+        "y": 10,
+        "w": 24,
+        "h": 1
+      },
+      "panels": []
+    },
+    {
+      "id": 3,
+      "type": "table",
+      "title": "3. Depuração e Diagnósticos de Integridade (System Health Audit)",
+      "description": "",
+      "gridPos": {
+        "x": 0,
+        "y": 11,
+        "w": 12,
+        "h": 9
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "mysql",
+            "uid": "mysql-escola-uid"
+          },
+          "dataset": "boost",
+          "editorMode": "code",
+          "format": "table",
+          "rawQuery": true,
+          "rawSql": "SELECT \n    'Contrato Expirado Ativo' AS Tipo_Anomalia,\n    CONCAT('Contrato ID ', id_contrato) AS Entidade_Afetada,\n    CONCAT('Venceu em ', data_fim, ' mas ainda está registrado') AS Detalhes_Diagnostico\nFROM contrato\nWHERE data_fim < CURDATE()\n\nUNION ALL\n\nSELECT \n    'Aluno Sem Agenda' AS Tipo_Anomalia,\n    CONCAT('Aluno ID ', a.id_aluno, ' (', a.nome, ')') AS Entidade_Afetada,\n    'Aluno ativo sem nenhum horário registrado em disponibilidade_aluno' AS Detalhes_Diagnostico\nFROM aluno a\nLEFT JOIN disponibilidade_aluno da ON a.id_aluno = da.aluno_id_aluno\nWHERE a.ativo = 1 AND da.aluno_id_aluno IS NULL\n\nUNION ALL\n\nSELECT \n    'Turma Orfa' AS Tipo_Anomalia,\n    CONCAT('Turma ID ', id_turma, ' (', nome_turma, ')') AS Entidade_Afetada,\n    'Turma cadastrada sem professor_id_professor atribuido' AS Detalhes_Diagnostico\nFROM turma\nWHERE professor_id_professor IS NULL\n\nUNION ALL\n\nSELECT \n    'Sobrecarga de Agenda' AS Tipo_Anomalia,\n    CONCAT('Professor ID ', dp.professor_id_professor, ' (', p.nome, ')') AS Entidade_Afetada,\n    CONCAT('Professor possui ', COUNT(dp.horario_id_horario), ' horarios vinculados simultaneamente') AS Detalhes_Diagnostico\nFROM disponibilidade_professor dp\nJOIN professor p ON dp.professor_id_professor = p.id_professor\nGROUP BY dp.professor_id_professor, p.nome\nHAVING COUNT(dp.horario_id_horario) > 15;",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          },
+          "hide": false
+        }
+      ],
+      "links": [],
+      "datasource": {
+        "type": "mysql",
+        "uid": "mysql-escola-uid"
+      },
+      "transformations": [],
+      "options": {
+        "cellHeight": "sm",
+        "showHeader": true,
+        "zebraStriping": false
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "value": 0,
+                "color": "green"
+              },
+              {
+                "value": 80,
+                "color": "red"
+              }
+            ]
+          },
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "auto",
+            "cellOptions": {
+              "type": "auto"
+            },
+            "footer": {
+              "reducers": []
+            },
+            "inspect": false
+          }
+        },
+        "overrides": []
+      }
+    },
+    {
+      "id": 4,
+      "type": "table",
+      "title": "4. Auditoria de Segurança e Contas (Security & Access Health Audit)",
+      "description": "",
+      "gridPos": {
+        "x": 12,
+        "y": 11,
+        "w": 12,
+        "h": 9
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "mysql",
+            "uid": "mysql-escola-uid"
+          },
+          "dataset": "boost",
+          "editorMode": "code",
+          "format": "table",
+          "rawQuery": true,
+          "rawSql": "SELECT \n    'Professor Sem Senha (Risco)' AS Tipo_Alerta,\n    CONCAT('Professor ID ', id_professor, ' (', nome, ')') AS Entidade_Afetada,\n    CONCAT('E-mail: ', email, ' - Senha nunca foi configurada (Pendente de Primeiro Acesso)') AS Detalhes_Diagnostico\nFROM professor\nWHERE senha IS NULL\n\nUNION ALL\n\nSELECT \n    'Código de Acesso Expirado/Órfão' AS Tipo_Alerta,\n    CONCAT('Aluno ID ', id_aluno, ' (', nome, ')') AS Entidade_Afetada,\n    CONCAT('Possui código de acesso pendente (', codigo_acesso, ') mas a conta já foi ativada ou modificada') AS Detalhes_Diagnostico\nFROM aluno\nWHERE senha IS NOT NULL AND codigo_acesso IS NOT NULL\n\nUNION ALL\n\nSELECT \n    'Professor Sem Telas Liberadas' AS Tipo_Alerta,\n    CONCAT('Professor ID ', p.id_professor, ' (', p.nome, ')') AS Entidade_Afetada,\n    'Professor ativo no sistema mas não possui nenhuma permissão de tela vinculada em professor_permissao' AS Detalhes_Diagnostico\nFROM professor p\nLEFT JOIN professor_permissao pp ON p.id_professor = pp.professor_id_professor\nWHERE p.ativo = 1 AND pp.permissao_id_permissao IS NULL\n\nUNION ALL\n\nSELECT \n    'Aluno Inativo com Contrato Ativo' AS Tipo_Alerta,\n    CONCAT('Aluno ID ', a.id_aluno, ' (', a.nome, ')') AS Entidade_Afetada,\n    'Aluno marcado como inativo (ativo = 0), mas possui vínculos contratuais pendentes' AS Detalhes_Diagnostico\nFROM aluno a\nJOIN contrato c ON a.id_aluno = c.aluno_id_aluno\nWHERE a.ativo = 0;",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          },
+          "hide": false
+        }
+      ],
+      "links": [],
+      "datasource": {
+        "type": "mysql",
+        "uid": "mysql-escola-uid"
+      },
+      "transformations": [],
+      "options": {
+        "cellHeight": "sm",
+        "showHeader": true,
+        "zebraStriping": false
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "value": 0,
+                "color": "green"
+              },
+              {
+                "value": 80,
+                "color": "red"
+              }
+            ]
+          },
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "auto",
+            "cellOptions": {
+              "type": "auto"
+            },
+            "footer": {
+              "reducers": []
+            },
+            "inspect": false
+          }
+        },
+        "overrides": []
+      }
+    },
+    {
+      "id": 1002,
+      "type": "row",
+      "title": "New row 2",
+      "collapsed": false,
+      "gridPos": {
+        "x": 0,
+        "y": 20,
+        "w": 24,
+        "h": 1
+      },
+      "panels": []
+    },
+    {
+      "id": 5,
+      "type": "table",
+      "title": "5. Log de Ações e Mudanças de Status de Alunos (Onboarding & Perfil)",
+      "description": "",
+      "gridPos": {
+        "x": 0,
+        "y": 21,
+        "w": 24,
+        "h": 9
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "mysql",
+            "uid": "mysql-escola-uid"
+          },
+          "dataset": "boost",
+          "editorMode": "code",
+          "format": "table",
+          "rawQuery": true,
+          "rawSql": "SELECT \n    NOW() AS time,\n    CASE \n        WHEN ativo = 0 THEN 'WARNING'\n        WHEN senha IS NULL THEN 'INFO'\n        ELSE 'SUCCESS'\n    END AS level,\n    CONCAT(\n        'Aluno: ', nome, \n        ' (', email, ')',\n        ' | Nível: ', COALESCE(nivel, 'Não definido'),\n        ' | Status Conta: ', CASE WHEN ativo = 1 THEN 'Ativo' ELSE 'Inativo' END,\n        ' | Senha: ', CASE WHEN senha IS NULL THEN 'Pendente (Primeiro Acesso)' ELSE 'Configurada' END\n    ) AS message\nFROM aluno\nORDER BY id_aluno DESC\nLIMIT 50;",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          },
+          "hide": false
+        }
+      ],
+      "links": [],
+      "datasource": {
+        "type": "mysql",
+        "uid": "mysql-escola-uid"
+      },
+      "transformations": [],
+      "options": {
+        "cellHeight": "sm",
+        "showHeader": true,
+        "zebraStriping": false
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "value": 0,
+                "color": "green"
+              },
+              {
+                "value": 80,
+                "color": "red"
+              }
+            ]
+          },
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "auto",
+            "cellOptions": {
+              "type": "auto"
+            },
+            "footer": {
+              "reducers": []
+            },
+            "inspect": false
+          }
+        },
+        "overrides": []
+      }
+    }
+  ]
+}

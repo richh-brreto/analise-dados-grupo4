@@ -1,0 +1,16 @@
+apiVersion: 1
+
+datasources:
+  - name: MySQL-Escola
+    type: mysql
+    uid: mysql-escola-uid
+    access: proxy
+    url: 172.17.0.1:3306
+    database: boost
+    user: grafana
+    secureJsonData:
+      password: grafana_password
+    isDefault: false
+    jsonData:
+      sslmode: "disable"
+    editable: true

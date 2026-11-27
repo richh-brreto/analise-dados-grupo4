@@ -1,7 +1,7 @@
 {
-  "title": "Voos para países anglófonos × intenção de estudar inglês (local, DuckDB)",
-  "uid": "grupo4-voos-trends-local",
+  "title": "Painel Cliente Técnico",
   "description": "Projeto Boost Your English, grupo 4. Cruzamento semanal entre voos comerciais do Brasil para EUA, Canadá e Reino Unido (ANAC) e interesse de busca (Google Trends). Versão local: lê os CSVs de data/gold pelo plugin DuckDB, sem AWS.",
+  "uid": "b19224ca-9388-498c-88f8-8a691c32a204",
   "tags": [
     "grupo4",
     "anac",
@@ -15,10 +15,57 @@
     "from": "2021-12-26T00:00:00.000Z",
     "to": "2026-08-01T23:59:59.000Z"
   },
-  "timepicker": {},
-  "schemaVersion": 39,
-  "version": 1,
+  "timepicker": {
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ],
+    "hidden": false
+  },
+  "hideTimepicker": false,
   "refresh": "",
+  "fiscalYearStartMonth": 0,
+  "liveNow": false,
+  "links": [],
+  "schemaVersion": 39,
+  "version": 2,
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "grafana",
+          "uid": "-- Grafana --"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "query": "",
+        "type": "dashboard"
+      },
+      {
+        "builtIn": 0,
+        "datasource": {
+          "type": "motherduck-duckdb-datasource",
+          "uid": "duckdb-gold"
+        },
+        "enable": true,
+        "hide": false,
+        "iconColor": "#898781",
+        "name": "Eventos de calendário",
+        "query": "SELECT CAST(semana_inicio AS timestamp) AS time, evento AS text FROM cruzamento_semanal_br WHERE evento <> '' AND TRUE"
+      }
+    ]
+  },
   "templating": {
     "list": [
       {
@@ -33,64 +80,66 @@
         },
         "options": [
           {
+            "selected": true,
             "text": "curso de inglês",
-            "value": "tr_curso_ingles",
-            "selected": true
+            "value": "tr_curso_ingles"
           },
           {
+            "selected": false,
             "text": "aula de inglês",
-            "value": "tr_aula_ingles",
-            "selected": false
+            "value": "tr_aula_ingles"
           },
           {
+            "selected": false,
             "text": "aprender inglês",
-            "value": "tr_aprender_ingles",
-            "selected": false
+            "value": "tr_aprender_ingles"
           },
           {
+            "selected": false,
             "text": "inglês online",
-            "value": "tr_ingles_online",
-            "selected": false
+            "value": "tr_ingles_online"
           },
           {
+            "selected": false,
             "text": "professor de inglês",
-            "value": "tr_professor_ingles",
-            "selected": false
+            "value": "tr_professor_ingles"
           },
           {
+            "selected": false,
             "text": "intenção (5 termos somados)",
-            "value": "tr_intencao_ingles",
-            "selected": false
+            "value": "tr_intencao_ingles"
           },
           {
+            "selected": false,
             "text": "inglês ÷ curso online",
-            "value": "tr_razao_ingles_curso_online",
-            "selected": false
+            "value": "tr_razao_ingles_curso_online"
           },
           {
+            "selected": false,
             "text": "intercâmbio",
-            "value": "tr_intercambio",
-            "selected": false
+            "value": "tr_intercambio"
           },
           {
+            "selected": false,
             "text": "visto americano",
-            "value": "tr_visto_americano",
-            "selected": false
+            "value": "tr_visto_americano"
           },
           {
+            "selected": false,
             "text": "passagem aérea",
-            "value": "tr_passagem_aerea",
-            "selected": false
+            "value": "tr_passagem_aerea"
           },
           {
+            "selected": false,
             "text": "curso online (controle)",
-            "value": "tr_curso_online",
-            "selected": false
+            "value": "tr_curso_online"
           }
         ],
         "multi": false,
         "includeAll": false,
-        "hide": 0
+        "hide": 0,
+        "skipUrlSync": false,
+        "allowCustomValue": true
       },
       {
         "type": "custom",
@@ -104,39 +153,41 @@
         },
         "options": [
           {
+            "selected": true,
             "text": "passageiros",
-            "value": "nr_passageiros",
-            "selected": true
+            "value": "nr_passageiros"
           },
           {
+            "selected": false,
             "text": "voos",
-            "value": "qtd_voos",
-            "selected": false
+            "value": "qtd_voos"
           },
           {
+            "selected": false,
             "text": "passageiros por voo",
-            "value": "pax_por_voo",
-            "selected": false
+            "value": "pax_por_voo"
           },
           {
+            "selected": false,
             "text": "passageiros EUA",
-            "value": "pax_eua",
-            "selected": false
+            "value": "pax_eua"
           },
           {
+            "selected": false,
             "text": "passageiros Canadá",
-            "value": "pax_canada",
-            "selected": false
+            "value": "pax_canada"
           },
           {
+            "selected": false,
             "text": "passageiros Reino Unido",
-            "value": "pax_reino_unido",
-            "selected": false
+            "value": "pax_reino_unido"
           }
         ],
         "multi": false,
         "includeAll": false,
-        "hide": 0
+        "hide": 0,
+        "skipUrlSync": false,
+        "allowCustomValue": true
       },
       {
         "type": "custom",
@@ -150,19 +201,21 @@
         },
         "options": [
           {
+            "selected": true,
             "text": "nível",
-            "value": "nivel",
-            "selected": true
+            "value": "nivel"
           },
           {
+            "selected": false,
             "text": "variação semanal",
-            "value": "variacao",
-            "selected": false
+            "value": "variacao"
           }
         ],
         "multi": false,
         "includeAll": false,
-        "hide": 0
+        "hide": 0,
+        "skipUrlSync": false,
+        "allowCustomValue": true
       },
       {
         "type": "custom",
@@ -176,34 +229,36 @@
         },
         "options": [
           {
+            "selected": true,
             "text": "curso de inglês",
-            "value": "tr_curso_ingles",
-            "selected": true
+            "value": "tr_curso_ingles"
           },
           {
+            "selected": false,
             "text": "intenção (5 termos somados)",
-            "value": "tr_intencao_ingles",
-            "selected": false
+            "value": "tr_intencao_ingles"
           },
           {
+            "selected": false,
             "text": "aula de inglês",
-            "value": "tr_aula_ingles",
-            "selected": false
+            "value": "tr_aula_ingles"
           },
           {
+            "selected": false,
             "text": "curso online (controle)",
-            "value": "tr_curso_online",
-            "selected": false
+            "value": "tr_curso_online"
           },
           {
+            "selected": false,
             "text": "inglês ÷ curso online",
-            "value": "tr_razao_ingles_curso_online",
-            "selected": false
+            "value": "tr_razao_ingles_curso_online"
           }
         ],
         "multi": false,
         "includeAll": false,
-        "hide": 0
+        "hide": 0,
+        "skipUrlSync": false,
+        "allowCustomValue": true
       },
       {
         "type": "custom",
@@ -217,103 +272,103 @@
         },
         "options": [
           {
+            "selected": false,
             "text": "-8",
-            "value": "-8",
-            "selected": false
+            "value": "-8"
           },
           {
+            "selected": false,
             "text": "-7",
-            "value": "-7",
-            "selected": false
+            "value": "-7"
           },
           {
+            "selected": false,
             "text": "-6",
-            "value": "-6",
-            "selected": false
+            "value": "-6"
           },
           {
+            "selected": false,
             "text": "-5",
-            "value": "-5",
-            "selected": false
+            "value": "-5"
           },
           {
+            "selected": false,
             "text": "-4",
-            "value": "-4",
-            "selected": false
+            "value": "-4"
           },
           {
+            "selected": false,
             "text": "-3",
-            "value": "-3",
-            "selected": false
+            "value": "-3"
           },
           {
+            "selected": false,
             "text": "-2",
-            "value": "-2",
-            "selected": false
+            "value": "-2"
           },
           {
+            "selected": false,
             "text": "-1",
-            "value": "-1",
-            "selected": false
+            "value": "-1"
           },
           {
+            "selected": false,
             "text": "0",
-            "value": "0",
-            "selected": false
+            "value": "0"
           },
           {
+            "selected": false,
             "text": "1",
-            "value": "1",
-            "selected": false
+            "value": "1"
           },
           {
+            "selected": false,
             "text": "2",
-            "value": "2",
-            "selected": false
+            "value": "2"
           },
           {
+            "selected": true,
             "text": "3",
-            "value": "3",
-            "selected": true
+            "value": "3"
           },
           {
+            "selected": false,
             "text": "4",
-            "value": "4",
-            "selected": false
+            "value": "4"
           },
           {
+            "selected": false,
             "text": "5",
-            "value": "5",
-            "selected": false
+            "value": "5"
           },
           {
+            "selected": false,
             "text": "6",
-            "value": "6",
-            "selected": false
+            "value": "6"
           },
           {
+            "selected": false,
             "text": "7",
-            "value": "7",
-            "selected": false
+            "value": "7"
           },
           {
+            "selected": false,
             "text": "8",
-            "value": "8",
-            "selected": false
+            "value": "8"
           }
         ],
         "multi": false,
         "includeAll": false,
-        "hide": 0
+        "hide": 0,
+        "skipUrlSync": false,
+        "allowCustomValue": true
       },
       {
         "type": "custom",
         "name": "uf",
         "label": "UF",
+        "description": "",
         "query": "SP,RJ,MG",
-        "multi": true,
-        "includeAll": false,
-        "hide": 0,
         "current": {
           "text": [
             "SP",
@@ -328,64 +383,32 @@
         },
         "options": [
           {
+            "selected": true,
             "text": "SP",
-            "value": "SP",
-            "selected": true
+            "value": "SP"
           },
           {
+            "selected": true,
             "text": "RJ",
-            "value": "RJ",
-            "selected": true
+            "value": "RJ"
           },
           {
+            "selected": true,
             "text": "MG",
-            "value": "MG",
-            "selected": true
+            "value": "MG"
           }
-        ]
-      }
-    ]
-  },
-  "annotations": {
-    "list": [
-      {
-        "builtIn": 1,
-        "datasource": {
-          "type": "grafana",
-          "uid": "-- Grafana --"
-        },
-        "enable": true,
-        "hide": true,
-        "iconColor": "rgba(0, 211, 255, 1)",
-        "name": "Annotations & Alerts",
-        "type": "dashboard"
-      },
-      {
-        "datasource": {
-          "type": "motherduck-duckdb-datasource",
-          "uid": "duckdb-gold"
-        },
-        "enable": true,
-        "hide": false,
-        "iconColor": "#898781",
-        "name": "Eventos de calendário",
-        "target": {
-          "refId": "A",
-          "datasource": {
-            "type": "motherduck-duckdb-datasource",
-            "uid": "duckdb-gold"
-          },
-          "editorMode": "code",
-          "format": 1,
-          "rawQuery": true,
-          "rawSql": "SELECT CAST(semana_inicio AS timestamp) AS time, evento AS text FROM cruzamento_semanal_br WHERE evento <> '' AND TRUE"
-        }
+        ],
+        "multi": true,
+        "includeAll": false,
+        "hide": 0,
+        "skipUrlSync": false,
+        "allowCustomValue": true
       }
     ]
   },
   "panels": [
     {
-      "id": 1,
+      "id": 1000,
       "type": "row",
       "title": "Resumo do período",
       "collapsed": false,
@@ -402,10 +425,6 @@
       "type": "stat",
       "title": "Passageiros no período",
       "description": "Passageiros de voos comerciais do Brasil para EUA, Canadá e Reino Unido nas semanas completas do intervalo de tempo escolhido.",
-      "datasource": {
-        "type": "motherduck-duckdb-datasource",
-        "uid": "duckdb-gold"
-      },
       "gridPos": {
         "x": 0,
         "y": 1,
@@ -422,20 +441,22 @@
           "editorMode": "code",
           "format": 1,
           "rawQuery": true,
-          "rawSql": "SELECT CAST(SUM(nr_passageiros) AS bigint) AS passageiros FROM cruzamento_semanal_br WHERE semana_completa AND TRUE"
+          "rawSql": "SELECT CAST(SUM(nr_passageiros) AS bigint) AS passageiros FROM cruzamento_semanal_br WHERE semana_completa AND TRUE",
+          "hide": false
         }
       ],
-      "fieldConfig": {
-        "defaults": {
-          "unit": "short",
-          "color": {
-            "mode": "fixed",
-            "fixedColor": "text"
-          }
-        },
-        "overrides": []
+      "links": [],
+      "datasource": {
+        "type": "motherduck-duckdb-datasource",
+        "uid": "duckdb-gold"
       },
+      "transformations": [],
       "options": {
+        "colorMode": "none",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
         "reduceOptions": {
           "calcs": [
             "lastNotNull"
@@ -443,11 +464,32 @@
           "fields": "",
           "values": false
         },
-        "colorMode": "none",
-        "graphMode": "none",
+        "showPercentChange": false,
         "textMode": "value",
-        "justifyMode": "center",
-        "orientation": "auto"
+        "wideLayout": true
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "text",
+            "mode": "fixed"
+          },
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
       }
     },
     {
@@ -455,10 +497,6 @@
       "type": "stat",
       "title": "Semanas completas no intervalo",
       "description": "",
-      "datasource": {
-        "type": "motherduck-duckdb-datasource",
-        "uid": "duckdb-gold"
-      },
       "gridPos": {
         "x": 6,
         "y": 1,
@@ -475,20 +513,22 @@
           "editorMode": "code",
           "format": 1,
           "rawQuery": true,
-          "rawSql": "SELECT COUNT(*) AS semanas FROM cruzamento_semanal_br WHERE semana_completa AND TRUE"
+          "rawSql": "SELECT COUNT(*) AS semanas FROM cruzamento_semanal_br WHERE semana_completa AND TRUE",
+          "hide": false
         }
       ],
-      "fieldConfig": {
-        "defaults": {
-          "unit": "short",
-          "color": {
-            "mode": "fixed",
-            "fixedColor": "text"
-          }
-        },
-        "overrides": []
+      "links": [],
+      "datasource": {
+        "type": "motherduck-duckdb-datasource",
+        "uid": "duckdb-gold"
       },
+      "transformations": [],
       "options": {
+        "colorMode": "none",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
         "reduceOptions": {
           "calcs": [
             "lastNotNull"
@@ -496,11 +536,32 @@
           "fields": "",
           "values": false
         },
-        "colorMode": "none",
-        "graphMode": "none",
+        "showPercentChange": false,
         "textMode": "value",
-        "justifyMode": "center",
-        "orientation": "auto"
+        "wideLayout": true
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "text",
+            "mode": "fixed"
+          },
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
       }
     },
     {
@@ -508,10 +569,6 @@
       "type": "stat",
       "title": "Maior correlação: ${serie_voos} × ${termo}",
       "description": "Maior Pearson entre a série de voos e o termo escolhidos, entre as defasagens de -8 a +8 semanas. Calculado sobre o período inteiro (não segue o seletor de tempo).",
-      "datasource": {
-        "type": "motherduck-duckdb-datasource",
-        "uid": "duckdb-gold"
-      },
       "gridPos": {
         "x": 12,
         "y": 1,
@@ -528,21 +585,22 @@
           "editorMode": "code",
           "format": 1,
           "rawQuery": true,
-          "rawSql": "SELECT MAX(pearson) AS pearson FROM correlacoes\nWHERE recorte = 'BR' AND serie_voos = '${serie_voos:raw}' AND serie_trends = '${termo:raw}'\n  AND transformacao = '${transformacao:raw}'"
+          "rawSql": "SELECT MAX(pearson) AS pearson FROM correlacoes\nWHERE recorte = 'BR' AND serie_voos = '${serie_voos:raw}' AND serie_trends = '${termo:raw}'\n  AND transformacao = '${transformacao:raw}'",
+          "hide": false
         }
       ],
-      "fieldConfig": {
-        "defaults": {
-          "unit": "short",
-          "color": {
-            "mode": "fixed",
-            "fixedColor": "text"
-          },
-          "decimals": 2
-        },
-        "overrides": []
+      "links": [],
+      "datasource": {
+        "type": "motherduck-duckdb-datasource",
+        "uid": "duckdb-gold"
       },
+      "transformations": [],
       "options": {
+        "colorMode": "none",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
         "reduceOptions": {
           "calcs": [
             "lastNotNull"
@@ -550,11 +608,33 @@
           "fields": "",
           "values": false
         },
-        "colorMode": "none",
-        "graphMode": "none",
+        "showPercentChange": false,
         "textMode": "value",
-        "justifyMode": "center",
-        "orientation": "auto"
+        "wideLayout": true
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "text",
+            "mode": "fixed"
+          },
+          "decimals": 2,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
       }
     },
     {
@@ -562,10 +642,6 @@
       "type": "stat",
       "title": "Defasagem do pico (semanas)",
       "description": "Positivo: a busca acontece depois do voo. Negativo: a busca vem antes.",
-      "datasource": {
-        "type": "motherduck-duckdb-datasource",
-        "uid": "duckdb-gold"
-      },
       "gridPos": {
         "x": 18,
         "y": 1,
@@ -582,21 +658,22 @@
           "editorMode": "code",
           "format": 1,
           "rawQuery": true,
-          "rawSql": "SELECT defasagem_semanas AS defasagem FROM correlacoes\nWHERE recorte = 'BR' AND serie_voos = '${serie_voos:raw}' AND serie_trends = '${termo:raw}'\n  AND transformacao = '${transformacao:raw}'\nORDER BY pearson DESC LIMIT 1"
+          "rawSql": "SELECT defasagem_semanas AS defasagem FROM correlacoes\nWHERE recorte = 'BR' AND serie_voos = '${serie_voos:raw}' AND serie_trends = '${termo:raw}'\n  AND transformacao = '${transformacao:raw}'\nORDER BY pearson DESC LIMIT 1",
+          "hide": false
         }
       ],
-      "fieldConfig": {
-        "defaults": {
-          "unit": "short",
-          "color": {
-            "mode": "fixed",
-            "fixedColor": "text"
-          },
-          "decimals": 0
-        },
-        "overrides": []
+      "links": [],
+      "datasource": {
+        "type": "motherduck-duckdb-datasource",
+        "uid": "duckdb-gold"
       },
+      "transformations": [],
       "options": {
+        "colorMode": "none",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
         "reduceOptions": {
           "calcs": [
             "lastNotNull"
@@ -604,15 +681,37 @@
           "fields": "",
           "values": false
         },
-        "colorMode": "none",
-        "graphMode": "none",
+        "showPercentChange": false,
         "textMode": "value",
-        "justifyMode": "center",
-        "orientation": "auto"
+        "wideLayout": true
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "text",
+            "mode": "fixed"
+          },
+          "decimals": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
       }
     },
     {
-      "id": 6,
+      "id": 1001,
       "type": "row",
       "title": "Séries semanais",
       "collapsed": false,
@@ -629,10 +728,6 @@
       "type": "timeseries",
       "title": "Passageiros × ${termo:text} (índice 0 a 100)",
       "description": "As três séries na mesma base (100 = maior semana de cada uma no período), sem eixo duplo. Troque o termo no seletor do topo.",
-      "datasource": {
-        "type": "motherduck-duckdb-datasource",
-        "uid": "duckdb-gold"
-      },
       "gridPos": {
         "x": 0,
         "y": 6,
@@ -649,25 +744,85 @@
           "editorMode": "code",
           "format": 1,
           "rawQuery": true,
-          "rawSql": "SELECT CAST(semana_inicio AS timestamp) AS time,\n       pax_indice AS \"Passageiros (índice)\",\n       ${termo:raw} AS \"Busca: ${termo:text}\",\n       tr_curso_online AS \"Busca: curso online (controle)\"\nFROM cruzamento_semanal_br WHERE semana_completa AND TRUE ORDER BY 1"
+          "rawSql": "SELECT CAST(semana_inicio AS timestamp) AS time,\n       pax_indice AS \"Passageiros (índice)\",\n       ${termo:raw} AS \"Busca: ${termo:text}\",\n       tr_curso_online AS \"Busca: curso online (controle)\"\nFROM cruzamento_semanal_br WHERE semana_completa AND TRUE ORDER BY 1",
+          "hide": false
         }
       ],
+      "links": [],
+      "datasource": {
+        "type": "motherduck-duckdb-datasource",
+        "uid": "duckdb-gold"
+      },
+      "transformations": [],
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "hideZeros": false,
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
       "fieldConfig": {
         "defaults": {
-          "custom": {
-            "drawStyle": "line",
-            "lineWidth": 2,
-            "fillOpacity": 0,
-            "showPoints": "never",
-            "spanNulls": false,
-            "axisSoftMin": 0
-          },
-          "unit": "short",
           "color": {
             "mode": "palette-classic"
           },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "axisSoftMin": 0,
+            "barAlignment": 0,
+            "barWidthFactor": 0.6,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 2,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "showValues": false,
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "max": 100,
           "min": 0,
-          "max": 100
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
         },
         "overrides": [
           {
@@ -679,8 +834,8 @@
               {
                 "id": "color",
                 "value": {
-                  "mode": "fixed",
-                  "fixedColor": "#2a78d6"
+                  "fixedColor": "#2a78d6",
+                  "mode": "fixed"
                 }
               }
             ]
@@ -694,8 +849,8 @@
               {
                 "id": "color",
                 "value": {
-                  "mode": "fixed",
-                  "fixedColor": "#eb6834"
+                  "fixedColor": "#eb6834",
+                  "mode": "fixed"
                 }
               }
             ]
@@ -709,24 +864,13 @@
               {
                 "id": "color",
                 "value": {
-                  "mode": "fixed",
-                  "fixedColor": "#1baf7a"
+                  "fixedColor": "#1baf7a",
+                  "mode": "fixed"
                 }
               }
             ]
           }
         ]
-      },
-      "options": {
-        "legend": {
-          "displayMode": "list",
-          "placement": "bottom",
-          "showLegend": true
-        },
-        "tooltip": {
-          "mode": "multi",
-          "sort": "none"
-        }
       }
     },
     {
@@ -734,10 +878,6 @@
       "type": "timeseries",
       "title": "Termos de intenção de estudar inglês",
       "description": "Mesma escala entre os cinco termos (100 = maior semana de curso de inglês).",
-      "datasource": {
-        "type": "motherduck-duckdb-datasource",
-        "uid": "duckdb-gold"
-      },
       "gridPos": {
         "x": 0,
         "y": 15,
@@ -754,24 +894,84 @@
           "editorMode": "code",
           "format": 1,
           "rawQuery": true,
-          "rawSql": "SELECT CAST(semana_inicio AS timestamp) AS time,\n       tr_curso_ingles AS \"curso de inglês\", tr_aula_ingles AS \"aula de inglês\",\n       tr_aprender_ingles AS \"aprender inglês\", tr_ingles_online AS \"inglês online\",\n       tr_professor_ingles AS \"professor de inglês\"\nFROM cruzamento_semanal_br WHERE semana_completa AND TRUE ORDER BY 1"
+          "rawSql": "SELECT CAST(semana_inicio AS timestamp) AS time,\n       tr_curso_ingles AS \"curso de inglês\", tr_aula_ingles AS \"aula de inglês\",\n       tr_aprender_ingles AS \"aprender inglês\", tr_ingles_online AS \"inglês online\",\n       tr_professor_ingles AS \"professor de inglês\"\nFROM cruzamento_semanal_br WHERE semana_completa AND TRUE ORDER BY 1",
+          "hide": false
         }
       ],
+      "links": [],
+      "datasource": {
+        "type": "motherduck-duckdb-datasource",
+        "uid": "duckdb-gold"
+      },
+      "transformations": [],
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "hideZeros": false,
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
       "fieldConfig": {
         "defaults": {
-          "custom": {
-            "drawStyle": "line",
-            "lineWidth": 2,
-            "fillOpacity": 0,
-            "showPoints": "never",
-            "spanNulls": false,
-            "axisSoftMin": 0
-          },
-          "unit": "short",
           "color": {
             "mode": "palette-classic"
           },
-          "min": 0
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "axisSoftMin": 0,
+            "barAlignment": 0,
+            "barWidthFactor": 0.6,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 2,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "showValues": false,
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
         },
         "overrides": [
           {
@@ -783,8 +983,8 @@
               {
                 "id": "color",
                 "value": {
-                  "mode": "fixed",
-                  "fixedColor": "#eb6834"
+                  "fixedColor": "#eb6834",
+                  "mode": "fixed"
                 }
               }
             ]
@@ -798,8 +998,8 @@
               {
                 "id": "color",
                 "value": {
-                  "mode": "fixed",
-                  "fixedColor": "#2a78d6"
+                  "fixedColor": "#2a78d6",
+                  "mode": "fixed"
                 }
               }
             ]
@@ -813,8 +1013,8 @@
               {
                 "id": "color",
                 "value": {
-                  "mode": "fixed",
-                  "fixedColor": "#1baf7a"
+                  "fixedColor": "#1baf7a",
+                  "mode": "fixed"
                 }
               }
             ]
@@ -828,8 +1028,8 @@
               {
                 "id": "color",
                 "value": {
-                  "mode": "fixed",
-                  "fixedColor": "#eda100"
+                  "fixedColor": "#eda100",
+                  "mode": "fixed"
                 }
               }
             ]
@@ -843,24 +1043,13 @@
               {
                 "id": "color",
                 "value": {
-                  "mode": "fixed",
-                  "fixedColor": "#e87ba4"
+                  "fixedColor": "#e87ba4",
+                  "mode": "fixed"
                 }
               }
             ]
           }
         ]
-      },
-      "options": {
-        "legend": {
-          "displayMode": "list",
-          "placement": "bottom",
-          "showLegend": true
-        },
-        "tooltip": {
-          "mode": "multi",
-          "sort": "none"
-        }
       }
     },
     {
@@ -868,10 +1057,6 @@
       "type": "timeseries",
       "title": "Contexto de viagem e controle",
       "description": "Mesma escala entre os termos do grupo (100 = maior semana de curso online).",
-      "datasource": {
-        "type": "motherduck-duckdb-datasource",
-        "uid": "duckdb-gold"
-      },
       "gridPos": {
         "x": 12,
         "y": 15,
@@ -888,24 +1073,84 @@
           "editorMode": "code",
           "format": 1,
           "rawQuery": true,
-          "rawSql": "SELECT CAST(semana_inicio AS timestamp) AS time,\n       tr_passagem_aerea AS \"passagem aérea\", tr_visto_americano AS \"visto americano\",\n       tr_intercambio AS \"intercâmbio\", tr_curso_online AS \"curso online\"\nFROM cruzamento_semanal_br WHERE semana_completa AND TRUE ORDER BY 1"
+          "rawSql": "SELECT CAST(semana_inicio AS timestamp) AS time,\n       tr_passagem_aerea AS \"passagem aérea\", tr_visto_americano AS \"visto americano\",\n       tr_intercambio AS \"intercâmbio\", tr_curso_online AS \"curso online\"\nFROM cruzamento_semanal_br WHERE semana_completa AND TRUE ORDER BY 1",
+          "hide": false
         }
       ],
+      "links": [],
+      "datasource": {
+        "type": "motherduck-duckdb-datasource",
+        "uid": "duckdb-gold"
+      },
+      "transformations": [],
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "hideZeros": false,
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
       "fieldConfig": {
         "defaults": {
-          "custom": {
-            "drawStyle": "line",
-            "lineWidth": 2,
-            "fillOpacity": 0,
-            "showPoints": "never",
-            "spanNulls": false,
-            "axisSoftMin": 0
-          },
-          "unit": "short",
           "color": {
             "mode": "palette-classic"
           },
-          "min": 0
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "axisSoftMin": 0,
+            "barAlignment": 0,
+            "barWidthFactor": 0.6,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 2,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "showValues": false,
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
         },
         "overrides": [
           {
@@ -917,8 +1162,8 @@
               {
                 "id": "color",
                 "value": {
-                  "mode": "fixed",
-                  "fixedColor": "#2a78d6"
+                  "fixedColor": "#2a78d6",
+                  "mode": "fixed"
                 }
               }
             ]
@@ -932,8 +1177,8 @@
               {
                 "id": "color",
                 "value": {
-                  "mode": "fixed",
-                  "fixedColor": "#eb6834"
+                  "fixedColor": "#eb6834",
+                  "mode": "fixed"
                 }
               }
             ]
@@ -947,8 +1192,8 @@
               {
                 "id": "color",
                 "value": {
-                  "mode": "fixed",
-                  "fixedColor": "#1baf7a"
+                  "fixedColor": "#1baf7a",
+                  "mode": "fixed"
                 }
               }
             ]
@@ -962,24 +1207,13 @@
               {
                 "id": "color",
                 "value": {
-                  "mode": "fixed",
-                  "fixedColor": "#eda100"
+                  "fixedColor": "#eda100",
+                  "mode": "fixed"
                 }
               }
             ]
           }
         ]
-      },
-      "options": {
-        "legend": {
-          "displayMode": "list",
-          "placement": "bottom",
-          "showLegend": true
-        },
-        "tooltip": {
-          "mode": "multi",
-          "sort": "none"
-        }
       }
     },
     {
@@ -987,10 +1221,6 @@
       "type": "timeseries",
       "title": "Passageiros por destino",
       "description": "",
-      "datasource": {
-        "type": "motherduck-duckdb-datasource",
-        "uid": "duckdb-gold"
-      },
       "gridPos": {
         "x": 0,
         "y": 23,
@@ -1007,24 +1237,84 @@
           "editorMode": "code",
           "format": 1,
           "rawQuery": true,
-          "rawSql": "SELECT CAST(semana_inicio AS timestamp) AS time,\n       pax_eua AS \"EUA\", pax_reino_unido AS \"Reino Unido\", pax_canada AS \"Canadá\"\nFROM cruzamento_semanal_br WHERE semana_completa AND TRUE ORDER BY 1"
+          "rawSql": "SELECT CAST(semana_inicio AS timestamp) AS time,\n       pax_eua AS \"EUA\", pax_reino_unido AS \"Reino Unido\", pax_canada AS \"Canadá\"\nFROM cruzamento_semanal_br WHERE semana_completa AND TRUE ORDER BY 1",
+          "hide": false
         }
       ],
+      "links": [],
+      "datasource": {
+        "type": "motherduck-duckdb-datasource",
+        "uid": "duckdb-gold"
+      },
+      "transformations": [],
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "hideZeros": false,
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
       "fieldConfig": {
         "defaults": {
-          "custom": {
-            "drawStyle": "line",
-            "lineWidth": 2,
-            "fillOpacity": 0,
-            "showPoints": "never",
-            "spanNulls": false,
-            "axisSoftMin": 0
-          },
-          "unit": "short",
           "color": {
             "mode": "palette-classic"
           },
-          "min": 0
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "axisSoftMin": 0,
+            "barAlignment": 0,
+            "barWidthFactor": 0.6,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 2,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "showValues": false,
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
         },
         "overrides": [
           {
@@ -1036,8 +1326,8 @@
               {
                 "id": "color",
                 "value": {
-                  "mode": "fixed",
-                  "fixedColor": "#2a78d6"
+                  "fixedColor": "#2a78d6",
+                  "mode": "fixed"
                 }
               }
             ]
@@ -1051,8 +1341,8 @@
               {
                 "id": "color",
                 "value": {
-                  "mode": "fixed",
-                  "fixedColor": "#eb6834"
+                  "fixedColor": "#eb6834",
+                  "mode": "fixed"
                 }
               }
             ]
@@ -1066,24 +1356,13 @@
               {
                 "id": "color",
                 "value": {
-                  "mode": "fixed",
-                  "fixedColor": "#1baf7a"
+                  "fixedColor": "#1baf7a",
+                  "mode": "fixed"
                 }
               }
             ]
           }
         ]
-      },
-      "options": {
-        "legend": {
-          "displayMode": "list",
-          "placement": "bottom",
-          "showLegend": true
-        },
-        "tooltip": {
-          "mode": "multi",
-          "sort": "none"
-        }
       }
     },
     {
@@ -1091,10 +1370,6 @@
       "type": "timeseries",
       "title": "Ocupação: passageiros por voo",
       "description": "Separa o pico que vem de mais voos do pico que vem de voos mais cheios.",
-      "datasource": {
-        "type": "motherduck-duckdb-datasource",
-        "uid": "duckdb-gold"
-      },
       "gridPos": {
         "x": 12,
         "y": 23,
@@ -1111,23 +1386,83 @@
           "editorMode": "code",
           "format": 1,
           "rawQuery": true,
-          "rawSql": "SELECT CAST(semana_inicio AS timestamp) AS time, pax_por_voo AS \"passageiros por voo\"\nFROM cruzamento_semanal_br WHERE semana_completa AND TRUE ORDER BY 1"
+          "rawSql": "SELECT CAST(semana_inicio AS timestamp) AS time, pax_por_voo AS \"passageiros por voo\"\nFROM cruzamento_semanal_br WHERE semana_completa AND TRUE ORDER BY 1",
+          "hide": false
         }
       ],
+      "links": [],
+      "datasource": {
+        "type": "motherduck-duckdb-datasource",
+        "uid": "duckdb-gold"
+      },
+      "transformations": [],
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "hideZeros": false,
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
       "fieldConfig": {
         "defaults": {
-          "custom": {
-            "drawStyle": "line",
-            "lineWidth": 2,
-            "fillOpacity": 0,
-            "showPoints": "never",
-            "spanNulls": false,
-            "axisSoftMin": 0
-          },
-          "unit": "short",
           "color": {
             "mode": "palette-classic"
-          }
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "axisSoftMin": 0,
+            "barAlignment": 0,
+            "barWidthFactor": 0.6,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 2,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "showValues": false,
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
         },
         "overrides": [
           {
@@ -1139,28 +1474,17 @@
               {
                 "id": "color",
                 "value": {
-                  "mode": "fixed",
-                  "fixedColor": "#2a78d6"
+                  "fixedColor": "#2a78d6",
+                  "mode": "fixed"
                 }
               }
             ]
           }
         ]
-      },
-      "options": {
-        "legend": {
-          "displayMode": "list",
-          "placement": "bottom",
-          "showLegend": true
-        },
-        "tooltip": {
-          "mode": "multi",
-          "sort": "none"
-        }
       }
     },
     {
-      "id": 12,
+      "id": 1002,
       "type": "row",
       "title": "Correlações",
       "collapsed": false,
@@ -1177,10 +1501,6 @@
       "type": "barchart",
       "title": "Correlograma: ${serie_voos:text} × ${termo:text}",
       "description": "Voos na semana t contra busca na semana t+k. Positivo: a busca vem depois. A significância usa o tamanho efetivo da amostra, que desconta a autocorrelação das séries semanais.",
-      "datasource": {
-        "type": "motherduck-duckdb-datasource",
-        "uid": "duckdb-gold"
-      },
       "gridPos": {
         "x": 0,
         "y": 32,
@@ -1197,23 +1517,81 @@
           "editorMode": "code",
           "format": 1,
           "rawQuery": true,
-          "rawSql": "SELECT CAST(defasagem_semanas AS varchar) AS \"defasagem (semanas)\",\n       pearson AS \"Pearson\",\n       CASE WHEN significativo THEN pearson END AS \"Pearson significativo (5%)\"\nFROM correlacoes\nWHERE recorte = 'BR' AND serie_voos = '${serie_voos:raw}' AND serie_trends = '${termo:raw}'\n  AND transformacao = '${transformacao:raw}'\nORDER BY defasagem_semanas"
+          "rawSql": "SELECT CAST(defasagem_semanas AS varchar) AS \"defasagem (semanas)\",\n       pearson AS \"Pearson\",\n       CASE WHEN significativo THEN pearson END AS \"Pearson significativo (5%)\"\nFROM correlacoes\nWHERE recorte = 'BR' AND serie_voos = '${serie_voos:raw}' AND serie_trends = '${termo:raw}'\n  AND transformacao = '${transformacao:raw}'\nORDER BY defasagem_semanas",
+          "hide": false
         }
       ],
+      "links": [],
+      "datasource": {
+        "type": "motherduck-duckdb-datasource",
+        "uid": "duckdb-gold"
+      },
+      "transformations": [],
+      "options": {
+        "barRadius": 0,
+        "barWidth": 0.85,
+        "fullHighlight": false,
+        "groupWidth": 0.75,
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "orientation": "vertical",
+        "showValue": "never",
+        "stacking": "none",
+        "tooltip": {
+          "hideZeros": false,
+          "mode": "multi",
+          "sort": "none"
+        },
+        "xField": "defasagem (semanas)",
+        "xTickLabelRotation": 0,
+        "xTickLabelSpacing": 0
+      },
       "fieldConfig": {
         "defaults": {
-          "custom": {
-            "fillOpacity": 100,
-            "lineWidth": 0,
-            "gradientMode": "none",
-            "axisCenteredZero": false
-          },
-          "unit": "short",
           "color": {
             "mode": "palette-classic"
           },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "fillOpacity": 100,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineWidth": 0,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "max": 1,
           "min": -1,
-          "max": 1
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
         },
         "overrides": [
           {
@@ -1225,8 +1603,8 @@
               {
                 "id": "color",
                 "value": {
-                  "mode": "fixed",
-                  "fixedColor": "#9ec5f4"
+                  "fixedColor": "#9ec5f4",
+                  "mode": "fixed"
                 }
               }
             ]
@@ -1240,32 +1618,13 @@
               {
                 "id": "color",
                 "value": {
-                  "mode": "fixed",
-                  "fixedColor": "#2a78d6"
+                  "fixedColor": "#2a78d6",
+                  "mode": "fixed"
                 }
               }
             ]
           }
         ]
-      },
-      "options": {
-        "xField": "defasagem (semanas)",
-        "orientation": "vertical",
-        "showValue": "never",
-        "barWidth": 0.85,
-        "groupWidth": 0.75,
-        "stacking": "none",
-        "xTickLabelRotation": 0,
-        "xTickLabelSpacing": 0,
-        "legend": {
-          "displayMode": "list",
-          "placement": "bottom",
-          "showLegend": true
-        },
-        "tooltip": {
-          "mode": "multi",
-          "sort": "none"
-        }
       }
     },
     {
@@ -1273,10 +1632,6 @@
       "type": "xychart",
       "title": "Dispersão: ${serie_voos:text} na semana t × ${termo:text} na semana t+${defasagem}",
       "description": "Cada ponto é uma semana. Mude a defasagem no seletor do topo.",
-      "datasource": {
-        "type": "motherduck-duckdb-datasource",
-        "uid": "duckdb-gold"
-      },
       "gridPos": {
         "x": 12,
         "y": 32,
@@ -1293,39 +1648,95 @@
           "editorMode": "code",
           "format": 1,
           "rawQuery": true,
-          "rawSql": "SELECT a.${serie_voos:raw} AS \"${serie_voos:text} (semana t)\",\n       b.${termo:raw} AS \"${termo:text} (semana t+k)\"\nFROM cruzamento_semanal_br a\nJOIN cruzamento_semanal_br b ON b.semana_inicio = (a.semana_inicio + to_weeks(${defasagem:raw}))\nWHERE a.semana_completa AND b.semana_completa\n  AND TRUE"
+          "rawSql": "SELECT a.${serie_voos:raw} AS \"${serie_voos:text} (semana t)\",\n       b.${termo:raw} AS \"${termo:text} (semana t+k)\"\nFROM cruzamento_semanal_br a\nJOIN cruzamento_semanal_br b ON b.semana_inicio = (a.semana_inicio + to_weeks(${defasagem:raw}))\nWHERE a.semana_completa AND b.semana_completa\n  AND TRUE",
+          "hide": false
         }
       ],
-      "fieldConfig": {
-        "defaults": {
-          "custom": {
-            "show": "points",
-            "pointSize": {
-              "fixed": 7
-            }
-          },
-          "color": {
-            "mode": "fixed",
-            "fixedColor": "#2a78d6"
-          }
-        },
-        "overrides": []
+      "links": [],
+      "datasource": {
+        "type": "motherduck-duckdb-datasource",
+        "uid": "duckdb-gold"
       },
+      "transformations": [],
       "options": {
-        "mapping": "auto",
-        "seriesMapping": "auto",
-        "series": [
-          {}
-        ],
         "legend": {
-          "showLegend": false,
+          "calcs": [],
           "displayMode": "list",
-          "placement": "bottom"
+          "placement": "bottom",
+          "showLegend": false
         },
+        "mapping": "auto",
+        "series": [
+          {
+            "frame": {
+              "matcher": {
+                "id": "byIndex",
+                "options": 0
+              }
+            },
+            "x": {
+              "matcher": {
+                "id": "byType",
+                "options": "number"
+              }
+            },
+            "y": {
+              "matcher": {
+                "id": "byType",
+                "options": "number"
+              }
+            }
+          }
+        ],
         "tooltip": {
+          "hideZeros": false,
           "mode": "single",
           "sort": "none"
         }
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "#2a78d6",
+            "mode": "fixed"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "fillOpacity": 50,
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "pointShape": "circle",
+            "pointSize": {
+              "fixed": 7
+            },
+            "pointStrokeWidth": 1,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "show": "points"
+          },
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
       }
     },
     {
@@ -1333,10 +1744,6 @@
       "type": "table",
       "title": "Matriz de correlação (defasagem ${defasagem} semanas, ${transformacao})",
       "description": "Pearson entre cada série de voos (colunas) e cada termo do Trends (linhas). Azul: relação inversa; vermelho: relação direta. Use a defasagem 0 para a mesma semana.",
-      "datasource": {
-        "type": "motherduck-duckdb-datasource",
-        "uid": "duckdb-gold"
-      },
       "gridPos": {
         "x": 0,
         "y": 41,
@@ -1353,9 +1760,21 @@
           "editorMode": "code",
           "format": 1,
           "rawQuery": true,
-          "rawSql": "SELECT CASE serie_trends WHEN 'tr_curso_ingles' THEN 'curso de inglês' WHEN 'tr_aula_ingles' THEN 'aula de inglês' WHEN 'tr_aprender_ingles' THEN 'aprender inglês' WHEN 'tr_ingles_online' THEN 'inglês online' WHEN 'tr_professor_ingles' THEN 'professor de inglês' WHEN 'tr_intencao_ingles' THEN 'intenção (5 termos somados)' WHEN 'tr_razao_ingles_curso_online' THEN 'inglês ÷ curso online' WHEN 'tr_intercambio' THEN 'intercâmbio' WHEN 'tr_visto_americano' THEN 'visto americano' WHEN 'tr_passagem_aerea' THEN 'passagem aérea' WHEN 'tr_curso_online' THEN 'curso online (controle)' END AS \"termo do Trends\", ROUND(MAX(CASE WHEN serie_voos = 'nr_passageiros' THEN pearson END), 2) AS \"passageiros\", ROUND(MAX(CASE WHEN serie_voos = 'qtd_voos' THEN pearson END), 2) AS \"voos\", ROUND(MAX(CASE WHEN serie_voos = 'pax_por_voo' THEN pearson END), 2) AS \"passageiros por voo\", ROUND(MAX(CASE WHEN serie_voos = 'pax_eua' THEN pearson END), 2) AS \"passageiros EUA\", ROUND(MAX(CASE WHEN serie_voos = 'pax_canada' THEN pearson END), 2) AS \"passageiros Canadá\", ROUND(MAX(CASE WHEN serie_voos = 'pax_reino_unido' THEN pearson END), 2) AS \"passageiros Reino Unido\"\nFROM correlacoes\nWHERE recorte = 'BR' AND transformacao = '${transformacao:raw}' AND defasagem_semanas = ${defasagem:raw}\nGROUP BY serie_trends\nORDER BY CASE serie_trends WHEN 'tr_curso_ingles' THEN 0 WHEN 'tr_aula_ingles' THEN 1 WHEN 'tr_aprender_ingles' THEN 2 WHEN 'tr_ingles_online' THEN 3 WHEN 'tr_professor_ingles' THEN 4 WHEN 'tr_intencao_ingles' THEN 5 WHEN 'tr_razao_ingles_curso_online' THEN 6 WHEN 'tr_intercambio' THEN 7 WHEN 'tr_visto_americano' THEN 8 WHEN 'tr_passagem_aerea' THEN 9 WHEN 'tr_curso_online' THEN 10 END"
+          "rawSql": "SELECT CASE serie_trends WHEN 'tr_curso_ingles' THEN 'curso de inglês' WHEN 'tr_aula_ingles' THEN 'aula de inglês' WHEN 'tr_aprender_ingles' THEN 'aprender inglês' WHEN 'tr_ingles_online' THEN 'inglês online' WHEN 'tr_professor_ingles' THEN 'professor de inglês' WHEN 'tr_intencao_ingles' THEN 'intenção (5 termos somados)' WHEN 'tr_razao_ingles_curso_online' THEN 'inglês ÷ curso online' WHEN 'tr_intercambio' THEN 'intercâmbio' WHEN 'tr_visto_americano' THEN 'visto americano' WHEN 'tr_passagem_aerea' THEN 'passagem aérea' WHEN 'tr_curso_online' THEN 'curso online (controle)' END AS \"termo do Trends\", ROUND(MAX(CASE WHEN serie_voos = 'nr_passageiros' THEN pearson END), 2) AS \"passageiros\", ROUND(MAX(CASE WHEN serie_voos = 'qtd_voos' THEN pearson END), 2) AS \"voos\", ROUND(MAX(CASE WHEN serie_voos = 'pax_por_voo' THEN pearson END), 2) AS \"passageiros por voo\", ROUND(MAX(CASE WHEN serie_voos = 'pax_eua' THEN pearson END), 2) AS \"passageiros EUA\", ROUND(MAX(CASE WHEN serie_voos = 'pax_canada' THEN pearson END), 2) AS \"passageiros Canadá\", ROUND(MAX(CASE WHEN serie_voos = 'pax_reino_unido' THEN pearson END), 2) AS \"passageiros Reino Unido\"\nFROM correlacoes\nWHERE recorte = 'BR' AND transformacao = '${transformacao:raw}' AND defasagem_semanas = ${defasagem:raw}\nGROUP BY serie_trends\nORDER BY CASE serie_trends WHEN 'tr_curso_ingles' THEN 0 WHEN 'tr_aula_ingles' THEN 1 WHEN 'tr_aprender_ingles' THEN 2 WHEN 'tr_ingles_online' THEN 3 WHEN 'tr_professor_ingles' THEN 4 WHEN 'tr_intencao_ingles' THEN 5 WHEN 'tr_razao_ingles_curso_online' THEN 6 WHEN 'tr_intercambio' THEN 7 WHEN 'tr_visto_americano' THEN 8 WHEN 'tr_passagem_aerea' THEN 9 WHEN 'tr_curso_online' THEN 10 END",
+          "hide": false
         }
       ],
+      "links": [],
+      "datasource": {
+        "type": "motherduck-duckdb-datasource",
+        "uid": "duckdb-gold"
+      },
+      "transformations": [],
+      "options": {
+        "cellHeight": "sm",
+        "showHeader": true,
+        "zebraStriping": false
+      },
       "fieldConfig": {
         "defaults": {
           "custom": {
@@ -1363,7 +1782,23 @@
             "cellOptions": {
               "type": "auto"
             },
+            "footer": {
+              "reducers": []
+            },
             "inspect": false
+          },
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
           }
         },
         "overrides": [
@@ -1376,8 +1811,8 @@
               {
                 "id": "custom.cellOptions",
                 "value": {
-                  "type": "color-background",
-                  "mode": "basic"
+                  "mode": "basic",
+                  "type": "color-background"
                 }
               },
               {
@@ -1393,7 +1828,7 @@
                   "steps": [
                     {
                       "color": "#184f95",
-                      "value": null
+                      "value": 0
                     },
                     {
                       "color": "#3987e5",
@@ -1437,8 +1872,8 @@
               {
                 "id": "custom.cellOptions",
                 "value": {
-                  "type": "color-background",
-                  "mode": "basic"
+                  "mode": "basic",
+                  "type": "color-background"
                 }
               },
               {
@@ -1454,7 +1889,7 @@
                   "steps": [
                     {
                       "color": "#184f95",
-                      "value": null
+                      "value": 0
                     },
                     {
                       "color": "#3987e5",
@@ -1498,8 +1933,8 @@
               {
                 "id": "custom.cellOptions",
                 "value": {
-                  "type": "color-background",
-                  "mode": "basic"
+                  "mode": "basic",
+                  "type": "color-background"
                 }
               },
               {
@@ -1515,7 +1950,7 @@
                   "steps": [
                     {
                       "color": "#184f95",
-                      "value": null
+                      "value": 0
                     },
                     {
                       "color": "#3987e5",
@@ -1559,8 +1994,8 @@
               {
                 "id": "custom.cellOptions",
                 "value": {
-                  "type": "color-background",
-                  "mode": "basic"
+                  "mode": "basic",
+                  "type": "color-background"
                 }
               },
               {
@@ -1576,7 +2011,7 @@
                   "steps": [
                     {
                       "color": "#184f95",
-                      "value": null
+                      "value": 0
                     },
                     {
                       "color": "#3987e5",
@@ -1620,8 +2055,8 @@
               {
                 "id": "custom.cellOptions",
                 "value": {
-                  "type": "color-background",
-                  "mode": "basic"
+                  "mode": "basic",
+                  "type": "color-background"
                 }
               },
               {
@@ -1637,7 +2072,7 @@
                   "steps": [
                     {
                       "color": "#184f95",
-                      "value": null
+                      "value": 0
                     },
                     {
                       "color": "#3987e5",
@@ -1681,8 +2116,8 @@
               {
                 "id": "custom.cellOptions",
                 "value": {
-                  "type": "color-background",
-                  "mode": "basic"
+                  "mode": "basic",
+                  "type": "color-background"
                 }
               },
               {
@@ -1698,7 +2133,7 @@
                   "steps": [
                     {
                       "color": "#184f95",
-                      "value": null
+                      "value": 0
                     },
                     {
                       "color": "#3987e5",
@@ -1746,17 +2181,6 @@
             ]
           }
         ]
-      },
-      "options": {
-        "showHeader": true,
-        "cellHeight": "sm",
-        "footer": {
-          "show": false,
-          "reducer": [
-            "sum"
-          ],
-          "fields": ""
-        }
       }
     },
     {
@@ -1764,10 +2188,6 @@
       "type": "table",
       "title": "Ranking dos pares mais correlacionados (${transformacao})",
       "description": "Todos os recortes (Brasil e UFs), todas as defasagens. Correlação alta sem significância é efeito de poucas semanas independentes.",
-      "datasource": {
-        "type": "motherduck-duckdb-datasource",
-        "uid": "duckdb-gold"
-      },
       "gridPos": {
         "x": 0,
         "y": 51,
@@ -1784,9 +2204,21 @@
           "editorMode": "code",
           "format": 1,
           "rawQuery": true,
-          "rawSql": "SELECT recorte, serie_voos AS \"série de voos\", serie_trends AS \"termo\",\n       defasagem_semanas AS \"defasagem\", ROUND(pearson, 3) AS \"Pearson\",\n       ROUND(spearman, 3) AS \"Spearman\", n, ROUND(n_efetivo, 1) AS \"n efetivo\",\n       CASE WHEN significativo THEN 'sim' ELSE 'não' END AS \"significativo (5%)\"\nFROM correlacoes\nWHERE transformacao = '${transformacao:raw}'\nORDER BY ABS(pearson) DESC\nLIMIT 30"
+          "rawSql": "SELECT recorte, serie_voos AS \"série de voos\", serie_trends AS \"termo\",\n       defasagem_semanas AS \"defasagem\", ROUND(pearson, 3) AS \"Pearson\",\n       ROUND(spearman, 3) AS \"Spearman\", n, ROUND(n_efetivo, 1) AS \"n efetivo\",\n       CASE WHEN significativo THEN 'sim' ELSE 'não' END AS \"significativo (5%)\"\nFROM correlacoes\nWHERE transformacao = '${transformacao:raw}'\nORDER BY ABS(pearson) DESC\nLIMIT 30",
+          "hide": false
         }
       ],
+      "links": [],
+      "datasource": {
+        "type": "motherduck-duckdb-datasource",
+        "uid": "duckdb-gold"
+      },
+      "transformations": [],
+      "options": {
+        "cellHeight": "sm",
+        "showHeader": true,
+        "zebraStriping": false
+      },
       "fieldConfig": {
         "defaults": {
           "custom": {
@@ -1794,7 +2226,23 @@
             "cellOptions": {
               "type": "auto"
             },
+            "footer": {
+              "reducers": []
+            },
             "inspect": false
+          },
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
           }
         },
         "overrides": [
@@ -1807,8 +2255,8 @@
               {
                 "id": "custom.cellOptions",
                 "value": {
-                  "type": "color-background",
-                  "mode": "basic"
+                  "mode": "basic",
+                  "type": "color-background"
                 }
               },
               {
@@ -1824,7 +2272,7 @@
                   "steps": [
                     {
                       "color": "#184f95",
-                      "value": null
+                      "value": 0
                     },
                     {
                       "color": "#3987e5",
@@ -1868,8 +2316,8 @@
               {
                 "id": "custom.cellOptions",
                 "value": {
-                  "type": "color-background",
-                  "mode": "basic"
+                  "mode": "basic",
+                  "type": "color-background"
                 }
               },
               {
@@ -1885,7 +2333,7 @@
                   "steps": [
                     {
                       "color": "#184f95",
-                      "value": null
+                      "value": 0
                     },
                     {
                       "color": "#3987e5",
@@ -1921,21 +2369,10 @@
             ]
           }
         ]
-      },
-      "options": {
-        "showHeader": true,
-        "cellHeight": "sm",
-        "footer": {
-          "show": false,
-          "reducer": [
-            "sum"
-          ],
-          "fields": ""
-        }
       }
     },
     {
-      "id": 17,
+      "id": 1003,
       "type": "row",
       "title": "Calendário escolar e ano contra ano",
       "collapsed": false,
@@ -1952,10 +2389,6 @@
       "type": "barchart",
       "title": "Cada série por temporada (100 = média do período)",
       "description": "Acima de 100: a série fica acima da própria média naquela temporada. Passageiros e curso de inglês sobem nas férias; aula de inglês cai.",
-      "datasource": {
-        "type": "motherduck-duckdb-datasource",
-        "uid": "duckdb-gold"
-      },
       "gridPos": {
         "x": 0,
         "y": 62,
@@ -1972,22 +2405,80 @@
           "editorMode": "code",
           "format": 1,
           "rawQuery": true,
-          "rawSql": "SELECT temporada,\n       ROUND(100 * AVG(nr_passageiros) / (SELECT AVG(nr_passageiros) FROM cruzamento_semanal_br WHERE semana_completa AND TRUE), 1) AS \"passageiros\",\n       ROUND(100 * AVG(tr_curso_ingles) / (SELECT AVG(tr_curso_ingles) FROM cruzamento_semanal_br WHERE semana_completa AND TRUE), 1) AS \"curso de inglês\",\n       ROUND(100 * AVG(tr_aula_ingles) / (SELECT AVG(tr_aula_ingles) FROM cruzamento_semanal_br WHERE semana_completa AND TRUE), 1) AS \"aula de inglês\",\n       ROUND(100 * AVG(tr_curso_online) / (SELECT AVG(tr_curso_online) FROM cruzamento_semanal_br WHERE semana_completa AND TRUE), 1) AS \"curso online\"\nFROM cruzamento_semanal_br WHERE semana_completa AND TRUE\nGROUP BY temporada\nORDER BY CASE temporada WHEN 'férias escolares' THEN 1 WHEN 'volta às aulas' THEN 2 ELSE 3 END"
+          "rawSql": "SELECT temporada,\n       ROUND(100 * AVG(nr_passageiros) / (SELECT AVG(nr_passageiros) FROM cruzamento_semanal_br WHERE semana_completa AND TRUE), 1) AS \"passageiros\",\n       ROUND(100 * AVG(tr_curso_ingles) / (SELECT AVG(tr_curso_ingles) FROM cruzamento_semanal_br WHERE semana_completa AND TRUE), 1) AS \"curso de inglês\",\n       ROUND(100 * AVG(tr_aula_ingles) / (SELECT AVG(tr_aula_ingles) FROM cruzamento_semanal_br WHERE semana_completa AND TRUE), 1) AS \"aula de inglês\",\n       ROUND(100 * AVG(tr_curso_online) / (SELECT AVG(tr_curso_online) FROM cruzamento_semanal_br WHERE semana_completa AND TRUE), 1) AS \"curso online\"\nFROM cruzamento_semanal_br WHERE semana_completa AND TRUE\nGROUP BY temporada\nORDER BY CASE temporada WHEN 'férias escolares' THEN 1 WHEN 'volta às aulas' THEN 2 ELSE 3 END",
+          "hide": false
         }
       ],
+      "links": [],
+      "datasource": {
+        "type": "motherduck-duckdb-datasource",
+        "uid": "duckdb-gold"
+      },
+      "transformations": [],
+      "options": {
+        "barRadius": 0,
+        "barWidth": 0.85,
+        "fullHighlight": false,
+        "groupWidth": 0.75,
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "orientation": "vertical",
+        "showValue": "never",
+        "stacking": "none",
+        "tooltip": {
+          "hideZeros": false,
+          "mode": "multi",
+          "sort": "none"
+        },
+        "xField": "temporada",
+        "xTickLabelRotation": 0,
+        "xTickLabelSpacing": 0
+      },
       "fieldConfig": {
         "defaults": {
-          "custom": {
-            "fillOpacity": 100,
-            "lineWidth": 0,
-            "gradientMode": "none",
-            "axisCenteredZero": false
-          },
-          "unit": "short",
           "color": {
             "mode": "palette-classic"
           },
-          "min": 0
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "fillOpacity": 100,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineWidth": 0,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
         },
         "overrides": [
           {
@@ -1999,8 +2490,8 @@
               {
                 "id": "color",
                 "value": {
-                  "mode": "fixed",
-                  "fixedColor": "#2a78d6"
+                  "fixedColor": "#2a78d6",
+                  "mode": "fixed"
                 }
               }
             ]
@@ -2014,8 +2505,8 @@
               {
                 "id": "color",
                 "value": {
-                  "mode": "fixed",
-                  "fixedColor": "#eb6834"
+                  "fixedColor": "#eb6834",
+                  "mode": "fixed"
                 }
               }
             ]
@@ -2029,8 +2520,8 @@
               {
                 "id": "color",
                 "value": {
-                  "mode": "fixed",
-                  "fixedColor": "#1baf7a"
+                  "fixedColor": "#1baf7a",
+                  "mode": "fixed"
                 }
               }
             ]
@@ -2044,32 +2535,13 @@
               {
                 "id": "color",
                 "value": {
-                  "mode": "fixed",
-                  "fixedColor": "#eda100"
+                  "fixedColor": "#eda100",
+                  "mode": "fixed"
                 }
               }
             ]
           }
         ]
-      },
-      "options": {
-        "xField": "temporada",
-        "orientation": "vertical",
-        "showValue": "never",
-        "barWidth": 0.85,
-        "groupWidth": 0.75,
-        "stacking": "none",
-        "xTickLabelRotation": 0,
-        "xTickLabelSpacing": 0,
-        "legend": {
-          "displayMode": "list",
-          "placement": "bottom",
-          "showLegend": true
-        },
-        "tooltip": {
-          "mode": "multi",
-          "sort": "none"
-        }
       }
     },
     {
@@ -2077,10 +2549,6 @@
       "type": "trend",
       "title": "Passageiros por semana do ano",
       "description": "Sobreposição ano a ano: picos alinhados na mesma semana indicam sazonalidade, não evento pontual.",
-      "datasource": {
-        "type": "motherduck-duckdb-datasource",
-        "uid": "duckdb-gold"
-      },
       "gridPos": {
         "x": 12,
         "y": 62,
@@ -2097,19 +2565,81 @@
           "editorMode": "code",
           "format": 1,
           "rawQuery": true,
-          "rawSql": "SELECT num_semana AS \"semana do ano\",\n       MAX(CASE WHEN ano_semana = 2022 THEN nr_passageiros END) AS \"2022\",\n       MAX(CASE WHEN ano_semana = 2023 THEN nr_passageiros END) AS \"2023\",\n       MAX(CASE WHEN ano_semana = 2024 THEN nr_passageiros END) AS \"2024\",\n       MAX(CASE WHEN ano_semana = 2025 THEN nr_passageiros END) AS \"2025\",\n       MAX(CASE WHEN ano_semana = 2026 THEN nr_passageiros END) AS \"2026\"\nFROM cruzamento_semanal_br WHERE semana_completa\nGROUP BY num_semana ORDER BY num_semana"
+          "rawSql": "SELECT num_semana AS \"semana do ano\",\n       MAX(CASE WHEN ano_semana = 2022 THEN nr_passageiros END) AS \"2022\",\n       MAX(CASE WHEN ano_semana = 2023 THEN nr_passageiros END) AS \"2023\",\n       MAX(CASE WHEN ano_semana = 2024 THEN nr_passageiros END) AS \"2024\",\n       MAX(CASE WHEN ano_semana = 2025 THEN nr_passageiros END) AS \"2025\",\n       MAX(CASE WHEN ano_semana = 2026 THEN nr_passageiros END) AS \"2026\"\nFROM cruzamento_semanal_br WHERE semana_completa\nGROUP BY num_semana ORDER BY num_semana",
+          "hide": false
         }
       ],
+      "links": [],
+      "datasource": {
+        "type": "motherduck-duckdb-datasource",
+        "uid": "duckdb-gold"
+      },
+      "transformations": [],
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "hideZeros": false,
+          "mode": "multi",
+          "sort": "none"
+        },
+        "xField": "semana do ano"
+      },
       "fieldConfig": {
         "defaults": {
-          "custom": {
-            "lineWidth": 2,
-            "showPoints": "never",
-            "spanNulls": false,
-            "fillOpacity": 0
-          },
           "color": {
             "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "barWidthFactor": 0.6,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 2,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "showValues": false,
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
           }
         },
         "overrides": [
@@ -2122,8 +2652,8 @@
               {
                 "id": "color",
                 "value": {
-                  "mode": "fixed",
-                  "fixedColor": "#86b6ef"
+                  "fixedColor": "#86b6ef",
+                  "mode": "fixed"
                 }
               }
             ]
@@ -2137,8 +2667,8 @@
               {
                 "id": "color",
                 "value": {
-                  "mode": "fixed",
-                  "fixedColor": "#5598e7"
+                  "fixedColor": "#5598e7",
+                  "mode": "fixed"
                 }
               }
             ]
@@ -2152,8 +2682,8 @@
               {
                 "id": "color",
                 "value": {
-                  "mode": "fixed",
-                  "fixedColor": "#2a78d6"
+                  "fixedColor": "#2a78d6",
+                  "mode": "fixed"
                 }
               }
             ]
@@ -2167,8 +2697,8 @@
               {
                 "id": "color",
                 "value": {
-                  "mode": "fixed",
-                  "fixedColor": "#104281"
+                  "fixedColor": "#104281",
+                  "mode": "fixed"
                 }
               }
             ]
@@ -2182,25 +2712,13 @@
               {
                 "id": "color",
                 "value": {
-                  "mode": "fixed",
-                  "fixedColor": "#0d366b"
+                  "fixedColor": "#0d366b",
+                  "mode": "fixed"
                 }
               }
             ]
           }
         ]
-      },
-      "options": {
-        "xField": "semana do ano",
-        "legend": {
-          "displayMode": "list",
-          "placement": "bottom",
-          "showLegend": true
-        },
-        "tooltip": {
-          "mode": "multi",
-          "sort": "none"
-        }
       }
     },
     {
@@ -2208,10 +2726,6 @@
       "type": "trend",
       "title": "${termo:text} por semana do ano",
       "description": "Sobreposição ano a ano: picos alinhados na mesma semana indicam sazonalidade, não evento pontual.",
-      "datasource": {
-        "type": "motherduck-duckdb-datasource",
-        "uid": "duckdb-gold"
-      },
       "gridPos": {
         "x": 18,
         "y": 62,
@@ -2228,19 +2742,81 @@
           "editorMode": "code",
           "format": 1,
           "rawQuery": true,
-          "rawSql": "SELECT num_semana AS \"semana do ano\",\n       MAX(CASE WHEN ano_semana = 2022 THEN ${termo:raw} END) AS \"2022\",\n       MAX(CASE WHEN ano_semana = 2023 THEN ${termo:raw} END) AS \"2023\",\n       MAX(CASE WHEN ano_semana = 2024 THEN ${termo:raw} END) AS \"2024\",\n       MAX(CASE WHEN ano_semana = 2025 THEN ${termo:raw} END) AS \"2025\",\n       MAX(CASE WHEN ano_semana = 2026 THEN ${termo:raw} END) AS \"2026\"\nFROM cruzamento_semanal_br WHERE semana_completa\nGROUP BY num_semana ORDER BY num_semana"
+          "rawSql": "SELECT num_semana AS \"semana do ano\",\n       MAX(CASE WHEN ano_semana = 2022 THEN ${termo:raw} END) AS \"2022\",\n       MAX(CASE WHEN ano_semana = 2023 THEN ${termo:raw} END) AS \"2023\",\n       MAX(CASE WHEN ano_semana = 2024 THEN ${termo:raw} END) AS \"2024\",\n       MAX(CASE WHEN ano_semana = 2025 THEN ${termo:raw} END) AS \"2025\",\n       MAX(CASE WHEN ano_semana = 2026 THEN ${termo:raw} END) AS \"2026\"\nFROM cruzamento_semanal_br WHERE semana_completa\nGROUP BY num_semana ORDER BY num_semana",
+          "hide": false
         }
       ],
+      "links": [],
+      "datasource": {
+        "type": "motherduck-duckdb-datasource",
+        "uid": "duckdb-gold"
+      },
+      "transformations": [],
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "hideZeros": false,
+          "mode": "multi",
+          "sort": "none"
+        },
+        "xField": "semana do ano"
+      },
       "fieldConfig": {
         "defaults": {
-          "custom": {
-            "lineWidth": 2,
-            "showPoints": "never",
-            "spanNulls": false,
-            "fillOpacity": 0
-          },
           "color": {
             "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "barWidthFactor": 0.6,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 2,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "showValues": false,
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
           }
         },
         "overrides": [
@@ -2253,8 +2829,8 @@
               {
                 "id": "color",
                 "value": {
-                  "mode": "fixed",
-                  "fixedColor": "#86b6ef"
+                  "fixedColor": "#86b6ef",
+                  "mode": "fixed"
                 }
               }
             ]
@@ -2268,8 +2844,8 @@
               {
                 "id": "color",
                 "value": {
-                  "mode": "fixed",
-                  "fixedColor": "#5598e7"
+                  "fixedColor": "#5598e7",
+                  "mode": "fixed"
                 }
               }
             ]
@@ -2283,8 +2859,8 @@
               {
                 "id": "color",
                 "value": {
-                  "mode": "fixed",
-                  "fixedColor": "#2a78d6"
+                  "fixedColor": "#2a78d6",
+                  "mode": "fixed"
                 }
               }
             ]
@@ -2298,8 +2874,8 @@
               {
                 "id": "color",
                 "value": {
-                  "mode": "fixed",
-                  "fixedColor": "#104281"
+                  "fixedColor": "#104281",
+                  "mode": "fixed"
                 }
               }
             ]
@@ -2313,29 +2889,17 @@
               {
                 "id": "color",
                 "value": {
-                  "mode": "fixed",
-                  "fixedColor": "#0d366b"
+                  "fixedColor": "#0d366b",
+                  "mode": "fixed"
                 }
               }
             ]
           }
         ]
-      },
-      "options": {
-        "xField": "semana do ano",
-        "legend": {
-          "displayMode": "list",
-          "placement": "bottom",
-          "showLegend": true
-        },
-        "tooltip": {
-          "mode": "multi",
-          "sort": "none"
-        }
       }
     },
     {
-      "id": 21,
+      "id": 1004,
       "type": "row",
       "title": "Regional (UF do aeroporto de embarque)",
       "collapsed": false,
@@ -2350,16 +2914,12 @@
     {
       "id": 22,
       "type": "timeseries",
-      "title": "${uf}: passageiros × busca por curso de inglês (índice)",
-      "description": "Um gráfico por UF escolhida no seletor. 100 = maior semana da UF. Semanas sem dado no Trends ficam em branco (volume abaixo do limiar de privacidade do Google).",
-      "datasource": {
-        "type": "motherduck-duckdb-datasource",
-        "uid": "duckdb-gold"
-      },
+      "title": "${uf:text}: passageiros × busca por curso de inglês (índice)",
+      "description": "Soma dos passageiros e média do interesse por curso de inglês entre as UFs selecionadas. 100 = maior semana da série combinada.",
       "gridPos": {
         "x": 0,
         "y": 72,
-        "w": 8,
+        "w": 24,
         "h": 8
       },
       "targets": [
@@ -2372,25 +2932,85 @@
           "editorMode": "code",
           "format": 1,
           "rawQuery": true,
-          "rawSql": "SELECT CAST(semana_inicio AS timestamp) AS time,\n       ROUND(100.0 * nr_passageiros / MAX(nr_passageiros) OVER (), 2) AS \"passageiros (índice)\",\n       ROUND(100.0 * tr_curso_ingles_uf / MAX(tr_curso_ingles_uf) OVER (), 2) AS \"busca na UF (índice)\"\nFROM cruzamento_semanal_uf\nWHERE sg_uf = '${uf:raw}' AND semana_completa AND TRUE\nORDER BY 1"
+          "rawSql": "WITH serie AS (\n  SELECT\n    CAST(semana_inicio AS timestamp) AS time,\n    SUM(nr_passageiros) AS passageiros,\n    AVG(tr_curso_ingles_uf) AS busca\n  FROM cruzamento_semanal_uf\n  WHERE sg_uf IN (${uf:sqlstring})\n    AND semana_completa\n    AND TRUE\n  GROUP BY semana_inicio\n)\nSELECT\n  time,\n  ROUND(100.0 * passageiros / NULLIF(MAX(passageiros) OVER (), 0), 2) AS \"passageiros (índice)\",\n  ROUND(100.0 * busca / NULLIF(MAX(busca) OVER (), 0), 2) AS \"busca nas UFs (índice)\"\nFROM serie\nORDER BY time",
+          "hide": false
         }
       ],
+      "links": [],
+      "datasource": {
+        "type": "motherduck-duckdb-datasource",
+        "uid": "duckdb-gold"
+      },
+      "transformations": [],
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "hideZeros": false,
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
       "fieldConfig": {
         "defaults": {
-          "custom": {
-            "drawStyle": "line",
-            "lineWidth": 2,
-            "fillOpacity": 0,
-            "showPoints": "never",
-            "spanNulls": false,
-            "axisSoftMin": 0
-          },
-          "unit": "short",
           "color": {
             "mode": "palette-classic"
           },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "axisSoftMin": 0,
+            "barAlignment": 0,
+            "barWidthFactor": 0.6,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 2,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "showValues": false,
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "max": 100,
           "min": 0,
-          "max": 100
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
         },
         "overrides": [
           {
@@ -2402,8 +3022,8 @@
               {
                 "id": "color",
                 "value": {
-                  "mode": "fixed",
-                  "fixedColor": "#2a78d6"
+                  "fixedColor": "#2a78d6",
+                  "mode": "fixed"
                 }
               }
             ]
@@ -2417,38 +3037,20 @@
               {
                 "id": "color",
                 "value": {
-                  "mode": "fixed",
-                  "fixedColor": "#eb6834"
+                  "fixedColor": "#eb6834",
+                  "mode": "fixed"
                 }
               }
             ]
           }
         ]
-      },
-      "options": {
-        "legend": {
-          "displayMode": "list",
-          "placement": "bottom",
-          "showLegend": true
-        },
-        "tooltip": {
-          "mode": "multi",
-          "sort": "none"
-        }
-      },
-      "repeat": "uf",
-      "repeatDirection": "h",
-      "maxPerRow": 3
+      }
     },
     {
       "id": 23,
       "type": "barchart",
       "title": "Correlograma por UF: passageiros × busca na UF",
       "description": "Só UFs com voo comercial e série semanal do Trends com dado suficiente.",
-      "datasource": {
-        "type": "motherduck-duckdb-datasource",
-        "uid": "duckdb-gold"
-      },
       "gridPos": {
         "x": 0,
         "y": 80,
@@ -2465,23 +3067,81 @@
           "editorMode": "code",
           "format": 1,
           "rawQuery": true,
-          "rawSql": "SELECT CAST(defasagem_semanas AS varchar) AS \"defasagem (semanas)\",\n       MAX(CASE WHEN recorte = 'SP' THEN pearson END) AS \"SP\",\n       MAX(CASE WHEN recorte = 'RJ' THEN pearson END) AS \"RJ\",\n       MAX(CASE WHEN recorte = 'MG' THEN pearson END) AS \"MG\"\nFROM correlacoes\nWHERE serie_voos = 'nr_passageiros' AND serie_trends = 'tr_curso_ingles_uf'\n  AND transformacao = '${transformacao:raw}'\nGROUP BY defasagem_semanas ORDER BY defasagem_semanas"
+          "rawSql": "SELECT CAST(defasagem_semanas AS varchar) AS \"defasagem (semanas)\",\n       MAX(CASE WHEN recorte = 'SP' THEN pearson END) AS \"SP\",\n       MAX(CASE WHEN recorte = 'RJ' THEN pearson END) AS \"RJ\",\n       MAX(CASE WHEN recorte = 'MG' THEN pearson END) AS \"MG\"\nFROM correlacoes\nWHERE serie_voos = 'nr_passageiros' AND serie_trends = 'tr_curso_ingles_uf'\n  AND transformacao = '${transformacao:raw}'\nGROUP BY defasagem_semanas ORDER BY defasagem_semanas",
+          "hide": false
         }
       ],
+      "links": [],
+      "datasource": {
+        "type": "motherduck-duckdb-datasource",
+        "uid": "duckdb-gold"
+      },
+      "transformations": [],
+      "options": {
+        "barRadius": 0,
+        "barWidth": 0.85,
+        "fullHighlight": false,
+        "groupWidth": 0.75,
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "orientation": "vertical",
+        "showValue": "never",
+        "stacking": "none",
+        "tooltip": {
+          "hideZeros": false,
+          "mode": "multi",
+          "sort": "none"
+        },
+        "xField": "defasagem (semanas)",
+        "xTickLabelRotation": 0,
+        "xTickLabelSpacing": 0
+      },
       "fieldConfig": {
         "defaults": {
-          "custom": {
-            "fillOpacity": 100,
-            "lineWidth": 0,
-            "gradientMode": "none",
-            "axisCenteredZero": false
-          },
-          "unit": "short",
           "color": {
             "mode": "palette-classic"
           },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "fillOpacity": 100,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineWidth": 0,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "max": 1,
           "min": -1,
-          "max": 1
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
         },
         "overrides": [
           {
@@ -2493,8 +3153,8 @@
               {
                 "id": "color",
                 "value": {
-                  "mode": "fixed",
-                  "fixedColor": "#2a78d6"
+                  "fixedColor": "#2a78d6",
+                  "mode": "fixed"
                 }
               }
             ]
@@ -2508,8 +3168,8 @@
               {
                 "id": "color",
                 "value": {
-                  "mode": "fixed",
-                  "fixedColor": "#eb6834"
+                  "fixedColor": "#eb6834",
+                  "mode": "fixed"
                 }
               }
             ]
@@ -2523,32 +3183,13 @@
               {
                 "id": "color",
                 "value": {
-                  "mode": "fixed",
-                  "fixedColor": "#1baf7a"
+                  "fixedColor": "#1baf7a",
+                  "mode": "fixed"
                 }
               }
             ]
           }
         ]
-      },
-      "options": {
-        "xField": "defasagem (semanas)",
-        "orientation": "vertical",
-        "showValue": "never",
-        "barWidth": 0.85,
-        "groupWidth": 0.75,
-        "stacking": "none",
-        "xTickLabelRotation": 0,
-        "xTickLabelSpacing": 0,
-        "legend": {
-          "displayMode": "list",
-          "placement": "bottom",
-          "showLegend": true
-        },
-        "tooltip": {
-          "mode": "multi",
-          "sort": "none"
-        }
       }
     },
     {
@@ -2556,10 +3197,6 @@
       "type": "barchart",
       "title": "Interesse por curso de inglês, por UF",
       "description": "Busca relativa no período inteiro: participação de curso de inglês no total de buscas da UF.",
-      "datasource": {
-        "type": "motherduck-duckdb-datasource",
-        "uid": "duckdb-gold"
-      },
       "gridPos": {
         "x": 12,
         "y": 80,
@@ -2576,23 +3213,81 @@
           "editorMode": "code",
           "format": 1,
           "rawQuery": true,
-          "rawSql": "SELECT sg_uf AS \"UF\", interesse_curso_ingles AS \"interesse (100 = maior UF)\"\nFROM resumo_uf ORDER BY interesse_curso_ingles DESC"
+          "rawSql": "SELECT sg_uf AS \"UF\", interesse_curso_ingles AS \"interesse (100 = maior UF)\"\nFROM resumo_uf ORDER BY interesse_curso_ingles DESC",
+          "hide": false
         }
       ],
+      "links": [],
+      "datasource": {
+        "type": "motherduck-duckdb-datasource",
+        "uid": "duckdb-gold"
+      },
+      "transformations": [],
+      "options": {
+        "barRadius": 0,
+        "barWidth": 0.85,
+        "fullHighlight": false,
+        "groupWidth": 0.75,
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "orientation": "vertical",
+        "showValue": "never",
+        "stacking": "none",
+        "tooltip": {
+          "hideZeros": false,
+          "mode": "multi",
+          "sort": "none"
+        },
+        "xField": "UF",
+        "xTickLabelRotation": 0,
+        "xTickLabelSpacing": 0
+      },
       "fieldConfig": {
         "defaults": {
-          "custom": {
-            "fillOpacity": 100,
-            "lineWidth": 0,
-            "gradientMode": "none",
-            "axisCenteredZero": false
-          },
-          "unit": "short",
           "color": {
             "mode": "palette-classic"
           },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "fillOpacity": 100,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineWidth": 0,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "max": 100,
           "min": 0,
-          "max": 100
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
         },
         "overrides": [
           {
@@ -2604,32 +3299,13 @@
               {
                 "id": "color",
                 "value": {
-                  "mode": "fixed",
-                  "fixedColor": "#2a78d6"
+                  "fixedColor": "#2a78d6",
+                  "mode": "fixed"
                 }
               }
             ]
           }
         ]
-      },
-      "options": {
-        "xField": "UF",
-        "orientation": "vertical",
-        "showValue": "never",
-        "barWidth": 0.85,
-        "groupWidth": 0.75,
-        "stacking": "none",
-        "xTickLabelRotation": 0,
-        "xTickLabelSpacing": 0,
-        "legend": {
-          "displayMode": "list",
-          "placement": "bottom",
-          "showLegend": true
-        },
-        "tooltip": {
-          "mode": "multi",
-          "sort": "none"
-        }
       }
     },
     {
@@ -2637,10 +3313,6 @@
       "type": "table",
       "title": "Resumo por UF",
       "description": "Voos e passageiros contam a UF do aeroporto de embarque, não a residência do passageiro: Guarulhos (SP) recebe conexões do país inteiro.",
-      "datasource": {
-        "type": "motherduck-duckdb-datasource",
-        "uid": "duckdb-gold"
-      },
       "gridPos": {
         "x": 0,
         "y": 89,
@@ -2657,9 +3329,21 @@
           "editorMode": "code",
           "format": 1,
           "rawQuery": true,
-          "rawSql": "SELECT sg_uf AS \"UF\", nome_uf AS \"nome\", regiao AS \"região\", qtd_voos AS \"voos\",\n       nr_passageiros AS \"passageiros\", pct_passageiros AS \"% dos passageiros\",\n       interesse_curso_ingles AS \"interesse no Trends\",\n       CASE WHEN serie_semanal_trends THEN 'sim' ELSE 'não' END AS \"série semanal no Trends\",\n       semanas_com_dado_trends AS \"semanas com dado\", ROUND(pearson_semanal, 2) AS \"Pearson semanal\"\nFROM resumo_uf ORDER BY nr_passageiros DESC, interesse_curso_ingles DESC"
+          "rawSql": "SELECT sg_uf AS \"UF\", nome_uf AS \"nome\", regiao AS \"região\", qtd_voos AS \"voos\",\n       nr_passageiros AS \"passageiros\", pct_passageiros AS \"% dos passageiros\",\n       interesse_curso_ingles AS \"interesse no Trends\",\n       CASE WHEN serie_semanal_trends THEN 'sim' ELSE 'não' END AS \"série semanal no Trends\",\n       semanas_com_dado_trends AS \"semanas com dado\", ROUND(pearson_semanal, 2) AS \"Pearson semanal\"\nFROM resumo_uf ORDER BY nr_passageiros DESC, interesse_curso_ingles DESC",
+          "hide": false
         }
       ],
+      "links": [],
+      "datasource": {
+        "type": "motherduck-duckdb-datasource",
+        "uid": "duckdb-gold"
+      },
+      "transformations": [],
+      "options": {
+        "cellHeight": "sm",
+        "showHeader": true,
+        "zebraStriping": false
+      },
       "fieldConfig": {
         "defaults": {
           "custom": {
@@ -2667,7 +3351,23 @@
             "cellOptions": {
               "type": "auto"
             },
+            "footer": {
+              "reducers": []
+            },
             "inspect": false
+          },
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
           }
         },
         "overrides": [
@@ -2680,8 +3380,8 @@
               {
                 "id": "custom.cellOptions",
                 "value": {
-                  "type": "color-background",
-                  "mode": "basic"
+                  "mode": "basic",
+                  "type": "color-background"
                 }
               },
               {
@@ -2697,7 +3397,7 @@
                   "steps": [
                     {
                       "color": "#184f95",
-                      "value": null
+                      "value": 0
                     },
                     {
                       "color": "#3987e5",
@@ -2733,21 +3433,10 @@
             ]
           }
         ]
-      },
-      "options": {
-        "showHeader": true,
-        "cellHeight": "sm",
-        "footer": {
-          "show": false,
-          "reducer": [
-            "sum"
-          ],
-          "fields": ""
-        }
       }
     },
     {
-      "id": 26,
+      "id": 1005,
       "type": "row",
       "title": "Férias ou destino? (grupo de comparação: destinos não anglófonos)",
       "collapsed": false,
@@ -2764,10 +3453,6 @@
       "type": "timeseries",
       "title": "Passageiros por destino (índice) × ${termo_destinos:text}",
       "description": "Cada grupo de destino em índice (100 = maior semana do grupo). A Europa, que não segue as férias escolares brasileiras, é o contraste.",
-      "datasource": {
-        "type": "motherduck-duckdb-datasource",
-        "uid": "duckdb-gold"
-      },
       "gridPos": {
         "x": 0,
         "y": 99,
@@ -2784,25 +3469,85 @@
           "editorMode": "code",
           "format": 1,
           "rawQuery": true,
-          "rawSql": "SELECT CAST(semana_inicio AS timestamp) AS time,\n       MAX(CASE WHEN segmento = 'anglofono' THEN pax_indice END) AS \"Anglófonos\",\n       MAX(CASE WHEN segmento = 'nao_anglofono' THEN pax_indice END) AS \"Não anglófonos\",\n       MAX(CASE WHEN segmento = 'nao_anglofono_america_sul' THEN pax_indice END) AS \"América do Sul\",\n       MAX(CASE WHEN segmento = 'nao_anglofono_europa' THEN pax_indice END) AS \"Europa\",\n       MAX(${termo_destinos:raw}) AS \"Busca: ${termo_destinos:text}\"\nFROM comparacao_destinos_semanal\nWHERE semana_completa AND TRUE\nGROUP BY semana_inicio ORDER BY 1"
+          "rawSql": "SELECT CAST(semana_inicio AS timestamp) AS time,\n       MAX(CASE WHEN segmento = 'anglofono' THEN pax_indice END) AS \"Anglófonos\",\n       MAX(CASE WHEN segmento = 'nao_anglofono' THEN pax_indice END) AS \"Não anglófonos\",\n       MAX(CASE WHEN segmento = 'nao_anglofono_america_sul' THEN pax_indice END) AS \"América do Sul\",\n       MAX(CASE WHEN segmento = 'nao_anglofono_europa' THEN pax_indice END) AS \"Europa\",\n       MAX(${termo_destinos:raw}) AS \"Busca: ${termo_destinos:text}\"\nFROM comparacao_destinos_semanal\nWHERE semana_completa AND TRUE\nGROUP BY semana_inicio ORDER BY 1",
+          "hide": false
         }
       ],
+      "links": [],
+      "datasource": {
+        "type": "motherduck-duckdb-datasource",
+        "uid": "duckdb-gold"
+      },
+      "transformations": [],
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "hideZeros": false,
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
       "fieldConfig": {
         "defaults": {
-          "custom": {
-            "drawStyle": "line",
-            "lineWidth": 2,
-            "fillOpacity": 0,
-            "showPoints": "never",
-            "spanNulls": false,
-            "axisSoftMin": 0
-          },
-          "unit": "short",
           "color": {
             "mode": "palette-classic"
           },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "axisSoftMin": 0,
+            "barAlignment": 0,
+            "barWidthFactor": 0.6,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 2,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "showValues": false,
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "max": 100,
           "min": 30,
-          "max": 100
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
         },
         "overrides": [
           {
@@ -2814,8 +3559,8 @@
               {
                 "id": "color",
                 "value": {
-                  "mode": "fixed",
-                  "fixedColor": "#2a78d6"
+                  "fixedColor": "#2a78d6",
+                  "mode": "fixed"
                 }
               }
             ]
@@ -2829,8 +3574,8 @@
               {
                 "id": "color",
                 "value": {
-                  "mode": "fixed",
-                  "fixedColor": "#eb6834"
+                  "fixedColor": "#eb6834",
+                  "mode": "fixed"
                 }
               }
             ]
@@ -2844,8 +3589,8 @@
               {
                 "id": "color",
                 "value": {
-                  "mode": "fixed",
-                  "fixedColor": "#1baf7a"
+                  "fixedColor": "#1baf7a",
+                  "mode": "fixed"
                 }
               }
             ]
@@ -2859,8 +3604,8 @@
               {
                 "id": "color",
                 "value": {
-                  "mode": "fixed",
-                  "fixedColor": "#eda100"
+                  "fixedColor": "#eda100",
+                  "mode": "fixed"
                 }
               }
             ]
@@ -2874,8 +3619,8 @@
               {
                 "id": "color",
                 "value": {
-                  "mode": "fixed",
-                  "fixedColor": "#898781"
+                  "fixedColor": "#898781",
+                  "mode": "fixed"
                 }
               }
             ]
@@ -2889,27 +3634,16 @@
               {
                 "id": "custom.lineStyle",
                 "value": {
-                  "fill": "dash",
                   "dash": [
                     8,
                     6
-                  ]
+                  ],
+                  "fill": "dash"
                 }
               }
             ]
           }
         ]
-      },
-      "options": {
-        "legend": {
-          "displayMode": "list",
-          "placement": "bottom",
-          "showLegend": true
-        },
-        "tooltip": {
-          "mode": "multi",
-          "sort": "none"
-        }
       }
     },
     {
@@ -2917,10 +3651,6 @@
       "type": "barchart",
       "title": "Correlograma por destino: passageiros × ${termo_destinos:text}",
       "description": "Se o efeito fosse só do destino de língua inglesa, os não anglófonos não teriam correlação. Positivo: a busca vem depois do voo.",
-      "datasource": {
-        "type": "motherduck-duckdb-datasource",
-        "uid": "duckdb-gold"
-      },
       "gridPos": {
         "x": 0,
         "y": 108,
@@ -2937,23 +3667,81 @@
           "editorMode": "code",
           "format": 1,
           "rawQuery": true,
-          "rawSql": "SELECT CAST(defasagem_semanas AS varchar) AS \"defasagem (semanas)\",\n       MAX(CASE WHEN segmento = 'anglofono' THEN pearson END) AS \"Anglófonos\",\n       MAX(CASE WHEN segmento = 'nao_anglofono' THEN pearson END) AS \"Não anglófonos\",\n       MAX(CASE WHEN segmento = 'nao_anglofono_america_sul' THEN pearson END) AS \"América do Sul\",\n       MAX(CASE WHEN segmento = 'nao_anglofono_europa' THEN pearson END) AS \"Europa\"\nFROM correlacoes_destinos\nWHERE serie_voos = 'nr_passageiros' AND serie_trends = '${termo_destinos:raw}'\n  AND transformacao = '${transformacao:raw}'\nGROUP BY defasagem_semanas ORDER BY defasagem_semanas"
+          "rawSql": "SELECT CAST(defasagem_semanas AS varchar) AS \"defasagem (semanas)\",\n       MAX(CASE WHEN segmento = 'anglofono' THEN pearson END) AS \"Anglófonos\",\n       MAX(CASE WHEN segmento = 'nao_anglofono' THEN pearson END) AS \"Não anglófonos\",\n       MAX(CASE WHEN segmento = 'nao_anglofono_america_sul' THEN pearson END) AS \"América do Sul\",\n       MAX(CASE WHEN segmento = 'nao_anglofono_europa' THEN pearson END) AS \"Europa\"\nFROM correlacoes_destinos\nWHERE serie_voos = 'nr_passageiros' AND serie_trends = '${termo_destinos:raw}'\n  AND transformacao = '${transformacao:raw}'\nGROUP BY defasagem_semanas ORDER BY defasagem_semanas",
+          "hide": false
         }
       ],
+      "links": [],
+      "datasource": {
+        "type": "motherduck-duckdb-datasource",
+        "uid": "duckdb-gold"
+      },
+      "transformations": [],
+      "options": {
+        "barRadius": 0,
+        "barWidth": 0.85,
+        "fullHighlight": false,
+        "groupWidth": 0.75,
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "orientation": "vertical",
+        "showValue": "never",
+        "stacking": "none",
+        "tooltip": {
+          "hideZeros": false,
+          "mode": "multi",
+          "sort": "none"
+        },
+        "xField": "defasagem (semanas)",
+        "xTickLabelRotation": 0,
+        "xTickLabelSpacing": 0
+      },
       "fieldConfig": {
         "defaults": {
-          "custom": {
-            "fillOpacity": 100,
-            "lineWidth": 0,
-            "gradientMode": "none",
-            "axisCenteredZero": false
-          },
-          "unit": "short",
           "color": {
             "mode": "palette-classic"
           },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "fillOpacity": 100,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineWidth": 0,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "max": 1,
           "min": -1,
-          "max": 1
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
         },
         "overrides": [
           {
@@ -2965,8 +3753,8 @@
               {
                 "id": "color",
                 "value": {
-                  "mode": "fixed",
-                  "fixedColor": "#2a78d6"
+                  "fixedColor": "#2a78d6",
+                  "mode": "fixed"
                 }
               }
             ]
@@ -2980,8 +3768,8 @@
               {
                 "id": "color",
                 "value": {
-                  "mode": "fixed",
-                  "fixedColor": "#eb6834"
+                  "fixedColor": "#eb6834",
+                  "mode": "fixed"
                 }
               }
             ]
@@ -2995,8 +3783,8 @@
               {
                 "id": "color",
                 "value": {
-                  "mode": "fixed",
-                  "fixedColor": "#1baf7a"
+                  "fixedColor": "#1baf7a",
+                  "mode": "fixed"
                 }
               }
             ]
@@ -3010,32 +3798,13 @@
               {
                 "id": "color",
                 "value": {
-                  "mode": "fixed",
-                  "fixedColor": "#eda100"
+                  "fixedColor": "#eda100",
+                  "mode": "fixed"
                 }
               }
             ]
           }
         ]
-      },
-      "options": {
-        "xField": "defasagem (semanas)",
-        "orientation": "vertical",
-        "showValue": "never",
-        "barWidth": 0.85,
-        "groupWidth": 0.75,
-        "stacking": "none",
-        "xTickLabelRotation": 0,
-        "xTickLabelSpacing": 0,
-        "legend": {
-          "displayMode": "list",
-          "placement": "bottom",
-          "showLegend": true
-        },
-        "tooltip": {
-          "mode": "multi",
-          "sort": "none"
-        }
       }
     },
     {
@@ -3043,10 +3812,6 @@
       "type": "barchart",
       "title": "Correlação parcial: o que cada grupo acrescenta sobre o outro",
       "description": "Correlação de cada grupo com a busca depois de retirar o que o outro grupo explica.",
-      "datasource": {
-        "type": "motherduck-duckdb-datasource",
-        "uid": "duckdb-gold"
-      },
       "gridPos": {
         "x": 12,
         "y": 108,
@@ -3063,23 +3828,81 @@
           "editorMode": "code",
           "format": 1,
           "rawQuery": true,
-          "rawSql": "SELECT CAST(defasagem_semanas AS varchar) AS \"defasagem (semanas)\",\n       MAX(CASE WHEN explicativa = 'anglofono' THEN pearson_parcial END) AS \"anglófonos, descontados os não anglófonos\",\n       MAX(CASE WHEN explicativa = 'nao_anglofono' THEN pearson_parcial END) AS \"não anglófonos, descontados os anglófonos\"\nFROM parciais_destinos\nWHERE serie_trends = '${termo_destinos:raw}'\nGROUP BY defasagem_semanas ORDER BY defasagem_semanas"
+          "rawSql": "SELECT CAST(defasagem_semanas AS varchar) AS \"defasagem (semanas)\",\n       MAX(CASE WHEN explicativa = 'anglofono' THEN pearson_parcial END) AS \"anglófonos, descontados os não anglófonos\",\n       MAX(CASE WHEN explicativa = 'nao_anglofono' THEN pearson_parcial END) AS \"não anglófonos, descontados os anglófonos\"\nFROM parciais_destinos\nWHERE serie_trends = '${termo_destinos:raw}'\nGROUP BY defasagem_semanas ORDER BY defasagem_semanas",
+          "hide": false
         }
       ],
+      "links": [],
+      "datasource": {
+        "type": "motherduck-duckdb-datasource",
+        "uid": "duckdb-gold"
+      },
+      "transformations": [],
+      "options": {
+        "barRadius": 0,
+        "barWidth": 0.85,
+        "fullHighlight": false,
+        "groupWidth": 0.75,
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "orientation": "vertical",
+        "showValue": "never",
+        "stacking": "none",
+        "tooltip": {
+          "hideZeros": false,
+          "mode": "multi",
+          "sort": "none"
+        },
+        "xField": "defasagem (semanas)",
+        "xTickLabelRotation": 0,
+        "xTickLabelSpacing": 0
+      },
       "fieldConfig": {
         "defaults": {
-          "custom": {
-            "fillOpacity": 100,
-            "lineWidth": 0,
-            "gradientMode": "none",
-            "axisCenteredZero": false
-          },
-          "unit": "short",
           "color": {
             "mode": "palette-classic"
           },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "fillOpacity": 100,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineWidth": 0,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "max": 1,
           "min": -1,
-          "max": 1
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
         },
         "overrides": [
           {
@@ -3091,8 +3914,8 @@
               {
                 "id": "color",
                 "value": {
-                  "mode": "fixed",
-                  "fixedColor": "#2a78d6"
+                  "fixedColor": "#2a78d6",
+                  "mode": "fixed"
                 }
               }
             ]
@@ -3106,32 +3929,13 @@
               {
                 "id": "color",
                 "value": {
-                  "mode": "fixed",
-                  "fixedColor": "#eb6834"
+                  "fixedColor": "#eb6834",
+                  "mode": "fixed"
                 }
               }
             ]
           }
         ]
-      },
-      "options": {
-        "xField": "defasagem (semanas)",
-        "orientation": "vertical",
-        "showValue": "never",
-        "barWidth": 0.85,
-        "groupWidth": 0.75,
-        "stacking": "none",
-        "xTickLabelRotation": 0,
-        "xTickLabelSpacing": 0,
-        "legend": {
-          "displayMode": "list",
-          "placement": "bottom",
-          "showLegend": true
-        },
-        "tooltip": {
-          "mode": "multi",
-          "sort": "none"
-        }
       }
     },
     {
@@ -3139,10 +3943,6 @@
       "type": "xychart",
       "title": "Composição: % anglófona dos passageiros (semana t) × ${termo_destinos:text} (t+${defasagem})",
       "description": "Se o destino importasse, semanas com mais viagem para países de língua inglesa (em proporção) seriam seguidas de mais busca. Não são.",
-      "datasource": {
-        "type": "motherduck-duckdb-datasource",
-        "uid": "duckdb-gold"
-      },
       "gridPos": {
         "x": 0,
         "y": 117,
@@ -3159,39 +3959,95 @@
           "editorMode": "code",
           "format": 1,
           "rawQuery": true,
-          "rawSql": "SELECT a.participacao_pax AS \"% anglófona (semana t)\",\n       b.${termo_destinos:raw} AS \"${termo_destinos:text} (semana t+k)\"\nFROM comparacao_destinos_semanal a\nJOIN comparacao_destinos_semanal b\n  ON b.segmento = a.segmento AND b.semana_inicio = (a.semana_inicio + to_weeks(${defasagem:raw}))\nWHERE a.segmento = 'anglofono' AND a.semana_completa AND b.semana_completa\n  AND TRUE"
+          "rawSql": "SELECT a.participacao_pax AS \"% anglófona (semana t)\",\n       b.${termo_destinos:raw} AS \"${termo_destinos:text} (semana t+k)\"\nFROM comparacao_destinos_semanal a\nJOIN comparacao_destinos_semanal b\n  ON b.segmento = a.segmento AND b.semana_inicio = (a.semana_inicio + to_weeks(${defasagem:raw}))\nWHERE a.segmento = 'anglofono' AND a.semana_completa AND b.semana_completa\n  AND TRUE",
+          "hide": false
         }
       ],
-      "fieldConfig": {
-        "defaults": {
-          "custom": {
-            "show": "points",
-            "pointSize": {
-              "fixed": 7
-            }
-          },
-          "color": {
-            "mode": "fixed",
-            "fixedColor": "#2a78d6"
-          }
-        },
-        "overrides": []
+      "links": [],
+      "datasource": {
+        "type": "motherduck-duckdb-datasource",
+        "uid": "duckdb-gold"
       },
+      "transformations": [],
       "options": {
-        "mapping": "auto",
-        "seriesMapping": "auto",
-        "series": [
-          {}
-        ],
         "legend": {
-          "showLegend": false,
+          "calcs": [],
           "displayMode": "list",
-          "placement": "bottom"
+          "placement": "bottom",
+          "showLegend": false
         },
+        "mapping": "auto",
+        "series": [
+          {
+            "frame": {
+              "matcher": {
+                "id": "byIndex",
+                "options": 0
+              }
+            },
+            "x": {
+              "matcher": {
+                "id": "byType",
+                "options": "number"
+              }
+            },
+            "y": {
+              "matcher": {
+                "id": "byType",
+                "options": "number"
+              }
+            }
+          }
+        ],
         "tooltip": {
+          "hideZeros": false,
           "mode": "single",
           "sort": "none"
         }
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "#2a78d6",
+            "mode": "fixed"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "fillOpacity": 50,
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "pointShape": "circle",
+            "pointSize": {
+              "fixed": 7
+            },
+            "pointStrokeWidth": 1,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "show": "points"
+          },
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
       }
     },
     {
@@ -3199,10 +4055,6 @@
       "type": "table",
       "title": "Pico de correlação por destino (${transformacao})",
       "description": "nr_passageiros: volume do grupo; participacao_pax: fatia do grupo no total internacional.",
-      "datasource": {
-        "type": "motherduck-duckdb-datasource",
-        "uid": "duckdb-gold"
-      },
       "gridPos": {
         "x": 12,
         "y": 117,
@@ -3219,9 +4071,21 @@
           "editorMode": "code",
           "format": 1,
           "rawQuery": true,
-          "rawSql": "SELECT c.segmento AS \"segmento\", c.serie_voos AS \"série\", c.defasagem_semanas AS \"defasagem do pico\",\n       c.pearson AS \"Pearson\", CASE WHEN c.significativo THEN 'sim' ELSE 'não' END AS \"significativo (5%)\"\nFROM correlacoes_destinos c\nJOIN (SELECT segmento, serie_voos, MAX(pearson) AS maximo FROM correlacoes_destinos\n      WHERE serie_trends = '${termo_destinos:raw}' AND transformacao = '${transformacao:raw}'\n      GROUP BY segmento, serie_voos) m\n  ON m.segmento = c.segmento AND m.serie_voos = c.serie_voos AND m.maximo = c.pearson\nWHERE c.serie_trends = '${termo_destinos:raw}' AND c.transformacao = '${transformacao:raw}'\nORDER BY c.pearson DESC"
+          "rawSql": "SELECT c.segmento AS \"segmento\", c.serie_voos AS \"série\", c.defasagem_semanas AS \"defasagem do pico\",\n       c.pearson AS \"Pearson\", CASE WHEN c.significativo THEN 'sim' ELSE 'não' END AS \"significativo (5%)\"\nFROM correlacoes_destinos c\nJOIN (SELECT segmento, serie_voos, MAX(pearson) AS maximo FROM correlacoes_destinos\n      WHERE serie_trends = '${termo_destinos:raw}' AND transformacao = '${transformacao:raw}'\n      GROUP BY segmento, serie_voos) m\n  ON m.segmento = c.segmento AND m.serie_voos = c.serie_voos AND m.maximo = c.pearson\nWHERE c.serie_trends = '${termo_destinos:raw}' AND c.transformacao = '${transformacao:raw}'\nORDER BY c.pearson DESC",
+          "hide": false
         }
       ],
+      "links": [],
+      "datasource": {
+        "type": "motherduck-duckdb-datasource",
+        "uid": "duckdb-gold"
+      },
+      "transformations": [],
+      "options": {
+        "cellHeight": "sm",
+        "showHeader": true,
+        "zebraStriping": false
+      },
       "fieldConfig": {
         "defaults": {
           "custom": {
@@ -3229,7 +4093,23 @@
             "cellOptions": {
               "type": "auto"
             },
+            "footer": {
+              "reducers": []
+            },
             "inspect": false
+          },
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
           }
         },
         "overrides": [
@@ -3242,8 +4122,8 @@
               {
                 "id": "custom.cellOptions",
                 "value": {
-                  "type": "color-background",
-                  "mode": "basic"
+                  "mode": "basic",
+                  "type": "color-background"
                 }
               },
               {
@@ -3259,7 +4139,7 @@
                   "steps": [
                     {
                       "color": "#184f95",
-                      "value": null
+                      "value": 0
                     },
                     {
                       "color": "#3987e5",
@@ -3295,17 +4175,6 @@
             ]
           }
         ]
-      },
-      "options": {
-        "showHeader": true,
-        "cellHeight": "sm",
-        "footer": {
-          "show": false,
-          "reducer": [
-            "sum"
-          ],
-          "fields": ""
-        }
       }
     }
   ]
